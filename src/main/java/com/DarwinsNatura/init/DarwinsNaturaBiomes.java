@@ -13,6 +13,8 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 public class DarwinsNaturaBiomes 
 {
 	public static final Biome GALAPAGOS = new BiomeGalapagos();
+	public static Biome GALAPAGOS_SHORE;
+
 	
 	public static void registerBiomes()
 	{
