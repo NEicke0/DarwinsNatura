@@ -1,6 +1,12 @@
 package com.DarwinsNatura.proxy;
 
+import com.DarwinsNatura.Reference;
+import com.DarwinsNatura.util.handlers.RegistryHandler;
+
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class CommonProxy 
 {

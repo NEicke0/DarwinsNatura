@@ -1,5 +1,6 @@
 package com.DarwinsNatura.world.biomes;
 
+import com.DarwinsNatura.world.biomes.southAmerica.BiomeGalapagos;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
@@ -11,11 +12,11 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class DarwinsNaturaBiomes 
 {
-	
+	public static final Biome GALAPAGOS = new BiomeGalapagos();
 	
 	public static void registerBiomes()
 	{
-		
+		initBiome(GALAPAGOS, "Galapagos_Islands", BiomeType.WARM, Type.PLAINS);
 			}
 	
 	private static Biome initBiome(Biome biome, String name, BiomeType biomeType, Type... types)

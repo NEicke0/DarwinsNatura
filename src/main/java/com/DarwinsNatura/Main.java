@@ -19,9 +19,22 @@ public class Main
 	@SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.COMMON)
 	public static CommonProxy proxy;
 	@EventHandler
-	public static void preInit(FMLPreInitializationEvent event) {RegistryHandler.preInitRegistries();}
+	public void preInit(FMLPreInitializationEvent event) {
+		System.out.println(Reference.MODID + ":preInit");
+		RegistryHandler.preInitRegistries();
+		
+	}
+	
 	@EventHandler
-	public static void init(FMLInitializationEvent event) {RegistryHandler.initRegistries();}
+	public void init(FMLInitializationEvent event) {
+		System.out.println(Reference.MODID + ":init");
+		RegistryHandler.preInitRegistries();
+	}
+	
 	@EventHandler
-	public static void postInit(FMLPostInitializationEvent event) {RegistryHandler.postInitRegistries();}
+	public void postInit(FMLPostInitializationEvent event) {
+		System.out.println(Reference.MODID + ":postInit");
+		RegistryHandler.postInitRegistries();
+	}
+	
 }

@@ -1,5 +1,8 @@
 package com.DarwinsNatura.util.handlers;
 
+import com.DarwinsNatura.world.biomes.DarwinsNaturaBiomes;
+import com.DarwinsNatura.world.gen.layers.WorldGenGalapagos;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.world.WorldType;
@@ -37,7 +40,7 @@ public class RegistryHandler
 	public static void preInitRegistries()
 	{
 		
-		
+		DarwinsNaturaBiomes.registerBiomes();
 	
 	}
 	
@@ -48,7 +51,8 @@ public class RegistryHandler
 	
 	public static void postInitRegistries()
 	{
-		
+		WorldType GALAPAGOS_ISLANDS = new WorldGenGalapagos();
+
 	}
 	
 	public static void serverRegistries(FMLServerStartingEvent event)
