@@ -1,6 +1,5 @@
 package com.DarwinsNatura.util.handlers;
 
-import com.DarwinsNatura.world.biomes.Galapagos.BiomeGalapagos;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.world.WorldType;
@@ -38,7 +37,7 @@ public class RegistryHandler
 	public static void preInitRegistries()
 	{
 		
-		BiomeGalapagos.registerBiomes();
+		
 	
 	}
 	

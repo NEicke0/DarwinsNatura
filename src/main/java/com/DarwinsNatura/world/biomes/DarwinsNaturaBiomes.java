@@ -1,6 +1,5 @@
 package com.DarwinsNatura.world.biomes;
 
-import com.DarwinsNatura.world.biomes.Galapagos.BiomeGalapagos;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
