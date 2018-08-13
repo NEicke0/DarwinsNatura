@@ -10,6 +10,16 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class CommonProxy 
 {
+	public void preInit(FMLPreInitializationEvent e) {
+		System.out.println(Reference.MODID + ":preInit");
+		RegistryHandler.preInitRegistries();
+    }
+    
+    public void init(FMLInitializationEvent e) {
+    }
+
+    public void postInit(FMLPostInitializationEvent e) {
+    }
 	public void registerItemRenderer(Item item, int meta, String id) {}
 	public void registerVariantRenderer(Item item, int meta, String filename, String id) {}
 }

@@ -2,7 +2,8 @@ package com.DarwinsNatura.world.gen;
 
 import java.util.Random;
 
-import com.DarwinsNatura.world.biomes.DarwinsNaturaBiomes;
+import com.DarwinsNatura.init.DarwinsNaturaBiomes;
+
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

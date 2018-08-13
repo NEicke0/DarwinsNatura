@@ -1,6 +1,6 @@
 package com.DarwinsNatura.util.handlers;
 
-import com.DarwinsNatura.world.biomes.DarwinsNaturaBiomes;
+import com.DarwinsNatura.init.DarwinsNaturaBiomes;
 import com.DarwinsNatura.world.gen.layers.WorldGenGalapagos;
 
 import net.minecraft.block.Block;
@@ -15,28 +15,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @EventBusSubscriber
 public class RegistryHandler 
 {
-	@SubscribeEvent
-	public static void onItemRegister(RegistryEvent.Register<Item> event)
-	{
-		
-	}
-	
-	@SubscribeEvent
-	public static void onBlockRegister(RegistryEvent.Register<Block> event)
-	{
-		
 
-	
-	}
-	
-	@SubscribeEvent
-	public static void onModelRegister(ModelRegistryEvent event)
-	{
-		
-	}
-		
-	
-	
 	public static void preInitRegistries()
 	{
 		

@@ -1,6 +1,6 @@
 package com.DarwinsNatura.world.gen.layers;
 
-import com.DarwinsNatura.world.biomes.DarwinsNaturaBiomes;
+import com.DarwinsNatura.init.DarwinsNaturaBiomes;
 
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
@@ -11,7 +11,7 @@ public class WorldGenGalapagos extends WorldType
 	{
 		public WorldGenGalapagos() 
 		{
-			super("Galapagos_Islands");
+			super("Galapagos_Island");
 		}
 		
 		@Override
