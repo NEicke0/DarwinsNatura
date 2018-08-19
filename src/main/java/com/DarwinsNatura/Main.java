@@ -2,7 +2,9 @@ package com.DarwinsNatura;
 
 import com.DarwinsNatura.proxy.CommonProxy;
 import com.DarwinsNatura.util.handlers.RegistryHandler;
+import com.DarwinsNatura.util.handlers.TerrainEventHandler;
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -19,7 +21,10 @@ public class Main
 	@SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.COMMON)
 	public static CommonProxy proxy;
 	@EventHandler
-	public static void preInit(FMLPreInitializationEvent event) {RegistryHandler.preInitRegistries();}
+	public static void preInit(FMLPreInitializationEvent event) {
+		MinecraftForge.TERRAIN_GEN_BUS.register(TerrainEventHandler.class);
+		RegistryHandler.preInitRegistries();
+		}
 	@EventHandler
 	public static void init(FMLInitializationEvent event) {RegistryHandler.initRegistries();}
 	@EventHandler

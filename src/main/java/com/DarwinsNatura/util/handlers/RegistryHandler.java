@@ -1,8 +1,6 @@
 package com.DarwinsNatura.util.handlers;
 
 import com.DarwinsNatura.init.DarwinsNaturaBiomes;
-import com.DarwinsNatura.world.gen.layers.WorldGenGalapagos;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.world.WorldType;
@@ -30,7 +28,7 @@ public class RegistryHandler
 	
 	public static void postInitRegistries()
 	{
-		WorldType GALAPAGOS_ISLANDS = new WorldGenGalapagos();
+
 
 	}
 	
