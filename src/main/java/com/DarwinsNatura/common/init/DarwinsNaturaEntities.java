@@ -16,13 +16,7 @@ public class DarwinsNaturaEntities {
         // mobs spawn eggs are put here, just replace Entity.class with Entity "Whatever the entity file was"
         int id = 1;
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "GalapagosRiceRat"), EntityGalapagosRiceRat.class, "GalapagosRiceRat", id++, Main.instance, 64, 3, true, 0xffe0bd	, 0xffad60	); 
-        
-       
-        
-    }	
-    
-    
-
+        }	
     @SideOnly(Side.CLIENT)
     public static void initModels() {
         //put mobs registry here,, replace entity, render, and model with the model, render, and entity classes of the desired entity.

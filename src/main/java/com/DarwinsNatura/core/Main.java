@@ -2,6 +2,7 @@ package com.DarwinsNatura.core;
 
 import org.apache.logging.log4j.Logger;
 
+import com.DarwinsNatura.common.init.DarwinsNaturaEntities;
 import com.DarwinsNatura.common.util.handlers.RegistryHandler;
 import com.DarwinsNatura.common.util.handlers.TerrainEventHandler;
 import com.DarwinsNatura.core.proxy.CommonProxy;
@@ -15,7 +16,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies = Reference.DEPEND)
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class Main {
 	@Instance
 	public static Main instance;
@@ -29,6 +30,7 @@ public class Main {
 	public static void preInit(FMLPreInitializationEvent event) {
 		MinecraftForge.TERRAIN_GEN_BUS.register(TerrainEventHandler.class);
 		RegistryHandler.preInitRegistries();
+		DarwinsNaturaEntities.init();
 	}
 
 	@EventHandler
