@@ -31,8 +31,7 @@ public class DarwinsNaturaBiomes
 		biome.setRegistryName(name);
 		ForgeRegistries.BIOMES.register(biome);
 		System.out.println("Biome Registered");
-		BiomeDictionary.addTypes(biome, types);
-		System.out.println("Biome Added");
+		BiomeDictionary.addTypes(biome, types);		System.out.println("Biome Added");
 		return biome;
 	}
 

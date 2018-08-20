@@ -18,12 +18,13 @@ public class BiomeGalapagos extends Biome
 
 	public BiomeGalapagos() 
 	{
-		super(new BiomeProperties("Galapagos_Islands").setTemperature(0.8F).setRainfall(0.6F).setBaseHeight(0.01F).setHeightVariation(0.02F));
+		super(new BiomeProperties("Galapagos_Islands").setTemperature(0.8F).setRainfall(0.6F).setBaseHeight(0.02F).setHeightVariation(0F));
 		
 		topBlock = Blocks.GRASS.getDefaultState();
 		fillerBlock = Blocks.DIRT.getDefaultState();
 
 		this.spawnableCaveCreatureList.clear();
+		this.decorator.treesPerChunk = -999;
 		this.spawnableCreatureList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableMonsterList.clear();
@@ -35,6 +36,11 @@ public class BiomeGalapagos extends Biome
 	@Override
     public int getGrassColorAtPos(BlockPos pos)
     {
-        return getModdedBiomeGrassColor(6677309);
+        return getModdedBiomeGrassColor(0xA7E140);
     }
+	 @Override
+	    public int getFoliageColorAtPos(BlockPos pos)
+	    {
+	        return getModdedBiomeFoliageColor(0x88E140);
+	    }
 }
