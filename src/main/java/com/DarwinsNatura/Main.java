@@ -1,5 +1,7 @@
 package com.DarwinsNatura;
 
+import org.apache.logging.log4j.Logger;
+
 import com.DarwinsNatura.proxy.CommonProxy;
 import com.DarwinsNatura.util.handlers.RegistryHandler;
 import com.DarwinsNatura.util.handlers.TerrainEventHandler;
@@ -13,21 +15,30 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
-public class Main 
-{
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies = Reference.DEPEND)
+public class Main {
 	@Instance
 	public static Main instance;
+
+	private static Logger logger;
+
 	@SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.COMMON)
 	public static CommonProxy proxy;
+
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {
 		MinecraftForge.TERRAIN_GEN_BUS.register(TerrainEventHandler.class);
 		RegistryHandler.preInitRegistries();
-		}
+	}
+
 	@EventHandler
-	public static void init(FMLInitializationEvent event) {RegistryHandler.initRegistries();}
+	public static void init(FMLInitializationEvent event) {
+		RegistryHandler.initRegistries();
+	}
+
 	@EventHandler
-	public static void postInit(FMLPostInitializationEvent event) {RegistryHandler.postInitRegistries();}
-	
+	public static void postInit(FMLPostInitializationEvent event) {
+		RegistryHandler.postInitRegistries();
+	}
+
 }

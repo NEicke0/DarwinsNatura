@@ -18,7 +18,7 @@ public class BiomeGalapagos extends Biome
 
 	public BiomeGalapagos() 
 	{
-		super(new BiomeProperties("Galapagos_Islands").setTemperature(0.8F).setRainfall(0.6F).setBaseHeight(0.02F).setHeightVariation(0F));
+		super(new BiomeProperties("Galapagos_Islands").setTemperature(0.8F).setRainfall(0.6F).setBaseHeight(1.1F));
 		
 		topBlock = Blocks.GRASS.getDefaultState();
 		fillerBlock = Blocks.DIRT.getDefaultState();
