@@ -1,10 +1,10 @@
-package com.DarwinsNatura;
+package com.DarwinsNatura.core;
 
 import org.apache.logging.log4j.Logger;
 
-import com.DarwinsNatura.proxy.CommonProxy;
-import com.DarwinsNatura.util.handlers.RegistryHandler;
-import com.DarwinsNatura.util.handlers.TerrainEventHandler;
+import com.DarwinsNatura.common.util.handlers.RegistryHandler;
+import com.DarwinsNatura.common.util.handlers.TerrainEventHandler;
+import com.DarwinsNatura.core.proxy.CommonProxy;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;

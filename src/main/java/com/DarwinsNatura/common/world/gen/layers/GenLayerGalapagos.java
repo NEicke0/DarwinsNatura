@@ -1,6 +1,6 @@
-package com.DarwinsNatura.world.gen.layers;
+package com.DarwinsNatura.common.world.gen.layers;
 
-import com.DarwinsNatura.init.DarwinsNaturaBiomes;
+import com.DarwinsNatura.common.init.DarwinsNaturaBiomes;
 
 import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;

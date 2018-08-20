@@ -1,6 +1,6 @@
-package com.DarwinsNatura.util.handlers;
+package com.DarwinsNatura.common.util.handlers;
 
-import com.DarwinsNatura.world.gen.layers.GenLayerGalapagos;
+import com.DarwinsNatura.common.world.gen.layers.GenLayerGalapagos;
 import com.google.common.collect.Lists;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.GenLayerZoom;

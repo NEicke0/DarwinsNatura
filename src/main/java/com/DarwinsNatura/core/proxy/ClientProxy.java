@@ -1,7 +1,7 @@
-package com.DarwinsNatura.proxy;
+package com.DarwinsNatura.core.proxy;
 
-import com.DarwinsNatura.Reference;
-import com.DarwinsNatura.util.handlers.RegistryHandler;
+import com.DarwinsNatura.common.util.handlers.RegistryHandler;
+import com.DarwinsNatura.core.Reference;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;

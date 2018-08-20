@@ -1,9 +1,9 @@
-package com.DarwinsNatura.init;
+package com.DarwinsNatura.common.init;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.DarwinsNatura.world.biomes.Galapagos.BiomeGalapagos;
+import com.DarwinsNatura.common.world.biomes.Galapagos.BiomeGalapagos;
 import com.google.common.base.Optional;
 
 import net.minecraft.world.biome.Biome;

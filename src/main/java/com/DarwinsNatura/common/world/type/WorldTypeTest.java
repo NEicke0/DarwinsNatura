@@ -1,6 +1,6 @@
-package com.DarwinsNatura.world.type;
+package com.DarwinsNatura.common.world.type;
 
-import com.DarwinsNatura.init.DarwinsNaturaBiomes;
+import com.DarwinsNatura.common.init.DarwinsNaturaBiomes;
 
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;

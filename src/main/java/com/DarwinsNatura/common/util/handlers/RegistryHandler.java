@@ -1,7 +1,7 @@
-package com.DarwinsNatura.util.handlers;
+package com.DarwinsNatura.common.util.handlers;
 
-import com.DarwinsNatura.init.DarwinsNaturaBiomes;
-import com.DarwinsNatura.world.type.WorldTypeTest;
+import com.DarwinsNatura.common.init.DarwinsNaturaBiomes;
+import com.DarwinsNatura.common.world.type.WorldTypeTest;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

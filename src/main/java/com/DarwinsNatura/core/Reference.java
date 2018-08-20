@@ -1,4 +1,4 @@
-package com.DarwinsNatura;
+package com.DarwinsNatura.core;
 
 public class Reference {
 	public static final String MODID = "darwin";

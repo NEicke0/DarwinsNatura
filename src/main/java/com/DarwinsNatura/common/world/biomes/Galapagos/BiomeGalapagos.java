@@ -1,4 +1,4 @@
-package com.DarwinsNatura.world.biomes.Galapagos;
+package com.DarwinsNatura.common.world.biomes.Galapagos;
 
 import java.util.Random;
 
