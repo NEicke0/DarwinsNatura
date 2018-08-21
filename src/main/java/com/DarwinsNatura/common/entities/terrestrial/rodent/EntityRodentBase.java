@@ -1,6 +1,9 @@
 package com.DarwinsNatura.common.entities.terrestrial.rodent;
 
+import java.util.Set;
+
 import com.DarwinsNatura.common.entities.EntityGender;
+import com.google.common.collect.Sets;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
@@ -9,17 +12,21 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMate;
 import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.world.World;
 
 public class EntityRodentBase extends EntityGender {
+	private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(Items.WHEAT_SEEDS, Items.MELON_SEEDS, Items.PUMPKIN_SEEDS, Items.BEETROOT_SEEDS, Items.BREAD, Items.EGG, Items.CHICKEN, Items.COOKED_CHICKEN);
 	private static final DataParameter<Byte> CLIMBING = EntityDataManager.<Byte>createKey(EntitySpider.class,
 			DataSerializers.BYTE);
 
@@ -46,6 +53,7 @@ public class EntityRodentBase extends EntityGender {
 		this.tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(6, new EntityAILookIdle(this));
 		this.tasks.addTask(7, new EntityAIAvoidEntity<EntityPlayer>(this, EntityPlayer.class, 10.0F, 0.30D, 0.30D));
+	    this.tasks.addTask(8, new EntityAITempt(this, 1.0D, false, TEMPTATION_ITEMS));
 	}
 
 	public void onUpdate() {
@@ -55,7 +63,8 @@ public class EntityRodentBase extends EntityGender {
 			this.setBesideClimbableBlock(this.collidedHorizontally);
 		}
 	}
-
+	 public void fall(float distance, float damageMultiplier){
+	    }
 	public boolean isOnLadder() {
 		return this.isBesideClimbableBlock();
 	}
