@@ -22,6 +22,6 @@ public class DarwinsNaturaEntities {
 	@SideOnly(Side.CLIENT)
 	public static void initModels() {
 		RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();
-		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosRiceRat.class,new RenderGalapagosRiceRat(renderManager, new ModelGalapagosRiceRat(), 0.5F));
+		
 	}
 }

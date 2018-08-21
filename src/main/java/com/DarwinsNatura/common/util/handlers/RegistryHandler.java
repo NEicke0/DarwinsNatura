@@ -21,7 +21,6 @@ public class RegistryHandler
 	{
 		
 		DarwinsNaturaBiomes.registerBiomes();
-		DarwinsNaturaEntities.init();
 	
 	}
 	

@@ -29,6 +29,7 @@ public class Main {
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {
 		MinecraftForge.TERRAIN_GEN_BUS.register(TerrainEventHandler.class);
+		DarwinsNaturaEntities.init();
 		RegistryHandler.preInitRegistries();
 		
 	}

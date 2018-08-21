@@ -14,12 +14,13 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-public class CommonProxy {
+public class CommonProxy 
+{
+	public void registerItemRenderer(Item item, int meta, String id) {}
+	public void registerVariantRenderer(Item item, int meta, String filename, String id) {}
+	public void registerRenders(){
+	RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();
+	
 
-	public void registerItemRenderer(Item item, int meta, String id) {
-	}
-
-	public void registerVariantRenderer(Item item, int meta, String filename, String id) {
-	}
-
+}
 }
