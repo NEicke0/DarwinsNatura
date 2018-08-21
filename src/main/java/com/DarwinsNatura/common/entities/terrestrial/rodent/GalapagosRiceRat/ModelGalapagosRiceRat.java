@@ -3,6 +3,7 @@ package com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.client.renderer.GlStateManager;
 import org.lwjgl.opengl.GL11;
 
@@ -190,6 +191,7 @@ public class ModelGalapagosRiceRat extends ModelBase {
 
 	@Override
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		float scaleFactor = 0.3F;
 		GlStateManager.pushMatrix();
 		GlStateManager.scale(1D / modelScale[0], 1D / modelScale[1], 1D / modelScale[2]);
 		this.Body.render(f5);
@@ -203,5 +205,8 @@ public class ModelGalapagosRiceRat extends ModelBase {
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
+	}
+	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn){
+    float f6 = (180F / (float)Math.PI);
 	}
 }
