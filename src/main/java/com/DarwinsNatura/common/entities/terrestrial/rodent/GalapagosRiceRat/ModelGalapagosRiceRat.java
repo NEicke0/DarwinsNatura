@@ -3,15 +3,13 @@ package com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.client.renderer.GlStateManager;
-import org.lwjgl.opengl.GL11;
 
 /**
  * DF_GalapagosRiceRat_Adult - Oceansss,Goony,Neicke Created using Tabula 7.0.0
  */
 public class ModelGalapagosRiceRat extends ModelBase {
-	public double[] modelScale = new double[] { 2.5D, 2.5D, 2.5D };
+	
 	public ModelRenderer Body;
 	public ModelRenderer Butt;
 	public ModelRenderer FrontLeftLeg1;
@@ -191,11 +189,25 @@ public class ModelGalapagosRiceRat extends ModelBase {
 
 	@Override
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-		float scaleFactor = 0.3F;
-		GlStateManager.pushMatrix();
-		GlStateManager.scale(1D / modelScale[0], 1D / modelScale[1], 1D / modelScale[2]);
-		this.Body.render(f5);
-		GlStateManager.popMatrix();
+		setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+    	if(this.isChild) {
+    		float scaleFactor= 0.1F;
+    	    	
+    	    GlStateManager.pushMatrix();
+    	    GlStateManager.translate(0F, 1.25-1.25F*scaleFactor, 0); 
+    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+    	    this.Body.render(f5);
+    	    GlStateManager.popMatrix();
+    	}
+    	else {
+            float scaleFactor= 0.2F;
+    	
+    	    GlStateManager.pushMatrix();
+    	    GlStateManager.translate(0F, 0.92F-0.92F*scaleFactor, -0.05F); 
+    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+            this.Body.render(f5);
+            GlStateManager.popMatrix();
+    	}
 	}
 
 	/**
@@ -205,8 +217,5 @@ public class ModelGalapagosRiceRat extends ModelBase {
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
-	}
-	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn){
-    float f6 = (180F / (float)Math.PI);
 	}
 }

@@ -1,6 +1,7 @@
 package com.DarwinsNatura.common.entities.terrestrial.rodent;
 
-import net.minecraft.entity.Entity;
+import com.DarwinsNatura.common.entities.EntityGender;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAIFollowParent;
@@ -12,22 +13,23 @@ import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.passive.EntityBat;
-import net.minecraft.entity.passive.EntityLlama;
-import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.world.World;
 
-public class EntityRodentBase extends EntityAnimal {
+public class EntityRodentBase extends EntityGender {
 	private static final DataParameter<Byte> CLIMBING = EntityDataManager.<Byte>createKey(EntitySpider.class,
 			DataSerializers.BYTE);
 
 	public EntityRodentBase(World worldIn) {
 		super(worldIn);
-
+	}
+	
+	@Override
+	public float getEyeHeight() {
+		return this.height;
 	}
 
 	protected void entityInit() {
@@ -37,13 +39,13 @@ public class EntityRodentBase extends EntityAnimal {
 
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(1, new EntityAIPanic(this, 1.4D));
-		this.tasks.addTask(2, new EntityAIMate(this, 1.0D));
-		this.tasks.addTask(3, new EntityAIFollowParent(this, 1.1D));
-		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 1.0D));
+		this.tasks.addTask(1, new EntityAIPanic(this, 0.30D));
+		this.tasks.addTask(2, new EntityAIMate(this, 0.26D));
+		this.tasks.addTask(3, new EntityAIFollowParent(this, 0.27D));
+		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 0.26D));
 		this.tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(6, new EntityAILookIdle(this));
-		this.tasks.addTask(7, new EntityAIAvoidEntity(this, EntityPlayer.class, 10.0F, 2.2D, 2.2D));
+		this.tasks.addTask(7, new EntityAIAvoidEntity<EntityPlayer>(this, EntityPlayer.class, 10.0F, 0.30D, 0.30D));
 	}
 
 	public void onUpdate() {
