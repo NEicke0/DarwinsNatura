@@ -15,20 +15,11 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class CommonProxy {
-	public void preInit(FMLPreInitializationEvent e) {
-		System.out.println(Reference.MODID + ":preInit");
-		DarwinsNaturaEntities.init();
-		RegistryHandler.preInitRegistries();
-	}
-
 
 	public void registerItemRenderer(Item item, int meta, String id) {
 	}
 
 	public void registerVariantRenderer(Item item, int meta, String filename, String id) {
 	}
-	public void registerRenders() {
-		RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();
-		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosRiceRat.class,new RenderGalapagosRiceRat(renderManager, new ModelGalapagosRiceRat(), 0.3F));
-	}
+
 }

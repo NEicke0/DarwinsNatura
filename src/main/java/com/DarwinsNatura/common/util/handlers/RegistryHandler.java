@@ -1,6 +1,7 @@
 package com.DarwinsNatura.common.util.handlers;
 
 import com.DarwinsNatura.common.init.DarwinsNaturaBiomes;
+import com.DarwinsNatura.common.init.DarwinsNaturaEntities;
 import com.DarwinsNatura.common.world.type.WorldTypeTest;
 
 import net.minecraft.block.Block;
@@ -20,6 +21,7 @@ public class RegistryHandler
 	{
 		
 		DarwinsNaturaBiomes.registerBiomes();
+		DarwinsNaturaEntities.init();
 	
 	}
 	
