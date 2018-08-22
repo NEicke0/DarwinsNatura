@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class DarwinsNaturaEntities {
 	public static void init() {
-		int id = 1;
+		int id = 0;
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "GalapagosRiceRat"),EntityGalapagosRiceRat.class, "GalapagosRiceRat", id++, Main.instance, 64, 3, true, 0xffe0bd, 0xffad60);
 	}
 }

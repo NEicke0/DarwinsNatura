@@ -15,8 +15,6 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntitySpider;
-import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -27,8 +25,7 @@ import net.minecraft.world.World;
 
 public class EntityRodentBase extends EntityGender {
 	private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(Items.WHEAT_SEEDS, Items.MELON_SEEDS, Items.PUMPKIN_SEEDS, Items.BEETROOT_SEEDS, Items.BREAD, Items.EGG, Items.CHICKEN, Items.COOKED_CHICKEN);
-	private static final DataParameter<Byte> CLIMBING = EntityDataManager.<Byte>createKey(EntitySpider.class,
-			DataSerializers.BYTE);
+	private static final DataParameter<Byte> CLIMBING = EntityDataManager.<Byte>createKey(EntityRodentBase.class, DataSerializers.BYTE);
 
 	public EntityRodentBase(World worldIn) {
 		super(worldIn);
@@ -39,7 +36,7 @@ public class EntityRodentBase extends EntityGender {
 		return this.height;
 	}
 
-	protected void entityInit() {
+	public void entityInit() {
 		super.entityInit();
 		this.dataManager.register(CLIMBING, Byte.valueOf((byte) 0));
 	}
@@ -63,8 +60,9 @@ public class EntityRodentBase extends EntityGender {
 			this.setBesideClimbableBlock(this.collidedHorizontally);
 		}
 	}
-	 public void fall(float distance, float damageMultiplier){
-	    }
+	
+	public void fall(float distance, float damageMultiplier){
+	}
 	public boolean isOnLadder() {
 		return this.isBesideClimbableBlock();
 	}

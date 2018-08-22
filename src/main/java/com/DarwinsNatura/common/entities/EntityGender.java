@@ -1,81 +1,65 @@
 package com.DarwinsNatura.common.entities;
 
-import java.util.Random;
-
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
-public class EntityGender extends EntityAnimal{
-	
-	private static final DataParameter<Boolean> GENDER = EntityDataManager.createKey(EntityGender.class, DataSerializers.BOOLEAN);
-	protected Random rand;
-	
-	public EntityGender(World worldIn) {
-		super(worldIn);
-		setGender(this.genderFromRan(rand.nextBoolean()));
-	}
-	
-	public enum Gender
-	{
-	  MALE(true),  FEMALE(false);
-		
-		boolean value;
-		  
-	  private Gender(boolean type)
-	  {
-	     this.value = type;
-	  }
-		  
-	  public boolean getValue()
-	  {
-		  return this.value;
-	  }
-	}
-	
-	protected Gender genderFromRan(boolean i)
-	{
-		if(i) {
-			return Gender.MALE;
-		}
-		else {
-			return Gender.FEMALE;
-		}
-	}
-	
-    protected void entityInit()
-    {
-        super.entityInit();
-        this.dataManager.register(GENDER, true);
-    }
-    
-    public void writeEntityToNBT(NBTTagCompound tagCompound)
-    {
-      super.writeEntityToNBT(tagCompound);
-      tagCompound.setBoolean("Gender", getGender().getValue());;
-    }
-    
-    @Override
-    public void readEntityFromNBT(NBTTagCompound compound) {
-    	super.readEntityFromNBT(compound);
-    	setGender(this.genderFromRan(compound.getBoolean("Gender")));
-    }
-    
-    protected Gender getGender() {
-    	return this.genderFromRan((Boolean)this.dataManager.get(GENDER));
-    }  
-    
-    protected void setGender(Gender g) {
-    	this.dataManager.set(GENDER, g.getValue());
+public class EntityGender extends EntityAnimal {
+
+    protected static final DataParameter<Integer> GENDER = EntityDataManager.<Integer>createKey(EntityGender.class, DataSerializers.VARINT);
+
+    public EntityGender(World worldIn) {
+        super(worldIn);
     }
 
-	@Override
-	public EntityAgeable createChild(EntityAgeable ageable) {
-		return new EntityGender(this.world);
-	}	
+    @Override
+    public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, IEntityLivingData livingdata) {
+        this.setGender(this.getRNG().nextInt(2));
+        return super.onInitialSpawn(difficulty, livingdata);
+    }
+
+    public void entityInit() {
+        super.entityInit();
+        this.dataManager.register(GENDER, Integer.valueOf(0));
+    }
+
+    public void writeEntityToNBT(NBTTagCompound tagCompound) {
+        super.writeEntityToNBT(tagCompound);
+        tagCompound.setInteger("Gender", this.getGender());
+    }
+
+    public void readEntityFromNBT(NBTTagCompound tagCompound) {
+        super.readEntityFromNBT(tagCompound);
+        this.setGender(tagCompound.getInteger("Gender"));
+    }
+
+    public int getGender() {
+        return this.dataManager.get(GENDER);
+    }
+
+    public void setGender(int value) {
+        this.dataManager.set(GENDER, Integer.valueOf(value));
+    }
+
+    public enum Gender {
+        MALE(0), FEMALE(1);
+        
+        EntityGender entity;
+
+        private Gender(int valueln){
+            valueln = entity.getGender();
+        }
+    }
+
+    @Override
+    public EntityAgeable createChild(EntityAgeable ageable) {
+        return new EntityGender(this.world);
+    }
 
 }
