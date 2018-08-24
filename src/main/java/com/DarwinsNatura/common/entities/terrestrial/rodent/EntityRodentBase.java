@@ -6,6 +6,7 @@ import com.DarwinsNatura.common.entities.EntityGender;
 import com.google.common.collect.Sets;
 
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -35,6 +36,12 @@ public class EntityRodentBase extends EntityGender {
 	public float getEyeHeight() {
 		return this.height;
 	}
+	protected void applyEntityAttributes()
+    {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.7D);
+    }
 
 	public void entityInit() {
 		super.entityInit();
@@ -49,7 +56,7 @@ public class EntityRodentBase extends EntityGender {
 		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 0.26D));
 		this.tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(6, new EntityAILookIdle(this));
-		this.tasks.addTask(7, new EntityAIAvoidEntity<EntityPlayer>(this, EntityPlayer.class, 10.0F, 0.30D, 0.30D));
+		this.tasks.addTask(5, new EntityAIAvoidEntity<EntityPlayer>(this, EntityPlayer.class, 10.0F, 0.30D, 0.30D));
 	    this.tasks.addTask(8, new EntityAITempt(this, 1.0D, false, TEMPTATION_ITEMS));
 	}
 
