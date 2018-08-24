@@ -2,6 +2,7 @@ package com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 /**
@@ -308,8 +309,26 @@ public class ModelGalapagosPenguin extends ModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
-        this.Body1.render(f5);
-    }
+    	setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+    	if(this.isChild) {
+    		float scaleFactor= 0.25F;
+    	    	
+    	    GlStateManager.pushMatrix();
+    	    GlStateManager.translate(0F, 1.25-1.25F*scaleFactor, 0); 
+    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+    	    this.Body1.render(f5);
+    	    GlStateManager.popMatrix();
+    	}
+    	else {
+            float scaleFactor= 0.4F;
+    	
+    	    GlStateManager.pushMatrix();
+    	    GlStateManager.translate(0F, 0.92F-0.92F*scaleFactor, -0.05F); 
+    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+            this.Body1.render(f5);
+            GlStateManager.popMatrix();
+    	}
+	}
 
     /**
      * This is a helper function from Tabula to set the rotation of model parts

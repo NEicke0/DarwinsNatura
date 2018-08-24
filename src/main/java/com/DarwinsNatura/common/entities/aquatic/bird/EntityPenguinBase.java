@@ -21,8 +21,7 @@ public class EntityPenguinBase extends EntityGender {
 
 	public EntityPenguinBase(World worldIn) {
 		super(worldIn);
-		this.setSize(0.4F, 0.4F);
-	}
+		}
 
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAISwimming(this));
@@ -38,7 +37,7 @@ public class EntityPenguinBase extends EntityGender {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.1D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
 	}
 
 	public void onLivingUpdate() {

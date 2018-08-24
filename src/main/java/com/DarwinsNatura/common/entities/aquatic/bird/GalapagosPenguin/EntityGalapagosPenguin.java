@@ -8,6 +8,7 @@ public class EntityGalapagosPenguin extends EntityPenguinBase {
 
 	public EntityGalapagosPenguin(World worldIn) {
 		super(worldIn);
+		this.setSize(0.4F, 0.4F);
 	}
 
 }
