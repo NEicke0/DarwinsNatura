@@ -21,7 +21,8 @@ public class EntityPenguinBase extends EntityGender {
 
 	public EntityPenguinBase(World worldIn) {
 		super(worldIn);
-		}
+		setPathPriority(net.minecraft.pathfinding.PathNodeType.WATER, 0.0F);
+	}
 
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAISwimming(this));

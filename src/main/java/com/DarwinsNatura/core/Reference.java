@@ -7,6 +7,6 @@ public class Reference {
 
 	public static final String CLIENT = "com.DarwinsNatura.core.proxy.ClientProxy";
 	public static final String COMMON = "com.DarwinsNatura.core.proxy.CommonProxy";
-	
+	public static final String DEPEND = "required-before:llibrary@[VERSION-FROM-GAME,);";
 
 }

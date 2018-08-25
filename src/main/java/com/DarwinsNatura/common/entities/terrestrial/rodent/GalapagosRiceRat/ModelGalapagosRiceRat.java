@@ -1,159 +1,159 @@
 package com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat;
 
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.entity.Entity;
+import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
+import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.entity.Entity;
 
 /**
  * DF_GalapagosRiceRat_Adult - Oceansss,Goony,Neicke Created using Tabula 7.0.0
  */
-public class ModelGalapagosRiceRat extends ModelBase {
-	
-	public ModelRenderer Body;
-	public ModelRenderer Butt;
-	public ModelRenderer FrontLeftLeg1;
-	public ModelRenderer FrontLeftLeg1_1;
-	public ModelRenderer Neck;
-	public ModelRenderer Tail1;
-	public ModelRenderer BackLeftLeg1;
-	public ModelRenderer BackLeftLeg1_1;
-	public ModelRenderer Tail2;
-	public ModelRenderer Tail3;
-	public ModelRenderer BackLeftLeg2;
-	public ModelRenderer BackLeftFoot;
-	public ModelRenderer BackLeftLeg2_1;
-	public ModelRenderer BackLeftFoot_1;
-	public ModelRenderer FrontLeftLeg2;
-	public ModelRenderer FrontLeftFoot;
-	public ModelRenderer FrontLeftLeg2_1;
-	public ModelRenderer FrontLeftFoot_1;
-	public ModelRenderer Head;
-	public ModelRenderer shape67;
-	public ModelRenderer shape67_1;
-	public ModelRenderer SnoutBase;
-	public ModelRenderer shape82;
-	public ModelRenderer shape83;
-	public ModelRenderer LowerJaw;
-	public ModelRenderer shape100;
-	public ModelRenderer SnoutBase_1;
-	public ModelRenderer Mouth;
-	public ModelRenderer shape86;
+public class ModelGalapagosRiceRat extends AdvancedModelBase {
+
+	public AdvancedModelRenderer Body;
+	public AdvancedModelRenderer Butt;
+	public AdvancedModelRenderer FrontLeftLeg1;
+	public AdvancedModelRenderer FrontLeftLeg1_1;
+	public AdvancedModelRenderer Neck;
+	public AdvancedModelRenderer Tail1;
+	public AdvancedModelRenderer BackLeftLeg1;
+	public AdvancedModelRenderer BackLeftLeg1_1;
+	public AdvancedModelRenderer Tail2;
+	public AdvancedModelRenderer Tail3;
+	public AdvancedModelRenderer BackLeftLeg2;
+	public AdvancedModelRenderer BackLeftFoot;
+	public AdvancedModelRenderer BackLeftLeg2_1;
+	public AdvancedModelRenderer BackLeftFoot_1;
+	public AdvancedModelRenderer FrontLeftLeg2;
+	public AdvancedModelRenderer FrontLeftFoot;
+	public AdvancedModelRenderer FrontLeftLeg2_1;
+	public AdvancedModelRenderer FrontLeftFoot_1;
+	public AdvancedModelRenderer Head;
+	public AdvancedModelRenderer shape67;
+	public AdvancedModelRenderer shape67_1;
+	public AdvancedModelRenderer SnoutBase;
+	public AdvancedModelRenderer shape82;
+	public AdvancedModelRenderer shape83;
+	public AdvancedModelRenderer LowerJaw;
+	public AdvancedModelRenderer shape100;
+	public AdvancedModelRenderer SnoutBase_1;
+	public AdvancedModelRenderer Mouth;
+	public AdvancedModelRenderer shape86;
 
 	public ModelGalapagosRiceRat() {
 		this.textureWidth = 128;
 		this.textureHeight = 128;
-		this.Butt = new ModelRenderer(this, 0, 23);
+		this.Butt = new AdvancedModelRenderer(this, 0, 23);
 		this.Butt.setRotationPoint(0.0F, -5.5F, 2.9F);
 		this.Butt.addBox(-5.0F, -1.1F, 0.6F, 10, 13, 13, 0.0F);
 		this.setRotateAngle(Butt, -0.08726646259971647F, 0.0F, 0.0F);
-		this.shape67 = new ModelRenderer(this, 22, 107);
+		this.shape67 = new AdvancedModelRenderer(this, 22, 107);
 		this.shape67.setRotationPoint(3.2F, 1.3F, -1.8F);
 		this.shape67.addBox(-2.5F, -5.0F, 0.0F, 5, 5, 1, 0.0F);
 		this.setRotateAngle(shape67, -0.40142572795869574F, 0.0F, 0.3141592653589793F);
-		this.FrontLeftFoot_1 = new ModelRenderer(this, 56, 74);
+		this.FrontLeftFoot_1 = new AdvancedModelRenderer(this, 56, 74);
 		this.FrontLeftFoot_1.setRotationPoint(0.0F, 4.3F, -1.9F);
 		this.FrontLeftFoot_1.addBox(-1.5F, 0.0F, -1.8F, 3, 1, 4, 0.0F);
 		this.setRotateAngle(FrontLeftFoot_1, 0.17453292519943295F, 0.0F, 0.0F);
-		this.shape82 = new ModelRenderer(this, 0, 85);
+		this.shape82 = new AdvancedModelRenderer(this, 0, 85);
 		this.shape82.setRotationPoint(0.0F, 3.5F, -6.0F);
 		this.shape82.addBox(-2.0F, 0.0F, -6.0F, 4, 2, 6, 0.0F);
 		this.setRotateAngle(shape82, 0.08726646259971647F, 0.0F, 0.0F);
-		this.BackLeftLeg2 = new ModelRenderer(this, 61, 31);
+		this.BackLeftLeg2 = new AdvancedModelRenderer(this, 61, 31);
 		this.BackLeftLeg2.setRotationPoint(2.0F, 6.4F, -1.8F);
 		this.BackLeftLeg2.addBox(-1.0F, 0.0F, 0.0F, 2, 8, 2, 0.0F);
 		this.setRotateAngle(BackLeftLeg2, 1.413716694115407F, 0.0F, 0.0F);
-		this.shape83 = new ModelRenderer(this, 0, 110);
+		this.shape83 = new AdvancedModelRenderer(this, 0, 110);
 		this.shape83.setRotationPoint(0.0F, 0.0F, -6.0F);
 		this.shape83.addBox(-1.0F, 0.0F, -6.0F, 2, 2, 6, 0.0F);
 		this.setRotateAngle(shape83, 0.5061454830783556F, 0.0F, 0.0F);
-		this.shape86 = new ModelRenderer(this, 26, 102);
+		this.shape86 = new AdvancedModelRenderer(this, 26, 102);
 		this.shape86.setRotationPoint(0.0F, 1.0F, -2.0F);
 		this.shape86.addBox(-0.5F, -1.0F, 0.0F, 1, 1, 2, 0.0F);
 		this.setRotateAngle(shape86, -0.40142572795869574F, 0.0F, 0.0F);
-		this.Body = new ModelRenderer(this, 0, 0);
+		this.Body = new AdvancedModelRenderer(this, 0, 0);
 		this.Body.setRotationPoint(0.0F, 49.0F, 0.0F);
 		this.Body.addBox(-4.5F, -6.5F, -5.0F, 9, 13, 10, 0.0F);
 		this.setRotateAngle(Body, 0.12217304763960307F, 0.0F, 0.0F);
-		this.BackLeftLeg2_1 = new ModelRenderer(this, 61, 31);
+		this.BackLeftLeg2_1 = new AdvancedModelRenderer(this, 61, 31);
 		this.BackLeftLeg2_1.setRotationPoint(-2.0F, 6.4F, -1.8F);
 		this.BackLeftLeg2_1.addBox(-1.0F, 0.0F, 0.0F, 2, 8, 2, 0.0F);
 		this.setRotateAngle(BackLeftLeg2_1, 1.413716694115407F, 0.0F, 0.0F);
-		this.Tail3 = new ModelRenderer(this, 92, 0);
+		this.Tail3 = new AdvancedModelRenderer(this, 92, 0);
 		this.Tail3.setRotationPoint(0.0F, 0.7F, 7.2F);
 		this.Tail3.addBox(-0.5F, 0.0F, 0.0F, 1, 1, 11, 0.0F);
 		this.setRotateAngle(Tail3, 0.45378560551852565F, 0.0F, 0.0F);
-		this.BackLeftFoot = new ModelRenderer(this, 58, 44);
+		this.BackLeftFoot = new AdvancedModelRenderer(this, 58, 44);
 		this.BackLeftFoot.setRotationPoint(0.0F, 6.6F, 0.1F);
 		this.BackLeftFoot.addBox(-1.5F, 0.0F, -2.4F, 3, 1, 5, 0.0F);
 		this.setRotateAngle(BackLeftFoot, -0.7330382858376184F, 0.0F, 0.0F);
-		this.FrontLeftLeg1_1 = new ModelRenderer(this, 58, 52);
+		this.FrontLeftLeg1_1 = new AdvancedModelRenderer(this, 58, 52);
 		this.FrontLeftLeg1_1.setRotationPoint(-2.5F, 2.0F, -3.1F);
 		this.FrontLeftLeg1_1.addBox(-1.5F, 0.0F, 0.0F, 3, 5, 4, 0.0F);
 		this.setRotateAngle(FrontLeftLeg1_1, 0.08726646259971647F, 0.0F, 0.0F);
-		this.Tail1 = new ModelRenderer(this, 44, 0);
+		this.Tail1 = new AdvancedModelRenderer(this, 44, 0);
 		this.Tail1.setRotationPoint(0.0F, 0.7F, 13.3F);
 		this.Tail1.addBox(-1.0F, 0.0F, 0.0F, 2, 2, 9, 0.0F);
 		this.setRotateAngle(Tail1, -0.9599310885968813F, 0.0F, 0.0F);
-		this.FrontLeftFoot = new ModelRenderer(this, 56, 74);
+		this.FrontLeftFoot = new AdvancedModelRenderer(this, 56, 74);
 		this.FrontLeftFoot.setRotationPoint(0.0F, 4.3F, -1.9F);
 		this.FrontLeftFoot.addBox(-1.5F, 0.0F, -1.8F, 3, 1, 4, 0.0F);
 		this.setRotateAngle(FrontLeftFoot, 0.17453292519943295F, 0.0F, 0.0F);
-		this.Head = new ModelRenderer(this, 0, 68);
+		this.Head = new AdvancedModelRenderer(this, 0, 68);
 		this.Head.setRotationPoint(0.0F, -0.1F, -2.4F);
 		this.Head.addBox(-4.0F, 0.0F, -6.2F, 8, 8, 7, 0.0F);
 		this.setRotateAngle(Head, 0.13962634015954636F, 0.0F, 0.0F);
-		this.FrontLeftLeg1 = new ModelRenderer(this, 58, 52);
+		this.FrontLeftLeg1 = new AdvancedModelRenderer(this, 58, 52);
 		this.FrontLeftLeg1.setRotationPoint(2.5F, 2.0F, -3.1F);
 		this.FrontLeftLeg1.addBox(-1.5F, 0.0F, 0.0F, 3, 5, 4, 0.0F);
 		this.setRotateAngle(FrontLeftLeg1, 0.08726646259971647F, 0.0F, 0.0F);
-		this.Tail2 = new ModelRenderer(this, 70, 0);
+		this.Tail2 = new AdvancedModelRenderer(this, 70, 0);
 		this.Tail2.setRotationPoint(0.0F, 0.0F, 8.6F);
 		this.Tail2.addBox(-0.5F, 0.0F, 0.0F, 1, 2, 8, 0.0F);
 		this.setRotateAngle(Tail2, 0.08726646259971647F, 0.0F, 0.0F);
-		this.shape100 = new ModelRenderer(this, 27, 63);
+		this.shape100 = new AdvancedModelRenderer(this, 27, 63);
 		this.shape100.setRotationPoint(0.0F, 8.0F, -4.1F);
 		this.shape100.addBox(-3.0F, -2.0F, 0.0F, 6, 2, 7, 0.0F);
 		this.setRotateAngle(shape100, -0.40142572795869574F, 0.0F, 0.0F);
-		this.LowerJaw = new ModelRenderer(this, 24, 92);
+		this.LowerJaw = new AdvancedModelRenderer(this, 24, 92);
 		this.LowerJaw.setRotationPoint(0.0F, 5.5F, -6.0F);
 		this.LowerJaw.addBox(-1.5F, 0.0F, -2.0F, 3, 2, 2, 0.0F);
-		this.shape67_1 = new ModelRenderer(this, 22, 107);
+		this.shape67_1 = new AdvancedModelRenderer(this, 22, 107);
 		this.shape67_1.setRotationPoint(-3.2F, 1.3F, -1.8F);
 		this.shape67_1.addBox(-2.5F, -5.0F, 0.0F, 5, 5, 1, 0.0F);
 		this.setRotateAngle(shape67_1, -0.40142572795869574F, 0.0F, -0.3141592653589793F);
-		this.FrontLeftLeg2 = new ModelRenderer(this, 60, 65);
+		this.FrontLeftLeg2 = new AdvancedModelRenderer(this, 60, 65);
 		this.FrontLeftLeg2.setRotationPoint(0.0F, 4.4F, 3.1F);
 		this.FrontLeftLeg2.addBox(-1.0F, 0.0F, -2.0F, 2, 5, 2, 0.0F);
 		this.setRotateAngle(FrontLeftLeg2, -0.40142572795869574F, 0.0F, 0.0F);
-		this.SnoutBase_1 = new ModelRenderer(this, 5, 120);
+		this.SnoutBase_1 = new AdvancedModelRenderer(this, 5, 120);
 		this.SnoutBase_1.setRotationPoint(0.0F, 0.0F, -6.0F);
 		this.SnoutBase_1.addBox(-1.0F, 0.0F, -1.0F, 2, 2, 1, 0.0F);
 		this.setRotateAngle(SnoutBase_1, 0.2792526803190927F, 0.0F, 0.0F);
-		this.BackLeftFoot_1 = new ModelRenderer(this, 58, 44);
+		this.BackLeftFoot_1 = new AdvancedModelRenderer(this, 58, 44);
 		this.BackLeftFoot_1.setRotationPoint(0.0F, 6.6F, 0.1F);
 		this.BackLeftFoot_1.addBox(-1.5F, 0.0F, -2.4F, 3, 1, 5, 0.0F);
 		this.setRotateAngle(BackLeftFoot_1, -0.7330382858376184F, 0.0F, 0.0F);
-		this.BackLeftLeg1_1 = new ModelRenderer(this, 56, 16);
+		this.BackLeftLeg1_1 = new AdvancedModelRenderer(this, 56, 16);
 		this.BackLeftLeg1_1.setRotationPoint(-2.2F, 7.5F, 9.0F);
 		this.BackLeftLeg1_1.addBox(-4.0F, -0.6F, -2.5F, 4, 7, 5, 0.0F);
 		this.setRotateAngle(BackLeftLeg1_1, -0.767944870877505F, 0.0F, 0.0F);
-		this.FrontLeftLeg2_1 = new ModelRenderer(this, 60, 65);
+		this.FrontLeftLeg2_1 = new AdvancedModelRenderer(this, 60, 65);
 		this.FrontLeftLeg2_1.setRotationPoint(0.0F, 4.4F, 3.1F);
 		this.FrontLeftLeg2_1.addBox(-1.0F, 0.0F, -2.0F, 2, 5, 2, 0.0F);
 		this.setRotateAngle(FrontLeftLeg2_1, -0.40142572795869574F, 0.0F, 0.0F);
-		this.Mouth = new ModelRenderer(this, 25, 98);
+		this.Mouth = new AdvancedModelRenderer(this, 25, 98);
 		this.Mouth.setRotationPoint(0.0F, 0.0F, -2.0F);
 		this.Mouth.addBox(-1.0F, 0.0F, -2.0F, 2, 1, 2, 0.0F);
-		this.SnoutBase = new ModelRenderer(this, 0, 97);
+		this.SnoutBase = new AdvancedModelRenderer(this, 0, 97);
 		this.SnoutBase.setRotationPoint(0.0F, 1.2F, -6.1F);
 		this.SnoutBase.addBox(-1.5F, 0.0F, -6.0F, 3, 3, 6, 0.0F);
 		this.setRotateAngle(SnoutBase, 0.2792526803190927F, 0.0F, 0.0F);
-		this.Neck = new ModelRenderer(this, 0, 51);
+		this.Neck = new AdvancedModelRenderer(this, 0, 51);
 		this.Neck.setRotationPoint(0.0F, -5.9F, -5.0F);
 		this.Neck.addBox(-3.57F, 0.0F, -3.0F, 7, 8, 5, 0.0F);
 		this.setRotateAngle(Neck, -0.08726646259971647F, 0.0F, 0.0F);
-		this.BackLeftLeg1 = new ModelRenderer(this, 56, 16);
+		this.BackLeftLeg1 = new AdvancedModelRenderer(this, 56, 16);
 		this.BackLeftLeg1.setRotationPoint(2.2F, 7.5F, 9.0F);
 		this.BackLeftLeg1.addBox(0.0F, -0.6F, -2.5F, 4, 7, 5, 0.0F);
 		this.setRotateAngle(BackLeftLeg1, -0.767944870877505F, 0.0F, 0.0F);
@@ -185,37 +185,55 @@ public class ModelGalapagosRiceRat extends ModelBase {
 		this.Head.addChild(this.SnoutBase);
 		this.Body.addChild(this.Neck);
 		this.Butt.addChild(this.BackLeftLeg1);
+
+		updateDefaultPose();
 	}
 
 	@Override
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
 		setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    	if(this.isChild) {
-    		float scaleFactor= 0.1F;
-    	    	
-    	    GlStateManager.pushMatrix();
-    	    GlStateManager.translate(0F, 1.25-1.25F*scaleFactor, 0); 
-    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
-    	    this.Body.render(f5);
-    	    GlStateManager.popMatrix();
-    	}
-    	else {
-            float scaleFactor= 0.2F;
-    	
-    	    GlStateManager.pushMatrix();
-    	    GlStateManager.translate(0F, 0.92F-0.92F*scaleFactor, -0.05F); 
-    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
-            this.Body.render(f5);
-            GlStateManager.popMatrix();
-    	}
+		if (this.isChild) {
+			float scaleFactor = 0.1F;
+
+			GlStateManager.pushMatrix();
+			GlStateManager.translate(0F, 1.25 - 1.25F * scaleFactor, 0);
+			GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+			this.Body.render(f5);
+			GlStateManager.popMatrix();
+		} else {
+			float scaleFactor = 0.2F;
+
+			GlStateManager.pushMatrix();
+			GlStateManager.translate(0F, 0.92F - 0.92F * scaleFactor, -0.05F);
+			GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+			this.Body.render(f5);
+			GlStateManager.popMatrix();
+		}
 	}
 
-	/**
-	 * This is a helper function from Tabula to set the rotation of model parts
-	 */
-	public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+	public void setRotateAngle(AdvancedModelRenderer modelRenderer, float x, float y, float z) {
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
+
+	}
+
+	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
+		super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+		resetToDefaultPose();
+		float globalSpeed = 3f;
+		float globalHeight = 1f;
+		float globalDegree = 3F;
+
+		this.Head.rotateAngleY = (f3 * 0.015453292F);
+		bob(Body, 1* globalSpeed, 2* globalHeight, false, f, f1);
+		walk(FrontLeftLeg1, 0.5f * globalSpeed, 0.7f * globalDegree, false, 0, 0.0f, f, f1);
+		walk(FrontLeftLeg1_1, 0.5f * globalSpeed, 0.7f * globalDegree, true, 0, 0.0f, f, f1);
+		walk(BackLeftLeg1, 0.5f * globalSpeed, 0.4f * globalDegree, false, 0f, 0f, f, f1);
+		walk(BackLeftLeg1_1, 0.5f * globalSpeed, 0.4f * globalDegree, true, 0f, 0f, f, f1);
+		walk(Neck, 0.10f, 0.06f, false, 0f, 0f, entity.ticksExisted, 0.5F);
+		walk(Head, 0.15f, 0.07f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+
+		flap(Tail1, 0.2f, 0.2f, true, 0f, 0f, entity.ticksExisted, 0.5F);
 	}
 }
