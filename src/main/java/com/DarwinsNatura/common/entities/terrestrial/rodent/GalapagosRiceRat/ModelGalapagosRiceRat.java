@@ -219,21 +219,40 @@ public class ModelGalapagosRiceRat extends AdvancedModelBase {
 	}
 
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-		super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
 		resetToDefaultPose();
-		float globalSpeed = 3f;
-		float globalHeight = 1f;
-		float globalDegree = 3F;
+		
+		float globalSpeed = 4.5f;
+		float globalHeight = 0.9f;
+		float globalDegree = 2F;
+		
+//		f=entity.ticksExisted;
+//		f1=0.5F;
 
 		this.Head.rotateAngleY = (f3 * 0.015453292F);
-		bob(Body, 1* globalSpeed, 2* globalHeight, false, f, f1);
-		walk(FrontLeftLeg1, 0.5f * globalSpeed, 0.7f * globalDegree, false, 0, 0.0f, f, f1);
-		walk(FrontLeftLeg1_1, 0.5f * globalSpeed, 0.7f * globalDegree, true, 0, 0.0f, f, f1);
-		walk(BackLeftLeg1, 0.5f * globalSpeed, 0.4f * globalDegree, false, 0f, 0f, f, f1);
-		walk(BackLeftLeg1_1, 0.5f * globalSpeed, 0.4f * globalDegree, true, 0f, 0f, f, f1);
-		walk(Neck, 0.10f, 0.06f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-		walk(Head, 0.15f, 0.07f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-
-		flap(Tail1, 0.2f, 0.2f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+		
+		bob(Body, 0.2f* globalSpeed, 1.3f* globalHeight, true, f, f1);
+		
+		walk(FrontLeftLeg1, 0.3f * globalSpeed, 0.5f * globalDegree, false, 0, 0.0f, f, f1);
+		walk(FrontLeftLeg1_1, 0.3f * globalSpeed, 0.5f * globalDegree, false, 0, 0.0f, f, f1);
+		walk(FrontLeftLeg2, 0.3f * globalSpeed, 0.7f * globalDegree, false, 1f, 0.0f, f, f1);
+		walk(FrontLeftLeg2_1, 0.3f * globalSpeed, 0.7f * globalDegree, false, 1f, 0.0f, f, f1);
+		walk(FrontLeftFoot, 0.4f * globalSpeed, 0.4f * globalDegree, true, 0, 0.0f, f, f1);
+		walk(FrontLeftFoot_1, 0.4f * globalSpeed, 0.4f * globalDegree, true, 0, 0.0f, f, f1);
+		walk(BackLeftLeg1, 0.3f * globalSpeed, 0.2f * globalDegree, true, 0f, 0.2f, f, f1);
+		walk(BackLeftLeg1_1, 0.3f * globalSpeed, 0.2f * globalDegree, true, 0f, 0.2f, f, f1);
+		walk(BackLeftLeg2, 0.3f * globalSpeed, 0.3f * globalDegree, true, 0f, -0.3f, f, f1);
+		walk(BackLeftLeg2_1, 0.3f * globalSpeed, 0.3f * globalDegree, true, 0f, -0.3f, f, f1);
+		walk(BackLeftFoot, 0.4f * globalSpeed, 0.4f * globalDegree, false, 0.2f, 0f, f, f1);
+		walk(BackLeftFoot_1, 0.4f * globalSpeed, 0.4f * globalDegree, false, 0.2f, 0f, f, f1);
+		walk(Neck, 0.35f * globalSpeed, 0.05f * globalDegree, true, 0f, 0f, f, f1);
+		walk(Tail1, 0.15f * globalSpeed, 0.2f * globalDegree, false, 0, 1f, f, f1);
+		walk(Tail2, 0.15f * globalSpeed, 0.2f * globalDegree, false, 0, 0.5f, f, f1);
+		walk(Tail3, 0.1f * globalSpeed, 0.2f * globalDegree, true, 0, 0.0f, f, f1);
+		
+		walk(Neck, 0.2f, 0.05f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+		walk(Head, 0.1f, 0.08f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+		flap(Tail1, 0.1f, 0.4f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+		swing(Tail2, 0.2f, 0.3f, false, 0f, 0f, entity.ticksExisted, 0.5F);
+		flap(Tail3, 0.3f, 0.2f, false, 0f, 0f, entity.ticksExisted, 0.5F);		
 	}
 }

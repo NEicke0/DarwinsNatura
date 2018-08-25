@@ -44,29 +44,6 @@ public class RenderGalapagosRiceRat extends RenderLiving<EntityGalapagosRiceRat>
 		      }
 		    }
 		    
-		    else if(entitylivingbaseIn.isAirBorne && entitylivingbaseIn.motionY<=0){
-		    	if (entitylivingbaseIn.getHorizontalFacing().equals(EnumFacing.EAST))
-			      {
-			        GlStateManager.rotate(270.0F, -1.0F, 0.0F, 0.0F);
-			        GlStateManager.translate(0.0F, 0.0F, 0.0F);
-			      }
-			      else if (entitylivingbaseIn.getHorizontalFacing().equals(EnumFacing.WEST))
-			      {
-			        GlStateManager.rotate(270.0F, -1.0F, 0.0F, 0.0F);
-			        GlStateManager.translate(0.0F, 0.0F, -0.4F);
-			      }
-			      else if (entitylivingbaseIn.getHorizontalFacing().equals(EnumFacing.NORTH))
-			      {
-			        GlStateManager.rotate(-270.0F, 1.0F, 0.0F, 0.0F);
-			        GlStateManager.translate(0.0F, 0.0F, -0.4F);
-			      }
-			      else if (entitylivingbaseIn.getHorizontalFacing().equals(EnumFacing.SOUTH))
-			      {
-			        GlStateManager.rotate(-270.0F, 1.0F, 0.0F, 0.0F);
-			        GlStateManager.translate(0.0F, 0.0F, -0.4F);
-			      }
-		    }
-		    
 		    super.preRenderCallback(entitylivingbaseIn, partialTickTime);
 		  }
 		

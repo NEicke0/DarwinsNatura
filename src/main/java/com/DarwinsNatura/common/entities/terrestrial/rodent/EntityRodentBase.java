@@ -10,8 +10,6 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAIFollowParent;
-import net.minecraft.entity.ai.EntityAIHarvestFarmland;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMate;
 import net.minecraft.entity.ai.EntityAIMoveIndoors;
 import net.minecraft.entity.ai.EntityAIOpenDoor;
@@ -56,7 +54,7 @@ public class EntityRodentBase extends EntityGender {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(1D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.26D);
 	}
 
 	public void entityInit() {
@@ -81,10 +79,10 @@ public class EntityRodentBase extends EntityGender {
 
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(1, new EntityAIPanic(this, 0.30D));
-		this.tasks.addTask(2, new EntityAIMate(this, 0.26D));
-		this.tasks.addTask(3, new EntityAIFollowParent(this, 0.27D));
-		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 0.26D));
+		this.tasks.addTask(1, new EntityAIPanic(this, 1D));
+		this.tasks.addTask(2, new EntityAIMate(this, 1D));
+		this.tasks.addTask(3, new EntityAIFollowParent(this, 1D));
+		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 1D));
 		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityVillager.class, 6.0F));
 		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityWolf.class, 6.0F));
