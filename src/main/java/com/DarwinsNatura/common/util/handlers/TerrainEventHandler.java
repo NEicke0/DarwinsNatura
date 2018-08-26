@@ -3,16 +3,19 @@ package com.DarwinsNatura.common.util.handlers;
 import com.DarwinsNatura.common.world.gen.layers.GenLayerGalapagos;
 import com.google.common.collect.Lists;
 import net.minecraft.world.gen.layer.GenLayer;
-import net.minecraft.world.gen.layer.GenLayerZoom;
+import net.minecraft.world.gen.layer.GenLayerBiome;
 import net.minecraftforge.event.terraingen.WorldTypeEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.annotation.Nullable;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
+import java.util.Stack;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -23,30 +26,58 @@ public class TerrainEventHandler {
 	@SubscribeEvent
 	public static void onInitBiomeGens(WorldTypeEvent.InitBiomeGens event) {
 		GenLayer root = event.getNewBiomeGens()[0];
-		insertLayer(root, l -> l instanceof GenLayerZoom, 12, p -> new GenLayerGalapagos(3000L, p));
+		insertAfterLast(root, l -> l instanceof GenLayerBiome, p -> new GenLayerGalapagos(3000L, p));
 	}
 
 	public static void insertLayer(GenLayer root, Predicate<GenLayer> predicate, int index,
 			Function<GenLayer, GenLayer> insert) {
-		insertLayerRecursive(root, predicate, index, insert, 0);
+		List<GenLayer> layerStack = buildLayerStack(root, predicate);
+		GenLayer target = layerStack.get(index);
+		insertBefore(target, insert);
 	}
 
-	private static void insertLayerRecursive(GenLayer root, Predicate<GenLayer> predicate, int index,
-			Function<GenLayer, GenLayer> insert, int currentIndex) {
-		if (predicate.test(root)) {
-			if (currentIndex++ == index) {
-				insert(root, insert);
-				return;
-			}
+	public static void insertAfterLast(GenLayer root, Predicate<GenLayer> predicate,
+			Function<GenLayer, GenLayer> insert) {
+		GenLayer target = getLayerAfterLast(root, predicate, null);
+		if (target != null) {
+			insertBefore(target, insert);
+		}
+	}
+
+	@Nullable
+	private static GenLayer getLayerAfterLast(GenLayer root, Predicate<GenLayer> predicate, GenLayer next) {
+		if (next != null && predicate.test(root)) {
+			return next;
 		}
 
 		Collection<GenLayer> parents = reflectParents(root);
 		for (GenLayer parent : parents) {
-			insertLayerRecursive(parent, predicate, index, insert, currentIndex);
+			GenLayer target = getLayerAfterLast(parent, predicate, root);
+			if (target != null) {
+				return target;
+			}
 		}
+
+		return null;
 	}
 
-	private static void insert(GenLayer root, Function<GenLayer, GenLayer> insert) {
+	private static List<GenLayer> buildLayerStack(GenLayer root, Predicate<GenLayer> predicate) {
+		List<GenLayer> layers = new ArrayList<>();
+
+		Stack<GenLayer> queue = new Stack<>();
+		queue.add(root);
+		while (!queue.isEmpty()) {
+			GenLayer layer = queue.pop();
+			if (predicate.test(layer)) {
+				layers.add(layer);
+			}
+			queue.addAll(reflectParents(layer));
+		}
+
+		return Lists.reverse(layers);
+	}
+
+	private static void insertBefore(GenLayer root, Function<GenLayer, GenLayer> insert) {
 		Collection<Field> parentFields = reflectParentFields(root);
 		if (parentFields.isEmpty()) {
 			throw new IllegalArgumentException("cannot insert layer before layer without a parent");

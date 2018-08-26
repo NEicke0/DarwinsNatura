@@ -33,6 +33,7 @@ public class EntityPenguinBase extends EntityGender {
 		this.tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(5, new EntityAIAvoidEntity<EntityPlayer>(this, EntityPlayer.class, 10.0F, 0.30D, 0.30D));
 		this.tasks.addTask(7, new EntityAILookIdle(this));
+
 	}
 
 	protected void applyEntityAttributes() {
@@ -46,5 +47,9 @@ public class EntityPenguinBase extends EntityGender {
 		if (this.isInWater()) {
 			this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.30D);
 		}
+	}
+
+	public boolean canBreatheUnderwater() {
+		return true;
 	}
 }
