@@ -221,8 +221,8 @@ public class ModelGalapagosRiceRat extends AdvancedModelBase {
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
 		resetToDefaultPose();
 		
-		float globalSpeed = 4.5f;
-		float globalHeight = 0.9f;
+		float globalSpeed = 1F;
+		float globalHeight = 1F;
 		float globalDegree = 2F;
 		
 //		f=entity.ticksExisted;
