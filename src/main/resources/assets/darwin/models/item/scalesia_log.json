@@ -1,4 +1,3 @@
-
 {
-    "parent": "examplemod:block/scalesia_log"
+    "parent": "darwin:block/scalesia_log"
 }

@@ -1,5 +1,8 @@
 package com.DarwinsNatura.common.blocks;
 
+import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
+import com.DarwinsNatura.common.init.DarwinsNaturaItems;
+
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
@@ -8,6 +11,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
@@ -20,8 +24,10 @@ public class BlockLogScalesia extends BlockLog
     public BlockLogScalesia()
     {
         super();
+    	DarwinsNaturaBlocks.BLOCKS.add(this);
+    	setRegistryName("scalesia_log");
+    	DarwinsNaturaItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
         setDefaultState(blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
-
     }
 
     @Override

@@ -2,6 +2,6 @@
 {
     "parent": "block/leaves",
     "textures": {
-        "all": "examplemod:blocks/scalesia_leaves"
+        "all": "darwin:blocks/scalesia_leaves"
     }
 }

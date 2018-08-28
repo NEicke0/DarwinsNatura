@@ -2,6 +2,8 @@ package com.DarwinsNatura.common.blocks;
 
 import javax.annotation.Nullable;
 
+import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
+import com.DarwinsNatura.common.init.DarwinsNaturaItems;
 import com.DarwinsNatura.core.Main;
 
 import net.minecraft.block.BlockLeaves;
@@ -12,6 +14,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
@@ -27,6 +30,10 @@ public class BlockLeavesScalesia extends BlockLeaves
      */
     public BlockLeavesScalesia()
     {
+        super();
+        DarwinsNaturaBlocks.BLOCKS.add(this);
+    	setRegistryName("scalesia_leaves");
+        DarwinsNaturaItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
     	Main.proxy.setGraphicsLevel(this, true);
         setDefaultState(blockState.getBaseState().withProperty(CHECK_DECAY, Boolean.valueOf(true)).withProperty(DECAYABLE, Boolean.valueOf(true)));
     }

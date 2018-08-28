@@ -4,7 +4,7 @@
         "textures": {
             "particle": "blocks/log_oak"
         },
-        "model": "examplemod:scalesia_leaves",
+        "model": "darwin:scalesia_leaves",
         "uvlock": true
     },
     "variants": {

@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_column",
     "textures": {
-        "end": "examplemod:blocks/scalesia_log_top",
-        "side": "examplemod:blocks/scalesia_log_side"
+        "end": "darwin:blocks/scalesia_log_top",
+        "side": "darwin:blocks/scalesia_log_side"
     }
 }
