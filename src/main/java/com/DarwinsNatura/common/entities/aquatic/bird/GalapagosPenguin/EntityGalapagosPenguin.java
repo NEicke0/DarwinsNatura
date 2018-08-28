@@ -11,11 +11,6 @@ public class EntityGalapagosPenguin extends EntityPenguinBase {
 		super(worldIn);
 		this.setSize(0.4F, 0.6F);
 	}
-	
-	@Override
-	public void onLivingUpdate() {
-		return;
-	}
 
     @Override
     public EntityAgeable createChild(EntityAgeable ageable) {

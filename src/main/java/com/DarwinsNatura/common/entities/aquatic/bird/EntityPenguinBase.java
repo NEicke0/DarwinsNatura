@@ -1,6 +1,7 @@
 package com.DarwinsNatura.common.entities.aquatic.bird;
 
 import com.DarwinsNatura.common.entities.EntityGender;
+import com.DarwinsNatura.common.entities.aquatic.EntityWaterBase;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -8,6 +9,7 @@ import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMate;
+import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAITempt;
@@ -15,6 +17,7 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 public class EntityPenguinBase extends EntityGender {
@@ -33,6 +36,8 @@ public class EntityPenguinBase extends EntityGender {
 		this.tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(5, new EntityAIAvoidEntity<EntityPlayer>(this, EntityPlayer.class, 10.0F, 0.30D, 0.30D));
 		this.tasks.addTask(7, new EntityAILookIdle(this));
+		this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
+
 	}
 
 	protected void applyEntityAttributes() {
@@ -47,4 +52,9 @@ public class EntityPenguinBase extends EntityGender {
 			this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.30D);
 		}
 	}
+
+	public boolean canBreatheUnderwater() {
+		return true;
+	}
+
 }
