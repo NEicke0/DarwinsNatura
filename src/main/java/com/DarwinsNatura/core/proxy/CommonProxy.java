@@ -1,5 +1,7 @@
 package com.DarwinsNatura.core.proxy;
 
+import com.DarwinsNatura.common.blocks.BlockLeavesScalesia;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.item.Item;
@@ -15,4 +17,7 @@ public class CommonProxy
 	public void registerRenders(){
 	     RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();
     }
+	public void setGraphicsLevel(BlockLeavesScalesia blockLeavesScalesia, boolean b) {
+		
+	}
 }

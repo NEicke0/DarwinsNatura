@@ -2,6 +2,7 @@ package com.DarwinsNatura.core;
 
 import org.apache.logging.log4j.Logger;
 
+import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.init.DarwinsNaturaEntities;
 import com.DarwinsNatura.common.util.handlers.RegistryHandler;
 import com.DarwinsNatura.common.util.handlers.TerrainEventHandler;
@@ -38,6 +39,7 @@ public class Main {
 	@EventHandler
 	public static void init(FMLInitializationEvent event) {
 		RegistryHandler.initRegistries();
+		DarwinsNaturaBlocks.registerOreDictionaryEntries();
 	}
 
 	@EventHandler

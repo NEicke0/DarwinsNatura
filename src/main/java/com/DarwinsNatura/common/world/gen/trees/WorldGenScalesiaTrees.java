@@ -2,6 +2,9 @@ package com.DarwinsNatura.common.world.gen.trees;
 
 import java.util.Random;
 
+import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
+
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
@@ -9,12 +12,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-public class WorldGenGalapagosTrees extends WorldGenAbstractTree
+public class WorldGenScalesiaTrees extends WorldGenAbstractTree
 {
-//    private static final IBlockState TRUNK = DarwinsNaturaBlocks.LOG2.getDefaultState()
-//    private static final IBlockState LEAF = DarwinsNaturaBlocks.LEAVES2.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
+      private static final IBlockState TRUNK = DarwinsNaturaBlocks.SCALESIA_LOG.getDefaultState();
+      private static final IBlockState LEAF = DarwinsNaturaBlocks.SCALESIA_LEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
 
-    public WorldGenGalapagosTrees(boolean doBlockNotify)
+    public WorldGenScalesiaTrees(boolean doBlockNotify)
     {
         super(doBlockNotify);
     }

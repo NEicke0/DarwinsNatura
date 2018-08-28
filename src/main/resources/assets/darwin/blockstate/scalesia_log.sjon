@@ -1,0 +1,9 @@
+{
+    "forge_marker": 1,
+    "variants": {
+        "axis=y":  { "model": "examplemod:scalesia_log" },
+        "axis=z":   { "model": "examplemod:scalesia_log", "x": 90 },
+        "axis=x":   { "model": "examplemod:scalesia_log", "x": 90, "y": 90 },
+        "axis=none": { "model": "examplemod:scalesia_log" }
+    }
+}
