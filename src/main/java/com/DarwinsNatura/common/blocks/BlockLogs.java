@@ -1,6 +1,5 @@
 package com.DarwinsNatura.common.blocks;
 
-import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

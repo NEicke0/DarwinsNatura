@@ -3,16 +3,16 @@ package com.DarwinsNatura.common.world.biomes.Galapagos;
 import java.util.Random;
 
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
+import com.DarwinsNatura.common.world.gen.trees.WorldGenGalapagosTrees;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraft.world.gen.feature.WorldGenSavannaTree;
 
 public class BiomeGalapagos extends Biome {
 
-	private static final WorldGenSavannaTree SAVANNA_TREE = new WorldGenSavannaTree(false);
+	private static final WorldGenGalapagosTrees GALAPAGOS_TREE = new WorldGenGalapagosTrees(false);
 
 	public BiomeGalapagos() {
 		super(new BiomeProperties("Galapagos_Islands").setTemperature(0.8F).setRainfall(0.6F).setBaseHeight(0.5f)
@@ -34,7 +34,7 @@ public class BiomeGalapagos extends Biome {
 	}
 
 	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
-		return (WorldGenAbstractTree) (rand.nextInt(5) > 0 ? SAVANNA_TREE : TREE_FEATURE);
+		return (WorldGenAbstractTree) (rand.nextInt(5) > 0 ? GALAPAGOS_TREE : TREE_FEATURE);
 	}
 
 

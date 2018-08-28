@@ -5,15 +5,6 @@ import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.ModelGala
 import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.RenderGalapagosPenguin;
 import com.DarwinsNatura.core.Reference;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
-import net.minecraft.entity.passive.EntityPig;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.entity.layers.LayerRenderer;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.client.model.ModelPig;
-import net.minecraft.client.renderer.entity.RenderPig;
-import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
