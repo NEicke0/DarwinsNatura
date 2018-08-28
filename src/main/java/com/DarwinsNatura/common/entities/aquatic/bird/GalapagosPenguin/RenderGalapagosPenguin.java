@@ -17,13 +17,18 @@ public class RenderGalapagosPenguin extends RenderLiving<EntityGalapagosPenguin>
 			Reference.MODID + ":textures/entity/nothing.png");
 
 	public RenderGalapagosPenguin(RenderManager manager) {
-		super(manager, new ModelGalapagosPenguin(), 0.3F);
+		super(manager, new ModelGalapagosPenguin(), 0.25F);
 		this.addLayer(new LayerSwimming(this));
 	}
 	
 	protected void preRenderCallback(EntityGalapagosPenguin entitylivingbaseIn, float partialTickTime)
 	{
-		GlStateManager.translate(0.0F, 0.3F, 0.0F);
+		if(entitylivingbaseIn.isChild()) {
+			GlStateManager.translate(0.0F, 0.17F, 0.0F);
+		}
+		else {
+		    GlStateManager.translate(0.0F, 0.33F, 0.07F);
+		}
 	}
 
 	@Override

@@ -1,52 +1,52 @@
-[15:09:35] [main/INFO] [GradleStart]: Extra: []
-[15:09:35] [main/INFO] [GradleStart]: Found and added coremod: net.ilexiconn.llibrary.server.core.plugin.LLibraryPlugin
-[15:09:35] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/Iker Fernández/.gradle/caches/minecraft/assets, --assetIndex, 1.12, --accessToken{REDACTED}, --version, 1.12.2, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
-[15:09:35] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[15:09:35] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[15:09:35] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
-[15:09:35] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
-[15:09:35] [main/INFO] [FML]: Forge Mod Loader version 14.23.4.2749 for Minecraft 1.12.2 loading
-[15:09:35] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_181, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jre1.8.0_181
-[15:09:35] [main/ERROR] [FML]: Apache Maven library folder was not in the format expected. Using default libraries directory.
-[15:09:35] [main/ERROR] [FML]: Full: C:\Users\Iker Fernández\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.5.3\7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4\maven-artifact-3.5.3.jar
-[15:09:35] [main/ERROR] [FML]: Trimmed: c:/users/iker fernández/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/
-[15:09:35] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
-[15:09:35] [main/INFO] [FML]: Detected deobfuscated environment, loading log configs for colored console logs.
-[15:09:36] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugin
-[15:09:36] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugin
-[15:09:36] [main/INFO] [FML]: Found a command line coremod : net.ilexiconn.llibrary.server.core.plugin.LLibraryPlugin
-[15:09:36] [main/INFO] [FML]: Ignoring missing certificate for coremod llibrary (net.ilexiconn.llibrary.server.core.plugin.LLibraryPlugin), as this is probably a dev workspace
-[15:09:36] [main/INFO] [FML]: Searching C:\Users\Iker Fernández\Desktop\Programacón\DarwinsNatura\run\.\mods for mods
-[15:09:36] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
-[15:09:36] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
-[15:09:36] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
-[15:09:36] [main/INFO] [GradleStart]: Injecting location in coremod net.ilexiconn.llibrary.server.core.plugin.LLibraryPlugin
-[15:09:36] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[15:09:36] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[15:09:36] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[15:09:36] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[15:09:36] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[15:09:36] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[15:09:37] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
-[15:09:37] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[15:09:37] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[15:09:38] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[15:09:38] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[15:09:38] [main/INFO] [GradleStart]: Remapping AccessTransformer rules...
-[15:09:38] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
-[15:09:38] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
-[15:09:38] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
-[15:09:39] [main/INFO] [net.minecraft.client.Minecraft]: Setting user: Player957
-[15:09:44] [main/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
-[15:09:44] [main/INFO] [net.minecraft.client.Minecraft]: LWJGL Version: 2.9.4
-[15:09:45] [main/WARN] [LLibrary Core]: Unable to call Core API! It has not been initialized yet!
-[15:09:45] [main/INFO] [FML]: -- System Details --
+[11:55:15] [main/INFO] [GradleStart]: Extra: []
+[11:55:15] [main/INFO] [GradleStart]: Found and added coremod: net.ilexiconn.llibrary.server.core.plugin.LLibraryPlugin
+[11:55:15] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/Iker Fernández/.gradle/caches/minecraft/assets, --assetIndex, 1.12, --accessToken{REDACTED}, --version, 1.12.2, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[11:55:15] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[11:55:15] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[11:55:15] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[11:55:15] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
+[11:55:15] [main/INFO] [FML]: Forge Mod Loader version 14.23.4.2749 for Minecraft 1.12.2 loading
+[11:55:15] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_181, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jre1.8.0_181
+[11:55:15] [main/ERROR] [FML]: Apache Maven library folder was not in the format expected. Using default libraries directory.
+[11:55:15] [main/ERROR] [FML]: Full: C:\Users\Iker Fernández\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.5.3\7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4\maven-artifact-3.5.3.jar
+[11:55:15] [main/ERROR] [FML]: Trimmed: c:/users/iker fernández/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/
+[11:55:15] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[11:55:15] [main/INFO] [FML]: Detected deobfuscated environment, loading log configs for colored console logs.
+[11:55:16] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugin
+[11:55:17] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugin
+[11:55:17] [main/INFO] [FML]: Found a command line coremod : net.ilexiconn.llibrary.server.core.plugin.LLibraryPlugin
+[11:55:17] [main/INFO] [FML]: Ignoring missing certificate for coremod llibrary (net.ilexiconn.llibrary.server.core.plugin.LLibraryPlugin), as this is probably a dev workspace
+[11:55:17] [main/INFO] [FML]: Searching C:\Users\Iker Fernández\Desktop\Programacón\DarwinsNatura\run\.\mods for mods
+[11:55:17] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[11:55:17] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
+[11:55:17] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[11:55:17] [main/INFO] [GradleStart]: Injecting location in coremod net.ilexiconn.llibrary.server.core.plugin.LLibraryPlugin
+[11:55:17] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[11:55:17] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[11:55:17] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[11:55:17] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[11:55:17] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[11:55:17] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[11:55:18] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
+[11:55:18] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[11:55:18] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[11:55:19] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[11:55:19] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[11:55:20] [main/INFO] [GradleStart]: Remapping AccessTransformer rules...
+[11:55:20] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[11:55:20] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[11:55:20] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[11:55:21] [main/INFO] [net.minecraft.client.Minecraft]: Setting user: Player825
+[11:55:27] [main/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
+[11:55:27] [main/INFO] [net.minecraft.client.Minecraft]: LWJGL Version: 2.9.4
+[11:55:28] [main/WARN] [LLibrary Core]: Unable to call Core API! It has not been initialized yet!
+[11:55:29] [main/INFO] [FML]: -- System Details --
 Details:
 	Minecraft Version: 1.12.2
 	Operating System: Windows 10 (amd64) version 10.0
 	Java Version: 1.8.0_181, Oracle Corporation
 	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
-	Memory: 81638336 bytes (77 MB) / 451411968 bytes (430 MB) up to 1883242496 bytes (1796 MB)
+	Memory: 129074136 bytes (123 MB) / 490733568 bytes (468 MB) up to 1883242496 bytes (1796 MB)
 	JVM Flags: 0 total; 
 	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
 	FML: 
@@ -55,51 +55,51 @@ llibrary (llibrary-core-1.0.8-1.12.2.jar)
   net.ilexiconn.llibrary.server.core.plugin.LLibraryTransformer
   net.ilexiconn.llibrary.server.core.patcher.LLibraryRuntimePatcher
 	GL info: ' Vendor: 'Intel' Version: '4.5.0 - Build 22.20.16.4815' Renderer: 'Intel(R) UHD Graphics 620'
-[15:09:45] [main/INFO] [FML]: MinecraftForge v14.23.4.2749 Initialized
-[15:09:45] [main/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
-[15:09:45] [main/INFO] [FML]: Replaced 1036 ore ingredients
-[15:09:46] [main/INFO] [FML]: Searching C:\Users\Iker Fernández\Desktop\Programacón\DarwinsNatura\run\.\mods for mods
-[15:09:47] [main/INFO] [FML]: Forge Mod Loader has identified 6 mods to load
-[15:09:48] [main/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, darwin, llibrary] at CLIENT
-[15:09:48] [main/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, darwin, llibrary] at SERVER
-[15:09:48] [Thread-3/INFO] [FML]: Using sync timing. 200 frames of Display.update took 71284047 nanos
-[15:09:49] [main/ERROR] [FML]: The mod llibrary is expecting signature b9f30a813bee3b9dd5652c460310cfcd54f6b7ec for source llibrary-1.7.15-1.12.2.jar, however there is no signature matching that description
-[15:09:49] [main/WARN] [LLibrary]: Detected invalid fingerprint for file llibrary-1.7.15-1.12.2.jar! You will not receive support with this tampered version of llibrary!
-[15:09:49] [main/INFO] [net.minecraft.client.resources.SimpleReloadableResourceManager]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Darwin's Natura: Exploration Reimagined, FMLFileResourcePack:LLibrary
-[15:09:49] [main/INFO] [FML]: Processing ObjectHolder annotations
-[15:09:49] [main/INFO] [FML]: Found 1168 ObjectHolder annotations
-[15:09:49] [main/INFO] [FML]: Identifying ItemStackHolder annotations
-[15:09:49] [main/INFO] [FML]: Found 0 ItemStackHolder annotations
-[15:09:49] [main/INFO] [FML]: Configured a dormant chunk cache size of 0
-[15:09:49] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
-[15:09:49] [main/INFO] [STDOUT]: [com.DarwinsNatura.common.init.DarwinsNaturaBiomes:initBiome:27]: Biome Registered
-[15:09:49] [main/INFO] [STDOUT]: [com.DarwinsNatura.common.init.DarwinsNaturaBiomes:initBiome:28]: Biome Added
-[15:09:50] [main/INFO] [LLibrary]: TabulaModelHandler: Domain llibrary has been added.
-[15:09:50] [main/INFO] [FML]: Applying holder lookups
-[15:09:50] [main/INFO] [FML]: Holder lookups applied
-[15:09:50] [main/INFO] [FML]: Applying holder lookups
-[15:09:50] [main/INFO] [FML]: Holder lookups applied
-[15:09:50] [main/INFO] [FML]: Applying holder lookups
-[15:09:50] [main/INFO] [FML]: Holder lookups applied
-[15:09:50] [main/INFO] [FML]: Applying holder lookups
-[15:09:50] [main/INFO] [FML]: Holder lookups applied
-[15:09:50] [main/INFO] [FML]: Injecting itemstacks
-[15:09:50] [main/INFO] [FML]: Itemstack injection complete
-[15:09:51] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: OUTDATED Target: 14.23.4.2758
-[15:09:51] [Forge Version Check/INFO] [forge.VersionCheck]: [llibrary] Starting version check at https://gist.githubusercontent.com/gegy1000/a6639456aeb8edd92cbf7cbfcf9d65d9/raw/llibrary_updates.json
-[15:09:51] [Forge Version Check/INFO] [forge.VersionCheck]: [llibrary] Found status: AHEAD Target: null
-[15:09:53] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Starting up SoundSystem...
-[15:09:53] [Thread-6/INFO] [net.minecraft.client.audio.SoundManager]: Initializing LWJGL OpenAL
-[15:09:53] [Thread-6/INFO] [net.minecraft.client.audio.SoundManager]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[15:09:55] [Thread-6/INFO] [net.minecraft.client.audio.SoundManager]: OpenAL initialized.
-[15:09:55] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Sound engine started
-[15:09:58] [main/INFO] [FML]: Max texture size: 16384
-[15:09:58] [main/INFO] [net.minecraft.client.renderer.texture.TextureMap]: Created: 512x512 textures-atlas
-[15:10:00] [main/INFO] [FML]: Applying holder lookups
-[15:10:00] [main/INFO] [FML]: Holder lookups applied
-[15:10:00] [main/INFO] [FML]: Injecting itemstacks
-[15:10:00] [main/INFO] [FML]: Itemstack injection complete
-[15:10:00] [main/INFO] [FML]: Forge Mod Loader has successfully loaded 6 mods
-[15:10:00] [main/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
-[15:10:01] [main/INFO] [com.mojang.text2speech.NarratorWindows]: Narrator library for x64 successfully loaded
-[15:10:03] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient]: Could not authorize you against Realms server: Invalid session id
+[11:55:29] [main/INFO] [FML]: MinecraftForge v14.23.4.2749 Initialized
+[11:55:29] [main/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
+[11:55:29] [main/INFO] [FML]: Replaced 1036 ore ingredients
+[11:55:29] [main/INFO] [FML]: Searching C:\Users\Iker Fernández\Desktop\Programacón\DarwinsNatura\run\.\mods for mods
+[11:55:31] [main/INFO] [FML]: Forge Mod Loader has identified 6 mods to load
+[11:55:31] [Thread-3/INFO] [FML]: Using sync timing. 200 frames of Display.update took 75266948 nanos
+[11:55:32] [main/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, darwin, llibrary] at CLIENT
+[11:55:32] [main/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, darwin, llibrary] at SERVER
+[11:55:33] [main/ERROR] [FML]: The mod llibrary is expecting signature b9f30a813bee3b9dd5652c460310cfcd54f6b7ec for source llibrary-1.7.15-1.12.2.jar, however there is no signature matching that description
+[11:55:33] [main/WARN] [LLibrary]: Detected invalid fingerprint for file llibrary-1.7.15-1.12.2.jar! You will not receive support with this tampered version of llibrary!
+[11:55:33] [main/INFO] [net.minecraft.client.resources.SimpleReloadableResourceManager]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Darwin's Natura: Exploration Reimagined, FMLFileResourcePack:LLibrary
+[11:55:34] [main/INFO] [FML]: Processing ObjectHolder annotations
+[11:55:34] [main/INFO] [FML]: Found 1168 ObjectHolder annotations
+[11:55:34] [main/INFO] [FML]: Identifying ItemStackHolder annotations
+[11:55:34] [main/INFO] [FML]: Found 0 ItemStackHolder annotations
+[11:55:34] [main/INFO] [FML]: Configured a dormant chunk cache size of 0
+[11:55:34] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[11:55:34] [main/INFO] [STDOUT]: [com.DarwinsNatura.common.init.DarwinsNaturaBiomes:initBiome:27]: Biome Registered
+[11:55:34] [main/INFO] [STDOUT]: [com.DarwinsNatura.common.init.DarwinsNaturaBiomes:initBiome:28]: Biome Added
+[11:55:34] [main/INFO] [LLibrary]: TabulaModelHandler: Domain llibrary has been added.
+[11:55:34] [main/INFO] [FML]: Applying holder lookups
+[11:55:34] [main/INFO] [FML]: Holder lookups applied
+[11:55:34] [main/INFO] [FML]: Applying holder lookups
+[11:55:34] [main/INFO] [FML]: Holder lookups applied
+[11:55:34] [main/INFO] [FML]: Applying holder lookups
+[11:55:34] [main/INFO] [FML]: Holder lookups applied
+[11:55:34] [main/INFO] [FML]: Applying holder lookups
+[11:55:34] [main/INFO] [FML]: Holder lookups applied
+[11:55:34] [main/INFO] [FML]: Injecting itemstacks
+[11:55:34] [main/INFO] [FML]: Itemstack injection complete
+[11:55:35] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: OUTDATED Target: 14.23.4.2758
+[11:55:35] [Forge Version Check/INFO] [forge.VersionCheck]: [llibrary] Starting version check at https://gist.githubusercontent.com/gegy1000/a6639456aeb8edd92cbf7cbfcf9d65d9/raw/llibrary_updates.json
+[11:55:35] [Forge Version Check/INFO] [forge.VersionCheck]: [llibrary] Found status: AHEAD Target: null
+[11:55:37] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Starting up SoundSystem...
+[11:55:38] [Thread-6/INFO] [net.minecraft.client.audio.SoundManager]: Initializing LWJGL OpenAL
+[11:55:38] [Thread-6/INFO] [net.minecraft.client.audio.SoundManager]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[11:55:39] [Thread-6/INFO] [net.minecraft.client.audio.SoundManager]: OpenAL initialized.
+[11:55:39] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Sound engine started
+[11:55:44] [main/INFO] [FML]: Max texture size: 16384
+[11:55:44] [main/INFO] [net.minecraft.client.renderer.texture.TextureMap]: Created: 512x512 textures-atlas
+[11:55:46] [main/INFO] [FML]: Applying holder lookups
+[11:55:46] [main/INFO] [FML]: Holder lookups applied
+[11:55:46] [main/INFO] [FML]: Injecting itemstacks
+[11:55:46] [main/INFO] [FML]: Itemstack injection complete
+[11:55:47] [main/INFO] [FML]: Forge Mod Loader has successfully loaded 6 mods
+[11:55:47] [main/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
+[11:55:47] [main/INFO] [com.mojang.text2speech.NarratorWindows]: Narrator library for x64 successfully loaded
+[11:55:48] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient]: Could not authorize you against Realms server: Invalid session id
