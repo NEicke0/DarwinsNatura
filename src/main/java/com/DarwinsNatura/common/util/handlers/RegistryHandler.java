@@ -15,7 +15,6 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 
 @EventBusSubscriber
@@ -46,8 +45,7 @@ public class RegistryHandler
 	public void registerItems(RegistryEvent.Register<Item> event) {
 		event.getRegistry().registerAll(DarwinsNaturaItems.ITEMS.toArray(new Item[DarwinsNaturaItems.ITEMS.size()]));
     }
-    
-    @SubscribeEvent
+	@SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
         for(Item item : DarwinsNaturaItems.ITEMS) {
             ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));

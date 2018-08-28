@@ -2,6 +2,7 @@ package com.DarwinsNatura.common.blocks;
 
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.init.DarwinsNaturaItems;
+import com.DarwinsNatura.core.Main;
 
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.MapColor;
@@ -89,6 +90,10 @@ public class BlockLogScalesia extends BlockLog
     protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {LOG_AXIS});
+    }
+    
+    public void registerModels() {
+      Main.proxy.registerBlockRenderer(this, 0, "inventory");;
     }
 
     @Override
