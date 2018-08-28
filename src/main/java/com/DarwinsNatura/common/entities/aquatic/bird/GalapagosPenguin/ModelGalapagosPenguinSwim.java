@@ -2,7 +2,6 @@ package com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
@@ -343,12 +342,26 @@ public class ModelGalapagosPenguinSwim extends AdvancedModelBase {
 		super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
 		resetToDefaultPose();
 
-		float globalSpeed = 1;
-		float globalHeight = 1;
-		float globalDegree = 1;
+		float globalSpeed = 3.7f;
+		float globalHeight = 1f;
+		float globalDegree = 2F;
 
 		f = entity.ticksExisted;
 		f1 = 0.5F;
-
+		
+		bob(Body1, 0.05f * globalSpeed, 1f* globalHeight, true, f, f1);
+		
+		flap(LeftWing1, 0.09f * globalSpeed, 0.3f * globalDegree, false, 0f, -1.3f, f, f1);
+		flap(RightWing1, 0.09f * globalSpeed, 0.3f * globalDegree, true, 0f, -1.3f, f, f1);
+		walk(RightLeg1, 0.07f * globalSpeed, 0.2f * globalDegree, true, 0f, 0f, f ,f1);
+		walk(LeftLeg1, 0.07f * globalSpeed, 0.2f * globalDegree, false, 0f, 0f, f ,f1);
+		swing(RightLeg2, 0.13f * globalSpeed, 0.09f * globalDegree, false, 0f, 0f, f ,f1);
+		swing(LeftLeg2, 0.13f * globalSpeed, 0.09f * globalDegree, true, 0f, 0f, f ,f1);
+		walk(Neck1, 0.07f * globalSpeed, 0.1f * globalDegree, true, 0f, 0f, f ,f1);
+		walk(Neck2, 0.07f * globalSpeed, 0.1f * globalDegree, false, 0f, 0f, f ,f1);
+		walk(Neck2, 0.07f * globalSpeed, 0.1f * globalDegree, true, 0f, 0f, f ,f1);
+		walk(Head, 0.07f * globalSpeed, 0.1f * globalDegree, false, 0f, 0f, f ,f1);
+		walk(Body2,  0.06f * globalSpeed, 0.05f * globalDegree, true, 0f, -0.075f, f, f1);
+		walk(Body3,  0.06f * globalSpeed, 0.05f * globalDegree, false, 0f, -0.075f, f, f1);
 	}
 }

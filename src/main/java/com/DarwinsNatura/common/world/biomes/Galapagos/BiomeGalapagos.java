@@ -4,19 +4,11 @@ import java.util.Random;
 
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
 
-import net.minecraft.block.material.Material;
-import net.minecraft.entity.passive.EntityLlama;
-import net.minecraft.entity.passive.EntityMooshroom;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraft.world.gen.feature.WorldGenFossils;
 import net.minecraft.world.gen.feature.WorldGenSavannaTree;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BiomeGalapagos extends Biome {
 
@@ -38,7 +30,7 @@ public class BiomeGalapagos extends Biome {
 		this.decorator.flowersPerChunk = 4;
 		this.decorator.grassPerChunk = 20;
 		
-		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosRiceRat.class, 15, 1, 2));
+		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosRiceRat.class, 30, 2, 4));
 	}
 
 	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
