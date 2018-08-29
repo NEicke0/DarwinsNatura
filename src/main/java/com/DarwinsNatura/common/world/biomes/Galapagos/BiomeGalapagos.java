@@ -12,7 +12,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 public class BiomeGalapagos extends Biome {
 
-	private static final WorldGenTreesScalesia GALAPAGOS_TREE = new WorldGenTreesScalesia(false);
+	private static final WorldGenTreesScalesia TREE = new WorldGenTreesScalesia(false);
 
 	public BiomeGalapagos() {
 		super(new BiomeProperties("Galapagos_Islands").setTemperature(0.8F).setRainfall(0.6F).setBaseHeight(0.5f)
@@ -33,8 +33,10 @@ public class BiomeGalapagos extends Biome {
 		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosRiceRat.class, 30, 2, 4));
 	}
 
-	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
-		return (WorldGenAbstractTree) (rand.nextInt(5) > 0 ? GALAPAGOS_TREE : TREE_FEATURE);
+	@Override
+	public WorldGenAbstractTree getRandomTreeFeature(Random rand) 
+	{
+		return TREE;
 	}
 
 
