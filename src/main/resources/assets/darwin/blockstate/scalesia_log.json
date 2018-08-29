@@ -1,8 +1,8 @@
 {
     "variants": {
-        "axis=y":  { "model": "darwin:scalesia_log" },
-        "axis=z":   { "model": "darwin:scalesia_log", "x": 90 },
-        "axis=x":   { "model": "darwin:scalesia_log", "x": 90, "y": 90 },
-        "axis=none": { "model": "darwin:scalesia_log" }
+        "axis=x":    { "model": "darwin:scalesia_log" },
+        "axis=y":    { "model": "darwin:scalesia_log", "x": 90 },
+        "axis=z":    { "model": "darwin:scalesia_log", "x": 90, "y": 90 },
+        "axis=none": { "model": "darwin:scalesia_log" },
     }
 }
