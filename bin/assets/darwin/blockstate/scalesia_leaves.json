@@ -1,7 +1,8 @@
 {
-     "defaults": {
-        "textures": {
-            "particle": "blocks/log_oak"
-        },
-        "model": "darwin:scalesia_leaves",
+    "defaults": {
+        "model": "darwin:scalesia_leaves"
+    },
+    "variants": {
+        "normal": { "model": "darwin:scalesia_log"}
+    }
 }

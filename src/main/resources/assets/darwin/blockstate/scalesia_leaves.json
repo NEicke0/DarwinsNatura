@@ -1,5 +1,9 @@
 {
+    "forge_marker": 1,
     "variants": {
-        "model": "darwin:scalesia_leaves" }
+        "check_decay=true,decayable=true":  { "model": "darwin:scalesia_leaves" },
+        "check_decay=false,decayable=true":  { "model": "darwin:scalesia_leaves" },
+        "check_decay=true,decayable=false":  { "model": "darwin:scalesia_leaves" },
+        "check_decay=false,decayable=false":  { "model": "darwin:scalesia_leaves" }
     }
 }
