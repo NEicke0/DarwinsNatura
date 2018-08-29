@@ -4,7 +4,9 @@ import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.EntityGal
 import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.RenderGalapagosPenguin;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.RenderGalapagosRiceRat;
+import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.init.DarwinsNaturaEntities;
+import com.DarwinsNatura.common.init.DarwinsNaturaItems;
 import com.DarwinsNatura.common.util.handlers.RegistryHandler;
 import com.DarwinsNatura.core.Reference;
 
@@ -23,18 +25,9 @@ public class ClientProxy extends CommonProxy {
 	}
 
 	@Override
-	public void registerItemRenderer(Item item, int meta, String id) 
-	{
-		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
-	}
-	
-	@Override
-	public void registerVariantRenderer(Item item, int meta, String filename, String id) 
-	{
-		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(new ResourceLocation(Reference.MODID, filename), id));
-	}
-
 	public void registerRenders(){
+		DarwinsNaturaItems.registerItemRenders();
+		DarwinsNaturaBlocks.registerBlockRenders();
 		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosRiceRat.class, new RenderGalapagosRiceRat.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosPenguin.class, new RenderGalapagosPenguin.RenderFactory());
 	}

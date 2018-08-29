@@ -18,7 +18,7 @@ public class DarwinsNaturaBiomes
 	public static void registerBiomes()
 	{
 		initBiome(GALAPAGOS, "Galapagos", BiomeType.WARM, Type.PLAINS);
-		initBiome(GALAPAGOS, "Galapagos_Beach", BiomeType.WARM, Type.BEACH);
+		initBiome(GALAPAGOS_BEACH, "Galapagos_Beach", BiomeType.WARM, Type.BEACH);
 	}
 
 	private static Biome initBiome(Biome biome, String name, BiomeType biomeType, Type... types)

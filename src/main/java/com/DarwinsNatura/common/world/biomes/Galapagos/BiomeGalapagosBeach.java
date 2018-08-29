@@ -1,5 +1,8 @@
 package com.DarwinsNatura.common.world.biomes.Galapagos;
 
+import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.EntityGalapagosPenguin;
+import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
@@ -20,5 +23,7 @@ public class BiomeGalapagosBeach extends Biome
         this.decorator.deadBushPerChunk = 0;
         this.decorator.reedsPerChunk = 0;
         this.decorator.cactiPerChunk = 0;
+        
+        this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosPenguin.class, 30, 2, 6));
     }
 }

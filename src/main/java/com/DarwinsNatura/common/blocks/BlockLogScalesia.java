@@ -17,15 +17,17 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
+// TODO: Auto-generated Javadoc
 public class BlockLogScalesia extends BlockLog
 {
 
-    public BlockLogScalesia()
-    {
+    public BlockLogScalesia(String name) {
         super();
-    	DarwinsNaturaBlocks.BLOCKS.add(this);
-    	setRegistryName("scalesia_log");
-    	DarwinsNaturaItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+        this.setUnlocalizedName(name);
+        this.setRegistryName(name);
+        this.setCreativeTab(CreativeTabs.DECORATIONS);
+        DarwinsNaturaBlocks.BLOCKS.add(this);
+        DarwinsNaturaItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
         setDefaultState(blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
     }
 

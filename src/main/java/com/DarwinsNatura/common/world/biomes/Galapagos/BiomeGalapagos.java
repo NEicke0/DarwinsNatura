@@ -3,7 +3,7 @@ package com.DarwinsNatura.common.world.biomes.Galapagos;
 import java.util.Random;
 
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
-import com.DarwinsNatura.common.world.gen.trees.WorldGenScalesiaTrees;
+import com.DarwinsNatura.common.world.gen.trees.WorldGenTreesScalesia;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -12,7 +12,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 public class BiomeGalapagos extends Biome {
 
-	private static final WorldGenScalesiaTrees GALAPAGOS_TREE = new WorldGenScalesiaTrees(false);
+	private static final WorldGenTreesScalesia GALAPAGOS_TREE = new WorldGenTreesScalesia(false);
 
 	public BiomeGalapagos() {
 		super(new BiomeProperties("Galapagos_Islands").setTemperature(0.8F).setRainfall(0.6F).setBaseHeight(0.5f)

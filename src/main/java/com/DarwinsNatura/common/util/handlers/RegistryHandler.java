@@ -42,23 +42,4 @@ public class RegistryHandler
 	{
 		
 	}
-	@SubscribeEvent
-	public void registerItems(RegistryEvent.Register<Item> event) {
-		event.getRegistry().registerAll(DarwinsNaturaItems.ITEMS.toArray(new Item[DarwinsNaturaItems.ITEMS.size()]));
-    }
-    
-    @SubscribeEvent
-    public static void registerRenders(ModelRegistryEvent event) {
-        for(Item item : DarwinsNaturaItems.ITEMS) {
-            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
-        }
-
-        for(Block block : DarwinsNaturaBlocks.BLOCKS) {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
-        }
-    }
-    @SubscribeEvent
-    public void registerBlocks(RegistryEvent.Register<Block> event) {
-    	event.getRegistry().registerAll(DarwinsNaturaBlocks.BLOCKS.toArray(new Block[DarwinsNaturaBlocks.BLOCKS.size()]));
-    }
 }

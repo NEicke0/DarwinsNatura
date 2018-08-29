@@ -28,11 +28,11 @@ public class BlockLeavesScalesia extends BlockLeaves
     /**
      * Instantiates a new block leaves cloud.
      */
-    public BlockLeavesScalesia()
-    {
+    public BlockLeavesScalesia(String name) {
         super();
+        this.setUnlocalizedName(name);
+        this.setRegistryName(name);
         DarwinsNaturaBlocks.BLOCKS.add(this);
-    	setRegistryName("scalesia_leaves");
         DarwinsNaturaItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
     	Main.proxy.setGraphicsLevel(this, true);
         setDefaultState(blockState.getBaseState().withProperty(CHECK_DECAY, Boolean.valueOf(true)).withProperty(DECAYABLE, Boolean.valueOf(true)));

@@ -1,5 +1,6 @@
 package com.DarwinsNatura.core;
 
+import com.DarwinsNatura.common.init.DarwinsNaturaItems;
 import org.apache.logging.log4j.Logger;
 
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
@@ -33,7 +34,8 @@ public class Main {
 		proxy.registerRenders();
 		DarwinsNaturaEntities.init();
 		RegistryHandler.preInitRegistries();
-		
+		DarwinsNaturaItems.registerItems();
+		DarwinsNaturaBlocks.registerBlocks();
 	}
 
 	@EventHandler

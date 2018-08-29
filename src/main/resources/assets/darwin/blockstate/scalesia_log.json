@@ -1,5 +1,4 @@
 {
-    "forge_marker": 1,
     "variants": {
         "axis=y":  { "model": "darwin:scalesia_log" },
         "axis=z":   { "model": "darwin:scalesia_log", "x": 90 },
