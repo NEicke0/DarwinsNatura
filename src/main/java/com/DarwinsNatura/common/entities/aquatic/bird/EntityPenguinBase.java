@@ -24,7 +24,7 @@ public class EntityPenguinBase extends EntityGender {
 
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(1, new EntityAIPanic(this, 1D));
+		this.tasks.addTask(1, new EntityAIPanic(this, 1.3D));
 		this.tasks.addTask(2, new EntityAIMate(this, 1.0D));
 		this.tasks.addTask(3, new EntityAIFollowParent(this, 1.1D));
 		this.tasks.addTask(4, new EntityAIWander(this, 1.0D));

@@ -54,7 +54,7 @@ public class EntityRodentBase extends EntityGender {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(3.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.9D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.30D);
 	}
 
 	public void entityInit() {
@@ -79,9 +79,9 @@ public class EntityRodentBase extends EntityGender {
 
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(1, new EntityAIPanic(this, 1D));
+		this.tasks.addTask(1, new EntityAIPanic(this, 1.3D));
 		this.tasks.addTask(2, new EntityAIMate(this, 1D));
-		this.tasks.addTask(3, new EntityAIFollowParent(this, 1D));
+		this.tasks.addTask(3, new EntityAIFollowParent(this, 1.1D));
 		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 1D));
 		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityVillager.class, 6.0F));
