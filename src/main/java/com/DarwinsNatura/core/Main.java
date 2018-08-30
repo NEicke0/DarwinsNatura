@@ -1,6 +1,8 @@
 package com.DarwinsNatura.core;
 
 import com.DarwinsNatura.common.init.DarwinsNaturaItems;
+import com.DarwinsNatura.common.tabs.AmericasTab;
+
 import org.apache.logging.log4j.Logger;
 
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
@@ -9,6 +11,7 @@ import com.DarwinsNatura.common.util.handlers.RegistryHandler;
 import com.DarwinsNatura.common.util.handlers.TerrainEventHandler;
 import com.DarwinsNatura.core.proxy.CommonProxy;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -27,6 +30,8 @@ public class Main {
 
 	@SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.COMMON)
 	public static CommonProxy proxy;
+	
+	public static final CreativeTabs AMERICAS = new AmericasTab("americastab");
 
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {

@@ -2,7 +2,11 @@ package com.DarwinsNatura.common.init;
 
 import java.util.ArrayList;
 
-		import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import com.DarwinsNatura.common.blocks.BlockLogScalesia;
+import com.DarwinsNatura.common.items.ItemBase;
+
+import net.minecraft.block.BlockLog;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 		import net.minecraft.item.Item;
 		import net.minecraftforge.client.model.ModelLoader;
 		import net.minecraftforge.event.RegistryEvent;
@@ -12,6 +16,8 @@ import java.util.ArrayList;
 public class DarwinsNaturaItems {
 
 	public static final ArrayList<Item> ITEMS = new ArrayList<Item>();
+	
+	public static final ItemBase AMERICAS_ICON = new ItemBase("americas_icon");
 
 	public static void registerItems() {
 		ForgeRegistries.ITEMS.registerAll(DarwinsNaturaItems.ITEMS.toArray(new Item[DarwinsNaturaItems.ITEMS.size()]));
