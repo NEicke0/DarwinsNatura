@@ -1,9 +1,9 @@
 package com.DarwinsNatura.common.init;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.DarwinsNatura.common.items.ItemBase;
-
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class DarwinsNaturaItems {
 
-	public static final ArrayList<Item> ITEMS = new ArrayList<Item>();
+	public static final List<Item> ITEMS = new ArrayList<Item>();
 	
 	public static final Item AMERICAS_ICON = new ItemBase("americas_icon");
 
