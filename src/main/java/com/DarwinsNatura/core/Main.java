@@ -6,7 +6,6 @@ import com.DarwinsNatura.common.tabs.AmericasTab;
 import org.apache.logging.log4j.Logger;
 
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
-import com.DarwinsNatura.common.init.DarwinsNaturaEntities;
 import com.DarwinsNatura.common.util.handlers.RegistryHandler;
 import com.DarwinsNatura.common.util.handlers.TerrainEventHandler;
 import com.DarwinsNatura.core.proxy.CommonProxy;
@@ -38,9 +37,8 @@ public class Main {
 		MinecraftForge.TERRAIN_GEN_BUS.register(TerrainEventHandler.class);
 		DarwinsNaturaBlocks.registerBlocks();
 		DarwinsNaturaItems.registerItems();
+		proxy.preInit(event);
 		proxy.registerRenders();
-		DarwinsNaturaEntities.init();
-		RegistryHandler.preInitRegistries();
 	}
 
 	@EventHandler

@@ -8,17 +8,13 @@ import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.Ren
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.init.DarwinsNaturaEntities;
 import com.DarwinsNatura.common.init.DarwinsNaturaItems;
+import com.DarwinsNatura.common.util.handlers.SoundHandler;
 import com.DarwinsNatura.core.Reference;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class ClientProxy extends CommonProxy {
-	@Override
-	public void preInit(FMLPreInitializationEvent e) {
-		System.out.println(Reference.MODID + ":preInit");
-		DarwinsNaturaEntities.init();
-	}
 
 	@Override
 	public void registerRenders(){

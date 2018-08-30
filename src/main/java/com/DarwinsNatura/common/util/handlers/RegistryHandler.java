@@ -24,7 +24,6 @@ public class RegistryHandler
 
 	public static void preInitRegistries()
 	{	
-		DarwinsNaturaBiomes.registerBiomes();
 	}
 	
 	public static void initRegistries()

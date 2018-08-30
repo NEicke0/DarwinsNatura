@@ -1,0 +1,3 @@
+{
+"entity.galapagos_penguin_living":{"category":"ambient", "sounds":[{"name": "darwin:entity/galapagos_penguin_living", "stream": true}]}
+}

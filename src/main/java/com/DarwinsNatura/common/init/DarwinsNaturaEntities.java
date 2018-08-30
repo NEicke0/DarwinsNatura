@@ -8,8 +8,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class DarwinsNaturaEntities {
+	private static int id = 0;
+	
 	public static void init() {
-		int id = 0;
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "GalapagosRiceRat"),EntityGalapagosRiceRat.class, "GalapagosRiceRat", id++, Main.instance, 64, 3, true, 0x783F32, 0x977044);
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "GalapagosPenguin"),EntityGalapagosPenguin.class, "GalapagosPenguin", id++, Main.instance, 64, 3, true, 0xE3DED9, 0x3C3A38);
 	}

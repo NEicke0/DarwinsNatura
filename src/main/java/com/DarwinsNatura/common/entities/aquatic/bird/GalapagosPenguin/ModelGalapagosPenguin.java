@@ -351,7 +351,7 @@ public class ModelGalapagosPenguin extends AdvancedModelBase {
 		
 		bob(Body1, 0.1f * globalSpeed, 0.5f* globalHeight, true, f, f1);
 
-		swing(Body1, 0.1f * globalSpeed, 0.35f * globalDegree, false, 0f, 0f, f, f1);
+		swing(Body1, 0.05f * globalSpeed, 0.2f * globalDegree, false, 0f, 0f, f, f1);
 		
 		walk(RightLeg1, 0.1f * globalSpeed, 0.5f * globalDegree, true, 0f, 0f, f ,f1);
 		walk(LeftLeg1, 0.1f * globalSpeed, 0.5f * globalDegree, false, 0f, 0f, f ,f1);
