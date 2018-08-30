@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 
 public class AmericasTab extends CreativeTabs {
 	public AmericasTab(String label) {
-		super("americastab");
+		super(label);
 		this.setBackgroundImageName("americas.png");
 	}
 
