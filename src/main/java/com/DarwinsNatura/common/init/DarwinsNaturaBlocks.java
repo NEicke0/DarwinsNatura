@@ -10,9 +10,11 @@ import com.DarwinsNatura.common.blocks.BlockLogBase;
 import com.DarwinsNatura.common.blocks.BlockPlantBase;
 import com.DarwinsNatura.common.blocks.BlockSaplingScalesia;
 import com.DarwinsNatura.common.blocks.BlockVolcanicRock;
+import com.DarwinsNatura.common.blocks.common.BlockSandBase;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLog;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -31,6 +33,12 @@ public class DarwinsNaturaBlocks {
 	public static final BlockBush LAVA_MORNING_GLORY = new BlockLavaMorningGlory("lava_morning_glory");
 	public static final BlockBush GALAPAGOS_FERN_TREE_PART = new BlockGalapagosFernTree("galapagos_fern_tree");
 	public static final Block VOLCANIC_ROCK = new BlockVolcanicRock("volcanic_rock");
+	
+	/*'
+	 * @Common- Stuff that will be reused in other biomes
+	 */
+	public static final BlockFalling WHITE_SAND = new BlockSandBase("white_sand");
+	public static final BlockFalling BLACK_SAND = new BlockSandBase("black_sand");
 
     public static void registerBlocks() {
         ForgeRegistries.BLOCKS.registerAll(DarwinsNaturaBlocks.BLOCKS.toArray(new Block[DarwinsNaturaBlocks.BLOCKS.size()]));
