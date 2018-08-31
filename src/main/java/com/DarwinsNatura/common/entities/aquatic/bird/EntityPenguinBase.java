@@ -69,7 +69,7 @@ public abstract class EntityPenguinBase extends EntityGender{
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.22D);
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
     }
 
@@ -120,7 +120,7 @@ public abstract class EntityPenguinBase extends EntityGender{
     public void onLivingUpdate()
     {
     	if(this.inWater) {
-    		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.6D);
+    		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.35D);
             this.moveHelper = moveHelpCross;
 	        if (this.world.isRemote)
 	        {
