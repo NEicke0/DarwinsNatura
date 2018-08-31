@@ -26,7 +26,7 @@ public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvide
 
 	public BiomeGalapagos() {
 		super(new BiomeProperties("Galapagos_Islands").setTemperature(0.8F).setRainfall(0.6F).setBaseHeight(0.5f)
-				.setHeightVariation(0f));
+				.setHeightVariation(0f).setWaterColor(0x00ccff));
 
 		topBlock = Blocks.GRASS.getDefaultState();
 		fillerBlock = Blocks.DIRT.getDefaultState();
@@ -40,6 +40,7 @@ public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvide
 		this.decorator.flowersPerChunk = 4;
 		this.decorator.grassPerChunk = 20;
 		this.decorator.mushroomsPerChunk = -999;
+		this.decorator.sandPatchesPerChunk = 2;
 		
 		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosRiceRat.class, 30, 2, 4));
 	}
@@ -88,9 +89,9 @@ public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvide
 
                 if (p_185379_2_.nextInt(20) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.BIG_SHROOM)) {
                     WorldGenBushGalapagos LAVA_GLORY_GEN = new WorldGenBushGalapagos(DarwinsNaturaBlocks.LAVA_MORNING_GLORY);
-                    WorldGenBushGalapagos MICONIA_EGN = new WorldGenBushGalapagos(DarwinsNaturaBlocks.MICONIA_SHRUB);
+                    WorldGenBushGalapagos MICONIA_GEN = new WorldGenBushGalapagos(DarwinsNaturaBlocks.MICONIA_SHRUB);
                     LAVA_GLORY_GEN.generate(p_185379_1_, p_185379_2_, blockpos);
-                    MICONIA_EGN.generate(p_185379_1_, p_185379_2_, blockpos2);
+                    MICONIA_GEN.generate(p_185379_1_, p_185379_2_, blockpos2);
                     
                 } else {
                 	
@@ -104,7 +105,7 @@ public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvide
 	//Just a placeholder for now
 	private void addWorldgenBase(World p_185379_1_, Random p_185379_2_, BlockPos p_185379_3_, BlockPos blockpos, Random rand) {
         if (net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.TREE)) {
-        	if(rand.nextInt(2)==1) {
+        	if(rand.nextInt(9)==1) {
         	WorldGenAbstractTree worldgenabstracttree = this.getRandomTreeFeature(p_185379_2_);
             worldgenabstracttree.setDecorationDefaults();
 
