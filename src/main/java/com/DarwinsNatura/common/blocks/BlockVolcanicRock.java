@@ -1,5 +1,7 @@
 package com.DarwinsNatura.common.blocks;
 
+import java.util.Random;
+
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.init.DarwinsNaturaItems;
 import com.DarwinsNatura.core.Main;
@@ -9,7 +11,18 @@ import net.minecraft.block.BlockStone;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockVolcanicRock extends Block{
 	
@@ -20,8 +33,34 @@ public class BlockVolcanicRock extends Block{
         this.setCreativeTab(Main.AMERICAS);
         DarwinsNaturaBlocks.BLOCKS.add(this);
         DarwinsNaturaItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
-        setHardness(0.0F);
+        setHardness(1.1F);
+        setHarvestLevel("pickaxe", 1);
         setSoundType(SoundType.PLANT);
 	}
 
+	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
+    {
+        if (!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase && !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase)entityIn))
+        {
+            entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 0.5F);
+        }
+
+        super.onEntityWalk(worldIn, pos, entityIn);
+    }
+	
+	 protected void checkAndDropBlock(World worldIn, BlockPos pos, IBlockState state){
+	       this.dropBlockAsItem(worldIn, pos, state, 0);
+	       worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+	 }
+	 
+	 @SideOnly(Side.CLIENT)
+	 public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+	    {
+	        super.randomDisplayTick(stateIn, worldIn, pos, rand);
+
+	        if (rand.nextInt(10) == 0)
+	        {
+	            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, (double)((float)pos.getX() + rand.nextFloat()), (double)((float)pos.getY() + 1.1F), (double)((float)pos.getZ() + rand.nextFloat()), 0.0D, 0.0D, 0.0D);
+	        }
+	    }
 }

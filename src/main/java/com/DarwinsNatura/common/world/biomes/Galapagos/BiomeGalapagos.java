@@ -7,6 +7,7 @@ import com.DarwinsNatura.common.init.DarwinsNaturaBiomes;
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.world.gen.layers.IWeightProvider;
 import com.DarwinsNatura.common.world.gen.plants.WorldGenBushGalapagos;
+import com.DarwinsNatura.common.world.gen.rocks.WorldGenGalapagosRocks;
 import com.DarwinsNatura.common.world.gen.trees.WorldGenTreesGalapagosFern;
 import com.DarwinsNatura.common.world.gen.trees.WorldGenTreesScalesia;
 
@@ -19,14 +20,14 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvider{
-
+	
 	private static final WorldGenTreesScalesia TREE = new WorldGenTreesScalesia(false);
 	private static final WorldGenTreesGalapagosFern TREE2 = new WorldGenTreesGalapagosFern(false, false);
 	public static short biomeWeight;
 
 	public BiomeGalapagos() {
 		super(new BiomeProperties("Galapagos_Islands").setTemperature(0.8F).setRainfall(0.6F).setBaseHeight(0.5f)
-				.setHeightVariation(0f).setWaterColor(0x00ccff));
+				.setHeightVariation(0f).setWaterColor(0x00ccfc));
 
 		topBlock = Blocks.GRASS.getDefaultState();
 		fillerBlock = Blocks.DIRT.getDefaultState();
@@ -55,6 +56,7 @@ public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvide
 			return TREE2;
 		}
 	}
+	
 
 	@Override
 	public int getGrassColorAtPos(BlockPos pos) {
@@ -69,6 +71,7 @@ public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvide
 	@Override
     public void decorate(World worldIn, Random rand, BlockPos pos) {
         this.addBushes(worldIn, rand, pos);
+        this.addRocks(worldIn, rand, pos);
        
         if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.FLOWERS)) { // no tab for patch
             int i = rand.nextInt(5) - 3;
@@ -77,6 +80,7 @@ public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvide
         }
         super.decorate(worldIn, rand, pos);
     }
+	
 	
 	public void addBushes(World p_185379_1_, Random p_185379_2_, BlockPos p_185379_3_) {
 
@@ -87,7 +91,7 @@ public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvide
                 BlockPos blockpos = p_185379_1_.getHeight(p_185379_3_.add(k, 0, l));
                 BlockPos blockpos2 = p_185379_1_.getHeight(p_185379_3_.add(k, -2, l));
 
-                if (p_185379_2_.nextInt(20) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.BIG_SHROOM)) {
+                if (p_185379_2_.nextInt(20) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.TREE)) {
                     WorldGenBushGalapagos LAVA_GLORY_GEN = new WorldGenBushGalapagos(DarwinsNaturaBlocks.LAVA_MORNING_GLORY);
                     WorldGenBushGalapagos MICONIA_GEN = new WorldGenBushGalapagos(DarwinsNaturaBlocks.MICONIA_SHRUB);
                     LAVA_GLORY_GEN.generate(p_185379_1_, p_185379_2_, blockpos);
@@ -101,6 +105,22 @@ public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvide
             }
         }
     }
+	
+	public void addRocks(World p_185379_1_, Random p_185379_2_, BlockPos p_185379_3_) {
+		
+		for (int i = 0; i < 4; ++i) {
+            for (int j = 0; j < 4; ++j) {
+                int k = i * 4 + 1 + 8 + p_185379_2_.nextInt(3);
+                int l = j * 4 + 1 + 8 + p_185379_2_.nextInt(3);
+                BlockPos blockpos = p_185379_1_.getHeight(p_185379_3_.add(k, 0, l));
+                BlockPos blockpos2 = p_185379_1_.getHeight(p_185379_3_.add(k, -2, l));
+                if (p_185379_2_.nextInt(27) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK)) {
+                	WorldGenGalapagosRocks ROCK_GEN = new WorldGenGalapagosRocks(DarwinsNaturaBlocks.VOLCANIC_ROCK, 0);
+                	ROCK_GEN.generate(p_185379_1_, p_185379_2_, blockpos2);
+                }
+            }
+		}
+	}
 	
 	//Just a placeholder for now
 	private void addWorldgenBase(World p_185379_1_, Random p_185379_2_, BlockPos p_185379_3_, BlockPos blockpos, Random rand) {

@@ -28,7 +28,7 @@ public class BiomeBaseGalapagos extends Biome implements IWeightProvider {
     public boolean canRain() {
         return true;
     }
-
+	
 	@Override
 	public final short getWeight() {
 		return biomeWeight;

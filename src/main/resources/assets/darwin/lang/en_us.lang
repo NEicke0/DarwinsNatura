@@ -1,2 +1,11 @@
 #Tabs
 itemGroup.americastab=Darwin's Natura: The Americas
+
+#Blocks
+tile.scalesia_log.name=Scalesia Log
+tile.scalesia_leaves.name=Scalesia Leaves
+tile.scalesia_sapling.name=Scalesia Sapling
+tile.miconia_shrub.name=Miconia Shrub
+tile.lava_morning_glory.name=Lava Morning Glory
+tile.galapagos_fern_tree.name=Galapagos Fern
+tile.volcanic_rock.name=Volcanic Rock
