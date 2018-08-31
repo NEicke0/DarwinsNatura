@@ -9,3 +9,7 @@ tile.miconia_shrub.name=Miconia Shrub
 tile.lava_morning_glory.name=Lava Morning Glory
 tile.galapagos_fern_tree.name=Galapagos Fern
 tile.volcanic_rock.name=Volcanic Rock
+
+#Common
+tile.black_sand.name=Black Sand
+tile.white_sand.name=White Sand
