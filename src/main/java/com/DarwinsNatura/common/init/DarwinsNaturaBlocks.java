@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.DarwinsNatura.common.blocks.BlockGalapagosFernTree;
+import com.DarwinsNatura.common.blocks.BlockLavaMorningGlory;
 import com.DarwinsNatura.common.blocks.BlockLeavesScalesia;
 import com.DarwinsNatura.common.blocks.BlockLogBase;
 import com.DarwinsNatura.common.blocks.BlockPlantBase;
 import com.DarwinsNatura.common.blocks.BlockSaplingScalesia;
+import com.DarwinsNatura.common.blocks.BlockVolcanicRock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
@@ -26,8 +28,9 @@ public class DarwinsNaturaBlocks {
 	public static final BlockLeaves SCALESIA_LEAVES = new BlockLeavesScalesia("scalesia_leaves");
 	public static final BlockBush SCALESIA_SAPLING = new BlockSaplingScalesia("scalesia_sapling");
 	public static final BlockBush MICONIA_SHRUB = new BlockPlantBase("miconia_shrub");
-	public static final BlockBush LAVA_MORNING_GLORY = new BlockPlantBase("lava_morning_glory");
+	public static final BlockBush LAVA_MORNING_GLORY = new BlockLavaMorningGlory("lava_morning_glory");
 	public static final BlockBush GALAPAGOS_FERN_TREE_PART = new BlockGalapagosFernTree("galapagos_fern_tree");
+	public static final Block VOLCANIC_ROCK = new BlockVolcanicRock("volcanic_rock");
 
     public static void registerBlocks() {
         ForgeRegistries.BLOCKS.registerAll(DarwinsNaturaBlocks.BLOCKS.toArray(new Block[DarwinsNaturaBlocks.BLOCKS.size()]));

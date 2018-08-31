@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "darwin:blocks/volcanic_rock"
+    }
+}
