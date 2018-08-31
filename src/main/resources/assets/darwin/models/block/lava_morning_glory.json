@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "darwin:blocks/lava_morning_glory"
+    }
+}

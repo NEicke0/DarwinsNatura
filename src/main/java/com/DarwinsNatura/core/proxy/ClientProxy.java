@@ -1,6 +1,6 @@
 package com.DarwinsNatura.core.proxy;
 
-import com.DarwinsNatura.common.blocks.BlockLeavesBase;
+import com.DarwinsNatura.common.blocks.BlockLeavesScalesia;
 import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.EntityGalapagosPenguin;
 import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.RenderGalapagosPenguin;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
@@ -25,7 +25,7 @@ public class ClientProxy extends CommonProxy {
 	}
 	
     @Override
-    public void setGraphicsLevel(BlockLeavesBase parBlock, boolean parFancyEnabled)
+    public void setGraphicsLevel(BlockLeavesScalesia parBlock, boolean parFancyEnabled)
     {
         parBlock.setGraphicsLevel(parFancyEnabled);
     }

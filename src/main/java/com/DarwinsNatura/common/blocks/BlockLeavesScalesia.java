@@ -23,9 +23,9 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
-public class BlockLeavesBase extends BlockLeaves {
+public class BlockLeavesScalesia extends BlockLeaves {
 
-    public BlockLeavesBase(String name) {
+    public BlockLeavesScalesia(String name) {
         super();
         this.setUnlocalizedName(name);
         this.setRegistryName(name);

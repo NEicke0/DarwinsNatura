@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "darwin:blocks/lava_morning_glory"
+    }
+}

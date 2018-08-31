@@ -3,16 +3,21 @@ package com.DarwinsNatura.common.world.biomes.Galapagos;
 import java.util.Random;
 
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
+import com.DarwinsNatura.common.world.gen.trees.WorldGenTreesGalapagosFern;
 import com.DarwinsNatura.common.world.gen.trees.WorldGenTreesScalesia;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class BiomeGalapagos extends Biome {
 
 	private static final WorldGenTreesScalesia TREE = new WorldGenTreesScalesia(false);
+	private static final WorldGenTreesGalapagosFern TREE2 = new WorldGenTreesGalapagosFern(false, false);
 
 	public BiomeGalapagos() {
 		super(new BiomeProperties("Galapagos_Islands").setTemperature(0.8F).setRainfall(0.6F).setBaseHeight(0.5f)
@@ -35,10 +40,14 @@ public class BiomeGalapagos extends Biome {
 
 	@Override
 	public WorldGenAbstractTree getRandomTreeFeature(Random rand) 
-	{
-		return TREE;
+	{		
+		if(rand.nextInt(2)==1) {
+			return TREE;
+		}
+		else {
+			return TREE2;
+		}
 	}
-
 
 	@Override
 	public int getGrassColorAtPos(BlockPos pos) {

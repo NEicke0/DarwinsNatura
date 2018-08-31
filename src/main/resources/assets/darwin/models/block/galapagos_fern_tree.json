@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "darwin:blocks/galapagos_fern_tree"
+    }
+}

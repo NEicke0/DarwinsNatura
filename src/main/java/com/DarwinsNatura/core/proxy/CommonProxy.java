@@ -1,6 +1,6 @@
 package com.DarwinsNatura.core.proxy;
 
-import com.DarwinsNatura.common.blocks.BlockLeavesBase;
+import com.DarwinsNatura.common.blocks.BlockLeavesScalesia;
 import com.DarwinsNatura.common.init.DarwinsNaturaBiomes;
 import com.DarwinsNatura.common.init.DarwinsNaturaEntities;
 import com.DarwinsNatura.common.util.handlers.SoundHandler;
@@ -16,5 +16,5 @@ public class CommonProxy
 	}
 	
 	public void registerRenders(){}
-	public void setGraphicsLevel(BlockLeavesBase blockLeaves, boolean b){}
+	public void setGraphicsLevel(BlockLeavesScalesia blockLeaves, boolean b){}
 }
