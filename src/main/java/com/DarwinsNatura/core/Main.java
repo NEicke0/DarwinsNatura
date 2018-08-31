@@ -44,6 +44,7 @@ public class Main {
 	@EventHandler
 	public static void init(FMLInitializationEvent event) {
 		RegistryHandler.initRegistries();
+		System.out.println("New Exploration Awaits....");
 	}
 
 	@EventHandler
