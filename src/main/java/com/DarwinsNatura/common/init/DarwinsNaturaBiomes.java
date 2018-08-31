@@ -1,5 +1,6 @@
 package com.DarwinsNatura.common.init;
 
+import com.DarwinsNatura.common.world.biomes.Galapagos.BiomeBaseGalapagos;
 import com.DarwinsNatura.common.world.biomes.Galapagos.BiomeGalapagos;
 import com.DarwinsNatura.common.world.biomes.Galapagos.BiomeGalapagosBeach;
 
@@ -13,7 +14,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 public class DarwinsNaturaBiomes 
 {
 	public static final Biome GALAPAGOS = new BiomeGalapagos();
-	public static final Biome GALAPAGOS_BEACH = new BiomeGalapagosBeach();
+	public static final BiomeBaseGalapagos GALAPAGOS_BEACH = new BiomeGalapagosBeach();
 
 	public static void registerBiomes()
 	{

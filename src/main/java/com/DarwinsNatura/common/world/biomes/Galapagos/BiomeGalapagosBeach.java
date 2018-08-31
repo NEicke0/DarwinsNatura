@@ -7,7 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 
-public class BiomeGalapagosBeach extends Biome
+public class BiomeGalapagosBeach extends BiomeBaseGalapagos
 {
 
 	public BiomeGalapagosBeach() {
