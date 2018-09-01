@@ -71,7 +71,7 @@ public class BiomeGalapagos extends BiomeBaseGalapagos{
 	@Override
     public void decorate(World worldIn, Random rand, BlockPos pos) {
         this.addBushes(worldIn, rand, pos);
-        this.addRocks(worldIn, rand, pos);
+        //this.addRocks(worldIn, rand, pos);
        
         if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.FLOWERS)) { // no tab for patch
             int i = rand.nextInt(5) - 3;
@@ -94,7 +94,7 @@ public class BiomeGalapagos extends BiomeBaseGalapagos{
                 if (p_185379_2_.nextInt(20) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.TREE)) {
                     WorldGenBushGalapagos LAVA_GLORY_GEN = new WorldGenBushGalapagos(DarwinsNaturaBlocks.LAVA_MORNING_GLORY);
                     WorldGenBushGalapagos MICONIA_GEN = new WorldGenBushGalapagos(DarwinsNaturaBlocks.MICONIA_SHRUB);
-                    LAVA_GLORY_GEN.generate(p_185379_1_, p_185379_2_, blockpos);
+                    //LAVA_GLORY_GEN.generate(p_185379_1_, p_185379_2_, blockpos);
                     MICONIA_GEN.generate(p_185379_1_, p_185379_2_, blockpos2);
                     
                 } else {
