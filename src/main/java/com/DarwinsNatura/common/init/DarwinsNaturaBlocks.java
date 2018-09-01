@@ -7,6 +7,7 @@ import com.DarwinsNatura.common.blocks.BlockGalapagosFernTree;
 import com.DarwinsNatura.common.blocks.BlockLavaMorningGlory;
 import com.DarwinsNatura.common.blocks.BlockLeavesScalesia;
 import com.DarwinsNatura.common.blocks.BlockLogBase;
+import com.DarwinsNatura.common.blocks.BlockPlanksBase;
 import com.DarwinsNatura.common.blocks.BlockPlantBase;
 import com.DarwinsNatura.common.blocks.BlockSaplingScalesia;
 import com.DarwinsNatura.common.blocks.BlockVolcanicRock;
@@ -27,6 +28,7 @@ public class DarwinsNaturaBlocks {
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	  
 	public static final BlockLog SCALESIA_LOG = new BlockLogBase("scalesia_log");
+	public static final Block SCALESIA_PLANK = new BlockPlanksBase("scalesia_plank");
 	public static final BlockLeaves SCALESIA_LEAVES = new BlockLeavesScalesia("scalesia_leaves");
 	public static final BlockBush SCALESIA_SAPLING = new BlockSaplingScalesia("scalesia_sapling");
 	public static final BlockBush MICONIA_SHRUB = new BlockPlantBase("miconia_shrub");
