@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top",
+    "textures": {
+       "bottom": "darwin:blocks/scalesia_door_bottom",
+        "top": "darwin:blocks/scalesia_door_top"
+    }
+}
