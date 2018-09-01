@@ -9,7 +9,7 @@ import net.minecraft.world.gen.layer.GenLayerZoom;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.WorldTypeEvent;
 
-public abstract class GenLayerGalapagosBase extends GenLayer {
+/*public abstract class GenLayerGalapagosBase extends GenLayer {
 
 	protected GenLayer parent;
 
@@ -44,3 +44,4 @@ public abstract class GenLayerGalapagosBase extends GenLayer {
 	}
 
 }
+*/

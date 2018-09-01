@@ -10,38 +10,45 @@ import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerGalapagosShore extends GenLayer {
-	public GenLayerGalapagosShore(long seed, GenLayer p_i2130_3_) {
-		super(seed);
-		this.parent = p_i2130_3_;
+	
+	 public GenLayerGalapagosShore(long seed, GenLayer p_i2130_3_) {
+	        super(seed);
+	        this.parent = p_i2130_3_;
+	    }
+
+	    @Override
+	    public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight) {
+	        int parentWidth = areaWidth + 2;
+	        int parentHeight = areaHeight + 2;
+
+	        int[] parent = this.parent.getInts(areaX - 1, areaY - 1, parentWidth, parentHeight);
+	        int[] result = IntCache.getIntCache(areaWidth * areaHeight);
+
+	        for (int localY = 0; localY < areaHeight; ++localY) {
+	            for (int localX = 0; localX < areaWidth; ++localX) {
+	                this.initChunkSeed((long) (localX + areaX), (long) (localY + areaY));
+
+	                int parentX = localX + 1;
+	                int parentY = localY + 1;
+	                int sampled = parent[parentX + parentY * parentWidth];
+
+	                if (sampled == Biome.getIdForBiome(DarwinsNaturaBiomes.GALAPAGOS)) {
+	                    int up = parent[parentX + (parentY - 1) * parentWidth];
+	                    int right = parent[parentX + 1 + parentY * parentWidth];
+	                    int left = parent[parentX - 1 + parentY * parentWidth];
+	                    int down = parent[parentX + (parentY + 1) * parentWidth];
+
+	                    if (isBiomeOceanic(up) || isBiomeOceanic(down) || isBiomeOceanic(right) || isBiomeOceanic(left)) {
+	                        result[localX + localY * areaWidth] = Biome.getIdForBiome(DarwinsNaturaBiomes.GALAPAGOS_BEACH);
+	                    } else {
+	                        result[localX + localY * areaWidth] = sampled;
+	                    }
+	                } else {
+	                    result[localX + localY * areaWidth] = sampled;
+	                }
+	            }
+	        }
+
+	        return result;
+	    }
 	}
-
-	@Override
-	public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight) {
-		int[] aint = this.parent.getInts(areaX - 1, areaY - 1, areaWidth + 2, areaHeight + 2);
-		int[] aint1 = IntCache.getIntCache(areaWidth * areaHeight);
-
-		for (int i = 0; i < areaHeight; ++i) {
-			for (int j = 0; j < areaWidth; ++j) {
-				this.initChunkSeed((long) (j + areaX), (long) (i + areaY));
-				int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
-				Biome biome = Biome.getBiome(k);
-
-				if (k == Biome.getIdForBiome(DarwinsNaturaBiomes.GALAPAGOS)) {
-					int j2 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
-					int i3 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
-					int l3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
-					int k4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
-
-					if (j2 != Biome.getIdForBiome(Biomes.OCEAN) && i3 != Biome.getIdForBiome(Biomes.OCEAN)
-							&& l3 != Biome.getIdForBiome(Biomes.OCEAN) && k4 != Biome.getIdForBiome(Biomes.OCEAN)) {
-						aint1[j + i * areaWidth] = k;
-					} else {
-						aint1[j + i * areaWidth] = Biome.getIdForBiome(DarwinsNaturaBiomes.GALAPAGOS_BEACH);
-					}
-				}
-			}
-		}
-
-		return aint1;
-	}
-}

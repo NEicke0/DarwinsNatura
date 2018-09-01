@@ -6,7 +6,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class GenLayerSubBiomes extends GenLayerGalapagosBase{
+/*public class GenLayerSubBiomes extends GenLayerGalapagosBase{
 	
 	private static final byte[] offsetX = new byte[] { 0, 1, -1, 0, 0 }, offsetZ = new byte[] { 0, 0, 0, 1, -1 };
 
@@ -58,3 +58,4 @@ public class GenLayerSubBiomes extends GenLayerGalapagosBase{
 	}
 
 }
+*/

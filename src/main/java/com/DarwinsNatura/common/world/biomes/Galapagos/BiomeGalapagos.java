@@ -19,7 +19,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvider{
+public class BiomeGalapagos extends BiomeBaseGalapagos{
 	
 	private static final WorldGenTreesScalesia TREE = new WorldGenTreesScalesia(false);
 	private static final WorldGenTreesGalapagosFern TREE2 = new WorldGenTreesGalapagosFern(false, false);
@@ -135,18 +135,5 @@ public class BiomeGalapagos extends BiomeBaseGalapagos implements IWeightProvide
         }
         }
     }
-	
-	@Override
-	public BiomeBaseGalapagos getRandomSubBiome(int randomValue) {
-		return randomValue < 12 ? DarwinsNaturaBiomes.GALAPAGOS_BEACH : null;
-	}
-
-	public static class BiomeGalapogosBeach extends BiomeBaseGalapagos {
-		public BiomeGalapogosBeach(BiomeProperties properties) {
-			super(properties);
-
-			properties.setBaseBiome("Galapagos Beach");
-		}
-	}
 	
 }
