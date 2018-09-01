@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import com.DarwinsNatura.common.blocks.item.ItemBlockLillyPad;
+import com.DarwinsNatura.common.blocks.item.ItemBlockLilyPad;
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.init.DarwinsNaturaItems;
 import com.DarwinsNatura.core.Main;
@@ -25,18 +25,21 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockLillyPadBase extends BlockLilyPad
+/*
+ * @Author SmellyModder
+ */
+public class BlockLilyPadBase extends BlockBush
 {
     protected static final AxisAlignedBB LILY_PAD_AABB = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.09375D, 0.9375D);
 
-    public BlockLillyPadBase(String name)
+    public BlockLilyPadBase(String name)
     {
     	this.setUnlocalizedName(name);
         this.setRegistryName(name);
         this.setCreativeTab(Main.AMERICAS);
         
         DarwinsNaturaBlocks.BLOCKS.add(this);
-        DarwinsNaturaItems.ITEMS.add(new ItemLilyPad(this).setRegistryName(this.getRegistryName()));
+        DarwinsNaturaItems.ITEMS.add(new ItemBlockLilyPad(this).setRegistryName(this.getRegistryName()));
     }
 
     public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState)
@@ -87,6 +90,14 @@ public class BlockLillyPadBase extends BlockLilyPad
         {
             return false;
         }
+    }
+    
+    @Override
+    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+    {
+        IBlockState iblockstate = worldIn.getBlockState(pos.down());
+       if( iblockstate.getBlock() != Blocks.WATER || iblockstate.getBlock() != Blocks.ICE);
+    return false;
     }
 
     /**

@@ -12,10 +12,10 @@ import com.DarwinsNatura.common.blocks.BlockPlanksBase;
 import com.DarwinsNatura.common.blocks.BlockPlantBase;
 import com.DarwinsNatura.common.blocks.BlockSaplingScalesia;
 import com.DarwinsNatura.common.blocks.BlockVolcanicRock;
-import com.DarwinsNatura.common.blocks.common.BlockLillyPadBase;
+import com.DarwinsNatura.common.blocks.common.BlockLilyPadBase;
 import com.DarwinsNatura.common.blocks.common.BlockSandBase;
 import com.DarwinsNatura.common.blocks.item.ItemBlockDoor;
-import com.DarwinsNatura.common.blocks.item.ItemBlockLillyPad;
+import com.DarwinsNatura.common.blocks.item.ItemBlockLilyPad;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
@@ -49,8 +49,8 @@ public class DarwinsNaturaBlocks {
 	 */
 	public static final BlockFalling WHITE_SAND = new BlockSandBase("white_sand");
 	public static final BlockFalling BLACK_SAND = new BlockSandBase("black_sand");
-	public static final BlockLillyPadBase LILLY_PAD = new BlockLillyPadBase("lilly_pad");
-	public static final ItemBlockLillyPad LILLY_PAD_ITEM = new ItemBlockLillyPad(LILLY_PAD);
+	public static final BlockLilyPadBase LILLY_PAD = new BlockLilyPadBase("lily_pad");
+	public static final ItemBlockLilyPad LILLY_PAD_ITEM = new ItemBlockLilyPad(LILLY_PAD);
 	
     public static void registerBlocks() {
         ForgeRegistries.BLOCKS.registerAll(DarwinsNaturaBlocks.BLOCKS.toArray(new Block[DarwinsNaturaBlocks.BLOCKS.size()]));

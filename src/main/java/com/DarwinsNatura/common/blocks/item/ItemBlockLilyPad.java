@@ -23,9 +23,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class ItemBlockLillyPad extends ItemColored
+/**
+ * 
+ * @author SmellyModder
+ *
+ */
+
+public class ItemBlockLilyPad extends ItemColored
 {
-    public ItemBlockLillyPad(Block block)
+    public ItemBlockLilyPad(Block block)
     {
         super(block, false);
     }
