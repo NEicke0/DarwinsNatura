@@ -99,6 +99,8 @@ public class WorldGenTreesGalapagosFern extends WorldGenAbstractTree
 
                                 if (Math.abs(j1) != l2 || Math.abs(l1) != l2 || rand.nextInt(2) != 0 && k2 != 0)
                                 {
+                                	
+                                	
                                     BlockPos blockpos = new BlockPos(i3, i2, k1);
                                     IBlockState state2 = worldIn.getBlockState(blockpos);
 

@@ -27,6 +27,7 @@ public class BlockGalapagosFernTree extends BlockBush{
         return true;
     }
     
+    @Override
     protected boolean canSustainBush(IBlockState state)
     {
         return state.getBlock() == Blocks.GRASS || state.getBlock() == DarwinsNaturaBlocks.GALAPAGOS_FERN_TREE_PART || state.getBlock() == Blocks.DIRT || state.getBlock() == Blocks.FARMLAND;
