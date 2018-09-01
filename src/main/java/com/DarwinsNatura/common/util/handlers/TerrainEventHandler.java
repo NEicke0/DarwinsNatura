@@ -1,10 +1,14 @@
 package com.DarwinsNatura.common.util.handlers;
  
+import com.DarwinsNatura.common.world.gen.layers.GenLayerCustomShore;
 import com.DarwinsNatura.common.world.gen.layers.GenLayerGalapagos;
 import com.DarwinsNatura.common.world.gen.layers.GenLayerGalapagosShore;
 import com.google.common.collect.Lists;
 import net.minecraft.world.gen.layer.GenLayer;
+import net.minecraft.world.gen.layer.GenLayerAddIsland;
 import net.minecraft.world.gen.layer.GenLayerBiome;
+import net.minecraft.world.gen.layer.GenLayerEdge;
+import net.minecraft.world.gen.layer.GenLayerIsland;
 import net.minecraft.world.gen.layer.GenLayerShore;
 import net.minecraftforge.event.terraingen.WorldTypeEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -29,7 +33,7 @@ public class TerrainEventHandler {
     public static void onInitBiomeGens(WorldTypeEvent.InitBiomeGens event) {
         GenLayer root = event.getNewBiomeGens()[0];
         insertAfterLast(root, l -> l instanceof GenLayerBiome, p -> new GenLayerGalapagos(3000L, p));
-        insertAfterLast(root, l -> l instanceof GenLayerShore, p -> new GenLayerGalapagosShore(6000L, p));
+        insertAfterLast(root, l -> l instanceof GenLayerAddIsland, p -> new GenLayerGalapagosShore(6000L, p));
     }
  
     public static void insertLayer(GenLayer root, Predicate<GenLayer> predicate, int index, Function<GenLayer, GenLayer> insert) {
