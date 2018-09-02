@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.DarwinsNatura.common.entities.EntityGender;
 import com.DarwinsNatura.common.entities.ai.EntityAIEatWheat;
+import com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk.EntityGalapagosHawk;
 import com.google.common.collect.Sets;
 
 import net.minecraft.entity.EntityAgeable;
@@ -87,10 +88,12 @@ public class EntityRodentBase extends EntityGender {
 		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityVillager.class, 6.0F));
 		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityWolf.class, 6.0F));
 		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityOcelot.class, 6.0F));
-		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityPlayer>(this, EntityPlayer.class, 10.0F, 0.30D, 0.30D));
-		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityVillager>(this, EntityVillager.class, 10.0F, 0.30D, 0.30D));
-		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityWolf>(this, EntityWolf.class, 10.0F, 0.30D, 0.30D));
-		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityOcelot>(this, EntityOcelot.class, 10.0F, 0.30D, 0.30D));
+		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityPlayer>(this, EntityPlayer.class, 10.0F, 1D, 1D));
+		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityVillager>(this, EntityVillager.class, 10.0F, 1D, 1D));
+		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityWolf>(this, EntityWolf.class, 10.0F, 1D, 1D));
+		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityOcelot>(this, EntityOcelot.class, 10.0F, 1D, 1D));
+		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityOcelot>(this, EntityOcelot.class, 10.0F, 1D, 1D));
+		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityGalapagosHawk>(this, EntityGalapagosHawk.class, 6.0F, 1D, 1D));
 		this.tasks.addTask(4, new EntityAIOpenDoor(this, true));
 		this.tasks.addTask(8, new EntityAITempt(this, 1.0D, false, TEMPTATION_ITEMS));
 		this.tasks.addTask(4, new EntityAIMoveIndoors(this));

@@ -626,14 +626,25 @@ public class ModelGalapagosHawkFlying extends ModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
-        GlStateManager.pushMatrix();
-        GlStateManager.translate(this.Body.offsetX, this.Body.offsetY, this.Body.offsetZ);
-        GlStateManager.translate(this.Body.rotationPointX * f5, this.Body.rotationPointY * f5, this.Body.rotationPointZ * f5);
-        GlStateManager.scale(1.1D, 1.0D, 1.0D);
-        GlStateManager.translate(-this.Body.offsetX, -this.Body.offsetY, -this.Body.offsetZ);
-        GlStateManager.translate(-this.Body.rotationPointX * f5, -this.Body.rotationPointY * f5, -this.Body.rotationPointZ * f5);
-        this.Body.render(f5);
-        GlStateManager.popMatrix();
+    	setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+    	if(this.isChild) {
+    		float scaleFactor= 0.35F;
+    	    	
+    	    GlStateManager.pushMatrix();
+    	    GlStateManager.translate(0F, 1.25-1.25F*scaleFactor, 0); 
+    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+    	    this.Body.render(f5);
+    	    GlStateManager.popMatrix();
+    	}
+    	else {
+            float scaleFactor= 0.5F;
+    	
+    	    GlStateManager.pushMatrix();
+    	    GlStateManager.translate(0F, 0.92F-0.92F*scaleFactor, -0.05F); 
+    	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
+            this.Body.render(f5);
+            GlStateManager.popMatrix();
+    	}
     }
 
     /**

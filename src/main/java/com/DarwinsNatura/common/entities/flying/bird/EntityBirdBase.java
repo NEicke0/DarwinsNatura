@@ -18,7 +18,7 @@ public class EntityBirdBase extends EntityGender{
 	  public boolean stand = false;
 	  private int sitNum;
 	  private int standNum;
-	  protected int chanceOfLanding = 150;
+	  protected int chanceOfLanding = 250;
 	
 	public EntityBirdBase(World worldIn) {
         super(worldIn);
@@ -26,7 +26,6 @@ public class EntityBirdBase extends EntityGender{
 	
 	public boolean getWaterBelow(World world, int x, int z){
 	    int y = 255;
-	    boolean foundGround = false;
 	    while (y-- >= 0)
 	    {
 	      IBlockState blockAt = world.getBlockState(new BlockPos(x, y, z));

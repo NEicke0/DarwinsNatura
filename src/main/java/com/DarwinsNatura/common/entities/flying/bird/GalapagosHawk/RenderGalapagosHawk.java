@@ -1,6 +1,6 @@
 package com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk;
 
-import com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk.layer.LayerFlying;
+import com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk.layer.LayerGalapagosHawk;
 import com.DarwinsNatura.core.Reference;
 
 import net.minecraft.client.renderer.GlStateManager;
@@ -18,7 +18,7 @@ public class RenderGalapagosHawk extends RenderLiving<EntityGalapagosHawk> {
 
 	public RenderGalapagosHawk(RenderManager manager) {
 		super(manager, new ModelGalapagosHawkFlying(), 0.3F);
-		this.addLayer(new LayerFlying(this));
+		this.addLayer(new LayerGalapagosHawk(this));
 	}
 	
 	protected void preRenderCallback(EntityGalapagosHawk entitylivingbaseIn, float partialTickTime)
@@ -35,7 +35,7 @@ public class RenderGalapagosHawk extends RenderLiving<EntityGalapagosHawk> {
 	@Override
 	protected ResourceLocation getEntityTexture(EntityGalapagosHawk entity) {
 		{
-			if (!entity.isInWater() && !entity.onGround)
+			if ((!entity.isInWater() && !entity.onGround) || entity.isHunting())
 				return NOTHING;
 			else
 				return TEXTURES;
