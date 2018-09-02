@@ -2,10 +2,9 @@ package com.DarwinsNatura.common.world.biomes.Galapagos;
 
 import java.util.Random;
 
+import com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk.EntityGalapagosHawk;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
-import com.DarwinsNatura.common.init.DarwinsNaturaBiomes;
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
-import com.DarwinsNatura.common.world.gen.layers.IWeightProvider;
 import com.DarwinsNatura.common.world.gen.plants.WorldGenBushGalapagos;
 import com.DarwinsNatura.common.world.gen.rocks.WorldGenGalapagosRocks;
 import com.DarwinsNatura.common.world.gen.trees.WorldGenTreesGalapagosFern;
@@ -16,8 +15,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
-import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class BiomeGalapagos extends Biome{
 	
@@ -44,6 +41,7 @@ public class BiomeGalapagos extends Biome{
 		this.decorator.sandPatchesPerChunk = 2;
 		
 		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosRiceRat.class, 30, 2, 4));
+		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosHawk.class, 30, 1, 2));
 	}
 
 	@Override
