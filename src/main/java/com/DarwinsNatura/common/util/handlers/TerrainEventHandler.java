@@ -33,9 +33,9 @@ public class TerrainEventHandler {
     public static void onInitBiomeGens(WorldTypeEvent.InitBiomeGens event) {
         GenLayer root = event.getNewBiomeGens()[0];
         insertAfterLast(root, l -> l instanceof GenLayerBiome, p -> new GenLayerGalapagos(3000L, p));
-        insertAfterLast(root, l -> l instanceof GenLayerAddIsland, p -> new GenLayerGalapagosShore(6000L, p));
+        insertAfterLast(root, l -> l instanceof GenLayerShore, p -> new GenLayerGalapagosShore(6000L, p));
     }
- 
+    
     public static void insertLayer(GenLayer root, Predicate<GenLayer> predicate, int index, Function<GenLayer, GenLayer> insert) {
         List<GenLayer> layerStack = buildLayerStack(root, predicate);
         GenLayer target = layerStack.get(index);

@@ -19,7 +19,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-public class BiomeGalapagos extends BiomeBaseGalapagos{
+public class BiomeGalapagos extends Biome{
 	
 	private static final WorldGenTreesScalesia TREE = new WorldGenTreesScalesia(false);
 	private static final WorldGenTreesGalapagosFern TREE2 = new WorldGenTreesGalapagosFern(false, false);

@@ -3,27 +3,23 @@ package com.DarwinsNatura.common.world.biomes.Galapagos;
 import java.util.Random;
 
 import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.EntityGalapagosPenguin;
-import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.world.gen.SandPatches;
 import com.DarwinsNatura.common.world.gen.plants.WorldGenBushGalapagos;
 import com.DarwinsNatura.common.world.gen.rocks.WorldGenGalapagosRocks;
 
-import net.minecraft.block.BlockDirt;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeTaiga;
-import net.minecraft.world.biome.Biome.BiomeProperties;
-import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BiomeGalapagosBeach extends BiomeBaseGalapagos
+public class BiomeGalapagosBeach extends Biome
 {
-
+	
 	public BiomeGalapagosBeach() {
-		super(new BiomeProperties("Galapagos_Beach").setTemperature(0.8F).setRainfall(0F).setBaseHeight(0.5f)
-				.setHeightVariation(0f));
+		super(new BiomeProperties("Galapagos_Beach").setTemperature(0.8F).setRainfall(0F).setBaseHeight(0.11f)
+				.setHeightVariation(0f).setWaterColor(0x00FF58));
 
     
        
@@ -105,4 +101,22 @@ public class BiomeGalapagosBeach extends BiomeBaseGalapagos
             }
         }
     }
+	
+	@SideOnly(Side.CLIENT)
+	@Override
+	public int getGrassColorAtPos(BlockPos pos) {
+		return 0x99ff00;
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public int getFoliageColorAtPos(BlockPos pos) {
+		return 0x99ff00;
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public int getSkyColorByTemp(float currentTemperature) {
+		return 0x66ccff;
+	}
 }
