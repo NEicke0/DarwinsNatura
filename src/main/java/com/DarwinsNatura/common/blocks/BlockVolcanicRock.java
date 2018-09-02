@@ -68,7 +68,7 @@ public class BlockVolcanicRock extends Block{
 	        {
 	            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, (double)((float)pos.getX() + rand.nextFloat()), (double)((float)pos.getY() + 1.1F), (double)((float)pos.getZ() + rand.nextFloat()), 0.0D, 0.0D, 0.0D);
 	        }
-	    }
+	        }
 	 
 	 @Override
 	 public int tickRate(World world) {
@@ -86,7 +86,10 @@ public class BlockVolcanicRock extends Block{
 
 	            if (worldIn instanceof WorldServer)
 	            {
-	                ((WorldServer)worldIn).spawnParticle(EnumParticleTypes.SMOKE_LARGE, (double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.25D, (double)blockpos.getZ() + 0.5D, 8, 0.5D, 0.25D, 0.5D, 0.0D);
+	            	if(rand.nextInt(2)==1) {
+	            		((WorldServer)worldIn).spawnParticle(EnumParticleTypes.SMOKE_LARGE, (double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.25D, (double)blockpos.getZ() + 0.5D, 8, 0.5D, 0.25D, 0.5D, 0.0D);
+	            	}
+	            	
 	            }
 	        }
 	    }

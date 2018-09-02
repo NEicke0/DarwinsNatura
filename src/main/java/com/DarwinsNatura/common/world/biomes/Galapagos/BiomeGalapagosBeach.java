@@ -7,15 +7,20 @@ import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.world.gen.SandPatches;
 import com.DarwinsNatura.common.world.gen.plants.WorldGenBushGalapagos;
 import com.DarwinsNatura.common.world.gen.rocks.WorldGenGalapagosRocks;
+import com.DarwinsNatura.common.world.gen.rocks.WorldGenGalapagosShoreRocks;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.WorldGenIceSpike;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BiomeGalapagosBeach extends Biome
 {
+	
+	private final WorldGenGalapagosShoreRocks rockSpike = new WorldGenGalapagosShoreRocks(DarwinsNaturaBlocks.VOLCANIC_ROCK, 1);
 	
 	public BiomeGalapagosBeach() {
 		super(new BiomeProperties("Galapagos_Beach").setTemperature(0.8F).setRainfall(0F).setBaseHeight(0.11f)
@@ -45,57 +50,61 @@ public class BiomeGalapagosBeach extends Biome
             i += 2;
             //this.addDoublePlants(worldIn, rand, pos, i);
         }
+        
         super.decorate(worldIn, rand, pos);
     }
 	
-	public void addRocks(World p_185379_1_, Random p_185379_2_, BlockPos p_185379_3_) {
+	public void addRocks(World p_185379_1_, Random rand, BlockPos p_185379_3_) {
 		
 		for (int i = 0; i < 4; ++i) {
             for (int j = 0; j < 4; ++j) {
-                int k = i * 4 + 1 + 8 + p_185379_2_.nextInt(3);
-                int l = j * 4 + 1 + 8 + p_185379_2_.nextInt(3);
-                BlockPos blockpos = p_185379_1_.getHeight(p_185379_3_.add(k, 0, l));
+                int k = i * 4 + 1 + 8 + rand.nextInt(3);
+                int l = j * 4 + 1 + 8 + rand.nextInt(3);
+                BlockPos blockpos = p_185379_1_.getHeight(p_185379_3_.add(k, -11, l));
                 BlockPos blockpos2 = p_185379_1_.getHeight(p_185379_3_.add(k, -2, l));
-                if (p_185379_2_.nextInt(5) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK)) {
+                if (rand.nextInt(5) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, rand, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK)) {
                 	WorldGenGalapagosRocks ROCK_GEN = new WorldGenGalapagosRocks(DarwinsNaturaBlocks.VOLCANIC_ROCK, 0);
-                	ROCK_GEN.generate(p_185379_1_, p_185379_2_, blockpos2);
+                	ROCK_GEN.generate(p_185379_1_, rand, blockpos2);
+                }
+                if(rand.nextInt(4) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, rand, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.CUSTOM)) {
+                	rockSpike.generate(p_185379_1_, rand, blockpos);
                 }
             }
 		}
 	}
 	
-	public void sandPatches(World p_185379_1_, Random p_185379_2_, BlockPos p_185379_3_) {
+	public void sandPatches(World p_185379_1_, Random rand, BlockPos p_185379_3_) {
 		
 		for (int i = 0; i < 4; ++i) {
             for (int j = 0; j < 4; ++j) {
-                int k = i * 4 + 1 + 8 + p_185379_2_.nextInt(3);
-                int l = j * 4 + 1 + 8 + p_185379_2_.nextInt(3);
+                int k = i * 4 + 1 + 8 + rand.nextInt(3);
+                int l = j * 4 + 1 + 8 + rand.nextInt(3);
                 BlockPos blockpos = p_185379_1_.getHeight(p_185379_3_.add(k, 0, l));
                 BlockPos blockpos2 = p_185379_1_.getHeight(p_185379_3_.add(k, -2, l));
-                if (p_185379_2_.nextInt(1) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.CLAY)) {
+                if (rand.nextInt(1) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, rand, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.CLAY)) {
                 	SandPatches SAND_PATCH = new SandPatches(DarwinsNaturaBlocks.WHITE_SAND, 23);
-                	SAND_PATCH.generate(p_185379_1_, p_185379_2_, blockpos2);
+                	SAND_PATCH.generate(p_185379_1_, rand, blockpos2);
                 }
             }
 		}
 	}
 	
-	public void addBushes(World p_185379_1_, Random p_185379_2_, BlockPos p_185379_3_) {
+	public void addBushes(World p_185379_1_, Random rand, BlockPos p_185379_3_) {
 
         for (int i = 0; i < 4; ++i) {
             for (int j = 0; j < 4; ++j) {
-                int k = i * 4 + 1 + 8 + p_185379_2_.nextInt(3);
-                int l = j * 4 + 1 + 8 + p_185379_2_.nextInt(3);
+                int k = i * 4 + 1 + 8 + rand.nextInt(3);
+                int l = j * 4 + 1 + 8 + rand.nextInt(3);
                 BlockPos blockpos = p_185379_1_.getHeight(p_185379_3_.add(k, 0, l));
                 BlockPos blockpos2 = p_185379_1_.getHeight(p_185379_3_.add(k, -2, l));
 
-                if (p_185379_2_.nextInt(20) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.TREE)) {
+                if (rand.nextInt(20) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, rand, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.TREE)) {
                     WorldGenBushGalapagos LAVA_GLORY_GEN = new WorldGenBushGalapagos(DarwinsNaturaBlocks.LAVA_MORNING_GLORY);
-                    LAVA_GLORY_GEN.generate(p_185379_1_, p_185379_2_, blockpos);
+                    LAVA_GLORY_GEN.generate(p_185379_1_, rand, blockpos);
                     
                 } else {
                 	
-                    //addWorldgenBase(p_185379_1_, p_185379_2_, p_185379_3_, blockpos, p_185379_2_);
+                    //addWorldgenBase(p_185379_1_, rand, p_185379_3_, blockpos, rand);
                     
                 }
             }
