@@ -24,7 +24,7 @@ public class BiomeGalapagos extends Biome{
 
 	public BiomeGalapagos() {
 		super(new BiomeProperties("Galapagos_Islands").setTemperature(0.8F).setRainfall(0.6F).setBaseHeight(0.5f)
-				.setHeightVariation(0f).setWaterColor(0x00ccfc));
+				.setHeightVariation(0f).setWaterColor(0x00FF99));
 
 		topBlock = Blocks.GRASS.getDefaultState();
 		fillerBlock = Blocks.DIRT.getDefaultState();
@@ -40,7 +40,7 @@ public class BiomeGalapagos extends Biome{
 		this.decorator.mushroomsPerChunk = -999;
 		this.decorator.sandPatchesPerChunk = 2;
 		
-		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosRiceRat.class, 30, 2, 4));
+		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosRiceRat.class, 21, 2, 4));
 		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosHawk.class, 30, 1, 2));
 	}
 
