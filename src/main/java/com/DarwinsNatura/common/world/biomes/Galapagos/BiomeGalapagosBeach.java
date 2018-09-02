@@ -19,7 +19,7 @@ public class BiomeGalapagosBeach extends Biome
 	
 	public BiomeGalapagosBeach() {
 		super(new BiomeProperties("Galapagos_Beach").setTemperature(0.8F).setRainfall(0F).setBaseHeight(0.11f)
-				.setHeightVariation(0f).setWaterColor(0x00FF58));
+				.setHeightVariation(0f).setWaterColor(0x00FF99));
 
     
        
