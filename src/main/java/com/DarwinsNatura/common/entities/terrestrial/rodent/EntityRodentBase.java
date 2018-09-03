@@ -19,17 +19,12 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -40,11 +35,9 @@ public class EntityRodentBase extends EntityGender {
 			Items.PUMPKIN_SEEDS, Items.BEETROOT_SEEDS, Items.BREAD, Items.EGG, Items.CHICKEN, Items.COOKED_CHICKEN);
 	private static final DataParameter<Byte> CLIMBING = EntityDataManager.<Byte>createKey(EntityRodentBase.class,
 			DataSerializers.BYTE);
-	private final InventoryBasic rodentInventory;
-
+	
 	public EntityRodentBase(World worldIn) {
 		super(worldIn);
-		this.rodentInventory = new InventoryBasic("Items", false, 8);
 	}
 
 	@Override
@@ -63,21 +56,6 @@ public class EntityRodentBase extends EntityGender {
 		this.dataManager.register(CLIMBING, Byte.valueOf((byte) 0));
 	}
 
-	public void writeEntityToNBT(NBTTagCompound compound) {
-		super.writeEntityToNBT(compound);
-		NBTTagList nbttaglist = new NBTTagList();
-
-		for (int i = 0; i < this.rodentInventory.getSizeInventory(); ++i) {
-			ItemStack itemstack = this.rodentInventory.getStackInSlot(i);
-
-			if (!itemstack.isEmpty()) {
-				nbttaglist.appendTag(itemstack.writeToNBT(new NBTTagCompound()));
-			}
-		}
-
-		compound.setTag("Inventory", nbttaglist);
-	}
-
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIPanic(this, 1.3D));
@@ -93,7 +71,7 @@ public class EntityRodentBase extends EntityGender {
 		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityWolf>(this, EntityWolf.class, 10.0F, 1D, 1D));
 		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityOcelot>(this, EntityOcelot.class, 10.0F, 1D, 1D));
 		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityOcelot>(this, EntityOcelot.class, 10.0F, 1D, 1D));
-		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityGalapagosHawk>(this, EntityGalapagosHawk.class, 6.0F, 1D, 1D));
+		this.tasks.addTask(0, new EntityAIAvoidEntity<EntityGalapagosHawk>(this, EntityGalapagosHawk.class, 4.0F, 1D, 1D));
 		this.tasks.addTask(4, new EntityAIOpenDoor(this, true));
 		this.tasks.addTask(8, new EntityAITempt(this, 1.0D, false, TEMPTATION_ITEMS));
 		this.tasks.addTask(4, new EntityAIMoveIndoors(this));
@@ -129,27 +107,6 @@ public class EntityRodentBase extends EntityGender {
 		}
 
 		this.dataManager.set(CLIMBING, Byte.valueOf(b0));
-	}
-
-	protected void updateEquipmentIfNeeded(EntityItem itemEntity) {
-		ItemStack itemstack = itemEntity.getItem();
-		Item item = itemstack.getItem();
-
-		if (this.canRodentPickupItem(item)) {
-			ItemStack itemstack1 = this.rodentInventory.addItem(itemstack);
-
-			if (itemstack1.isEmpty()) {
-				itemEntity.setDead();
-			} else {
-				itemstack.setCount(itemstack1.getCount());
-			}
-		}
-	}
-
-	private boolean canRodentPickupItem(Item itemIn) {
-		return itemIn == Items.BREAD || itemIn == Items.POTATO || itemIn == Items.CARROT || itemIn == Items.WHEAT
-				|| itemIn == Items.WHEAT_SEEDS || itemIn == Items.BEETROOT || itemIn == Items.BEETROOT_SEEDS
-				|| itemIn == Items.EGG;
 	}
 
 	@Override

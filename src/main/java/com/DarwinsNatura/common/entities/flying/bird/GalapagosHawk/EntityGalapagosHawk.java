@@ -60,9 +60,7 @@ public class EntityGalapagosHawk extends EntityBirdBase{
 	    {
 	      if (entityFound2 instanceof EntityGalapagosRiceRat) {
 	  		this.setHunting(true);
-	  		if(!this.isPassenger(this)) {
-	  			this.getNavigator().tryMoveToXYZ(entityFound2.posX, entityFound2.posY, entityFound2.posZ, this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue() * 6.0D);
-	  		}
+	  	    this.getNavigator().tryMoveToXYZ(entityFound2.posX, entityFound2.posY, entityFound2.posZ, this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue() * 4.0D);
 	      }
 	      else{
 		    this.setHunting(false);

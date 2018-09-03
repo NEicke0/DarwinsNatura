@@ -40,8 +40,8 @@ public class BiomeGalapagos extends Biome{
 		this.decorator.mushroomsPerChunk = -999;
 		this.decorator.sandPatchesPerChunk = 2;
 		
-		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosRiceRat.class, 21, 2, 4));
-		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosHawk.class, 30, 1, 2));
+		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosRiceRat.class, 30, 2, 4));
+		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosHawk.class, 20, 1, 2));
 	}
 
 	@Override
