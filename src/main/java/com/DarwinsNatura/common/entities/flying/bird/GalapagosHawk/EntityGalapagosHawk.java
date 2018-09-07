@@ -34,10 +34,41 @@ public class EntityGalapagosHawk extends EntityBirdBase{
 	public void setHunting(boolean hunting) {
 		this.hunting = hunting;
 	}
+	
+    public double getMountedYOffset()
+    {
+        return (double)this.height -0.85D;
+    }
 
 	@Override
 	public void onLivingUpdate() {
-		double distance2 = 20.0D;
+		double distance = 20.0D;
+	    Entity entityFound = null;
+	    
+	    double d = -1.0D;
+	    for (int i = 0; i < this.world.loadedEntityList.size(); i++)
+	    {
+	      Entity CuEnt = (Entity)this.world.loadedEntityList.get(i);
+	        
+	      if (((CuEnt instanceof Entity)) && (CuEnt != this)) {
+	        double d5 = CuEnt.getDistanceSq(this.posX, this.posY, this.posZ);
+	          
+	        if (((distance < 0.0D) || (d5 < distance * distance)) && ((d == -1.0D) || (d5 < d)))
+	        {
+	          d = d5;
+	          entityFound = CuEnt;
+	        }
+	      }
+	    }
+	    
+	    if (isChild()==false)
+	    {
+	      if (entityFound instanceof EntityGalapagosRiceRat) {
+	  	    this.getNavigator().tryMoveToXYZ(entityFound.posX, entityFound.posY, entityFound.posZ, this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue() * 4.0D);
+	      }
+	    }
+	    
+	    double distance2 = 1.0D;
 	    Entity entityFound2 = null;
 	    
 	    double d4 = -1.0D;
@@ -59,12 +90,13 @@ public class EntityGalapagosHawk extends EntityBirdBase{
 	    if (isChild()==false)
 	    {
 	      if (entityFound2 instanceof EntityGalapagosRiceRat) {
-	  		this.setHunting(true);
-	  	    this.getNavigator().tryMoveToXYZ(entityFound2.posX, entityFound2.posY, entityFound2.posZ, this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue() * 4.0D);
+	  	    this.setHunting(true);
+	  	    entityFound2.startRiding(this);
+	  	    entityFound2.attackEntityFrom(DamageSource.DROWN, 0.25F);
 	      }
-	      else{
-		    this.setHunting(false);
-		  }
+	      else {
+		  	    this.setHunting(false);
+		      }
 	    }
 		super.onLivingUpdate();
 	}

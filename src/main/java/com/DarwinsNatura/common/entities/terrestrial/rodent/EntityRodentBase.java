@@ -109,6 +109,7 @@ public class EntityRodentBase extends EntityGender {
 		this.dataManager.set(CLIMBING, Byte.valueOf(b0));
 	}
 
+
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {
 		return new EntityRodentBase(this.world);

@@ -40,7 +40,7 @@ public class BlockVolcanicRock extends Block{
         DarwinsNaturaItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
         setHardness(1.1F);
         setHarvestLevel("pickaxe", 1);
-        setSoundType(SoundType.PLANT);
+        setSoundType(SoundType.STONE);
         this.setTickRandomly(true);
 	}
 
