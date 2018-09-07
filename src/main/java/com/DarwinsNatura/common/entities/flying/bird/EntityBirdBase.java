@@ -17,7 +17,7 @@ public class EntityBirdBase extends EntityGender{
 	  public boolean sit = true;
 	  public boolean stand = false;
 	  private int sitNum;
-	  private int standNum;
+	  protected int standNum;
 	  protected int chanceOfLanding = 250;
 	
 	public EntityBirdBase(World worldIn) {

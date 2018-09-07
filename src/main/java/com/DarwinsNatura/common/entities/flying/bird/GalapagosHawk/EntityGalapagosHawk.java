@@ -1,5 +1,7 @@
 package com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk;
 
+import java.util.List;
+
 import com.DarwinsNatura.common.entities.flying.bird.EntityBirdBase;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
 import com.google.common.base.Predicate;
@@ -37,7 +39,7 @@ public class EntityGalapagosHawk extends EntityBirdBase{
 	
     public double getMountedYOffset()
     {
-        return (double)this.height -0.85D;
+        return (double)this.height -0.95D;
     }
 
 	@Override
@@ -65,10 +67,11 @@ public class EntityGalapagosHawk extends EntityBirdBase{
 	    {
 	      if (entityFound instanceof EntityGalapagosRiceRat) {
 	  	    this.getNavigator().tryMoveToXYZ(entityFound.posX, entityFound.posY, entityFound.posZ, this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue() * 4.0D);
+	  	    this.setHunting(true);
 	      }
 	    }
 	    
-	    double distance2 = 1.0D;
+	    double distance2 = 2.0D;
 	    Entity entityFound2 = null;
 	    
 	    double d4 = -1.0D;
@@ -90,13 +93,26 @@ public class EntityGalapagosHawk extends EntityBirdBase{
 	    if (isChild()==false)
 	    {
 	      if (entityFound2 instanceof EntityGalapagosRiceRat) {
-	  	    this.setHunting(true);
-	  	    entityFound2.startRiding(this);
-	  	    entityFound2.attackEntityFrom(DamageSource.DROWN, 0.25F);
+	    	if(entityFound2.getRidingEntity()==this)
+	    	{
+	    		if(this.onGround) {
+		    		this.setHunting(false);
+	    			this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.0D);
+	    			entityFound2.attackEntityFrom(DamageSource.DROWN, 0.1F);	
+	    		}
+	    		else {
+		    		this.setHunting(false);
+	    		}
+	    	}
+	    	else
+	    	{
+	  	        entityFound2.startRiding(this);
+	  	        this.stand=true;
+	    	}
 	      }
 	      else {
 		  	    this.setHunting(false);
-		      }
+		  }
 	    }
 		super.onLivingUpdate();
 	}
