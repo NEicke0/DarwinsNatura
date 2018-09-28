@@ -7,6 +7,8 @@ import com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk.EntityGalapag
 import com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk.RenderGalapagosHawk;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.RenderGalapagosRiceRat;
+import com.DarwinsNatura.common.entities.terrestrial.tortoise.GalapagosTortoise.EntityGalapagosTortoise;
+import com.DarwinsNatura.common.entities.terrestrial.tortoise.GalapagosTortoise.RenderGalapagosTortoise;
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.init.DarwinsNaturaItems;
 
@@ -21,6 +23,7 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosRiceRat.class, new RenderGalapagosRiceRat.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosPenguin.class, new RenderGalapagosPenguin.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosHawk.class, new RenderGalapagosHawk.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosTortoise.class, new RenderGalapagosTortoise.RenderFactory());
 	}
 	
     @Override

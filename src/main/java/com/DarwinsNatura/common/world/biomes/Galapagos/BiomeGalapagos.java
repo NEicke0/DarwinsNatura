@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk.EntityGalapagosHawk;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
+import com.DarwinsNatura.common.entities.terrestrial.tortoise.GalapagosTortoise.EntityGalapagosTortoise;
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.world.gen.plants.WorldGenBushGalapagos;
 import com.DarwinsNatura.common.world.gen.rocks.WorldGenGalapagosRocks;
@@ -42,6 +43,7 @@ public class BiomeGalapagos extends Biome{
 		
 		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosRiceRat.class, 30, 2, 4));
 		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosHawk.class, 20, 1, 2));
+		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosTortoise.class, 20, 1, 2));
 	}
 
 	@Override
