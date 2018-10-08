@@ -14,7 +14,7 @@ public class RenderGalapagosTortoise extends RenderLiving<EntityGalapagosTortois
 		
 		public RenderGalapagosTortoise(RenderManager manager) 
 		{
-			super(manager, new ModelGalapagosTortoise(), 0.15F);
+			super(manager, new ModelGalapagosTortoise(), 0.9F);
 		}
 		
 		@Override
