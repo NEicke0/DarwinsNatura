@@ -17,7 +17,7 @@ public class RenderGalapagosHawk extends RenderLiving<EntityGalapagosHawk> {
 			Reference.MODID + ":textures/entity/nothing.png");
 
 	public RenderGalapagosHawk(RenderManager manager) {
-		super(manager, new ModelGalapagosHawkFlying(), 0.3F);
+		super(manager, new ModelGalapagosHawk(), 0.3F);
 		this.addLayer(new LayerGalapagosHawk(this));
 	}
 	
