@@ -1,32 +1,32 @@
 package com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk;
 
-import java.util.List;
-
 import com.DarwinsNatura.common.entities.flying.bird.EntityBirdBase;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
-import com.google.common.base.Predicate;
+import com.DarwinsNatura.common.util.handlers.SoundHandler;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
-import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.passive.EntityChicken;
-import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.entity.passive.EntityPig;
-import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityGalapagosHawk extends EntityBirdBase{
 	
-	private boolean hunting=true;
+	private boolean hunting=false;
 	
 	public EntityGalapagosHawk(World worldIn) {
 		super(worldIn);
 		this.setSize(0.6F, 0.6F);
+	}
+	
+	@Override
+	protected SoundEvent getAmbientSound() {
+		return SoundHandler.GALAPAGOS_HAWK_LIVING;
+	}
+	@Override
+	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
+		return SoundHandler.GALAPAGOS_HAWK_LIVING;
 	}
 	
     public boolean isHunting() {
@@ -39,81 +39,84 @@ public class EntityGalapagosHawk extends EntityBirdBase{
 	
     public double getMountedYOffset()
     {
-        return (double)this.height -0.95D;
+        return (double)this.height -0.8D;
     }
-
+    
+    public double getMountedXOffset()
+    {
+    	if(this.onGround) {
+    		 return (double)0.2;
+    	}
+    	else {
+    		return (double)-0.2;
+    	}
+    }
+    
 	@Override
 	public void onLivingUpdate() {
-		double distance = 20.0D;
-	    Entity entityFound = null;
-	    
-	    double d = -1.0D;
-	    for (int i = 0; i < this.world.loadedEntityList.size(); i++)
-	    {
-	      Entity CuEnt = (Entity)this.world.loadedEntityList.get(i);
-	        
-	      if (((CuEnt instanceof Entity)) && (CuEnt != this)) {
-	        double d5 = CuEnt.getDistanceSq(this.posX, this.posY, this.posZ);
-	          
-	        if (((distance < 0.0D) || (d5 < distance * distance)) && ((d == -1.0D) || (d5 < d)))
-	        {
-	          d = d5;
-	          entityFound = CuEnt;
-	        }
-	      }
-	    }
-	    
-	    if (isChild()==false)
-	    {
-	      if (entityFound instanceof EntityGalapagosRiceRat) {
-	  	    this.getNavigator().tryMoveToXYZ(entityFound.posX, entityFound.posY, entityFound.posZ, this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue() * 4.0D);
-	  	    this.setHunting(true);
-	      }
-	    }
-	    
-	    double distance2 = 2.0D;
-	    Entity entityFound2 = null;
-	    
-	    double d4 = -1.0D;
-	    for (int i = 0; i < this.world.loadedEntityList.size(); i++)
-	    {
-	      Entity CuEnt = (Entity)this.world.loadedEntityList.get(i);
-	        
-	      if (((CuEnt instanceof Entity)) && (CuEnt != this)) {
-	        double d5 = CuEnt.getDistanceSq(this.posX, this.posY, this.posZ);
-	          
-	        if (((distance2 < 0.0D) || (d5 < distance2 * distance2)) && ((d4 == -1.0D) || (d5 < d4)))
-	        {
-	          d4 = d5;
-	          entityFound2 = CuEnt;
-	        }
-	      }
-	    }
-	    
-	    if (isChild()==false)
-	    {
-	      if (entityFound2 instanceof EntityGalapagosRiceRat) {
-	    	if(entityFound2.getRidingEntity()==this)
-	    	{
-	    		if(this.onGround) {
-		    		this.setHunting(false);
-	    			this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.0D);
-	    			entityFound2.attackEntityFrom(DamageSource.DROWN, 0.1F);	
-	    		}
-	    		else {
-		    		this.setHunting(false);
-	    		}
-	    	}
-	    	else
-	    	{
-	  	        entityFound2.startRiding(this);
-	  	        this.stand=true;
-	    	}
-	      }
-	      else {
-		  	    this.setHunting(false);
-		  }
-	    }
+        if(this.getControllingPassenger() instanceof EntityGalapagosRiceRat) {
+     		this.setHunting(false);
+        	if(this.onGround) {
+        		this.getControllingPassenger().attackEntityFrom(DamageSource.DROWN, 1.0f);
+        	}
+        }
+        else {
+    		double distance = 20.0D;
+    	    Entity entityFound = null;
+    	    
+    	    double d4 = -1.0D;
+    	    for (int i = 0; i < this.world.loadedEntityList.size(); i++)
+    	    {
+    	      Entity CuEnt = (Entity)this.world.loadedEntityList.get(i);
+    	        
+    	      if (((CuEnt instanceof Entity)) && (CuEnt != this)) {
+    	        double d5 = CuEnt.getDistanceSq(this.posX, this.posY, this.posZ);
+    	          
+    	        if (((distance < 0.0D) || (d5 < distance * distance)) && ((d4 == -1.0D) || (d5 < d4)))
+    	        {
+    	          d4 = d5;
+    	          entityFound = CuEnt;
+    	        }
+    	      }
+    	    }	    
+    	    if (isChild()==false)
+    	    {
+    	      if (entityFound instanceof EntityGalapagosRiceRat) {
+    		      this.setHunting(true);
+    	    	  this.getNavigator().tryMoveToXYZ(entityFound.posX, entityFound.posY, entityFound.posZ, this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue() * 4.0D);
+    	      }
+    	      else {
+    	    	  this.setHunting(false);
+    	      }
+    	    }
+    	    
+    	    double distance2 = 0.25D;
+    	    Entity entityFound2 = null;
+    	    
+    	    double d = -1.0D;
+    	    for (int i = 0; i < this.world.loadedEntityList.size(); i++)
+    	    {
+    	      Entity CuEnt = (Entity)this.world.loadedEntityList.get(i);
+    	        
+    	      if (((CuEnt instanceof Entity)) && (CuEnt != this)) {
+    	        double d5 = CuEnt.getDistanceSq(this.posX, this.posY, this.posZ);
+    	          
+    	        if (((distance2 < 0.0D) || (d5 < distance2 * distance2)) && ((d == -1.0D) || (d5 < d)))
+    	        {
+    	          d = d5;
+    	          entityFound2 = CuEnt;
+    	        }
+    	      }
+    	    }
+    	    
+    	    if (isChild()==false)
+    	    {
+    	      if (entityFound2 instanceof EntityGalapagosRiceRat) {
+    		         entityFound.startRiding(this);
+    		         this.setHunting(false);
+    	      }
+    	    }
+        }
 		super.onLivingUpdate();
 	}
 

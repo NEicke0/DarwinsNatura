@@ -9,12 +9,14 @@ public class SoundHandler {
 	private static int size=0;
 	
 	public static SoundEvent GALAPAGOS_PENGUIN_LIVING; 
+	public static SoundEvent GALAPAGOS_HAWK_LIVING; 
 	
     public static void registerSounds() {
 		
 		size=SoundEvent.REGISTRY.getKeys().size();
 		
 		GALAPAGOS_PENGUIN_LIVING = registerSound("entity.galapagos_penguin_living");
+		GALAPAGOS_HAWK_LIVING = registerSound("entity.galapagos_hawk_living");
     }	
 	
 	private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("darwin:" + s);

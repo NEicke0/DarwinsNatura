@@ -634,7 +634,7 @@ public class ModelGalapagosHawkHunting extends AdvancedModelBase {
             float scaleFactor= 0.5F;
     	
     	    GlStateManager.pushMatrix();
-    	    GlStateManager.translate(0F, 1.32F-1.32F*scaleFactor, -0.05F); 
+    	    GlStateManager.translate(0F, 0.5, -0.05F); 
     	    GlStateManager.scale(scaleFactor, scaleFactor, scaleFactor);
             this.Body.render(f5);
             GlStateManager.popMatrix();

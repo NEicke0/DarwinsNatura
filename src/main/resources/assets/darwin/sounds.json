@@ -1,3 +1,4 @@
 {
-"entity.galapagos_penguin_living":{"category":"ambient", "sounds":[{"name": "darwin:entity/galapagos_penguin_living", "stream": true}]}
+"entity.galapagos_penguin_living":{"category":"ambient", "sounds":[{"name": "darwin:entity/galapagos_penguin_living", "stream": true}]},
+"entity.galapagos_hawk_living":{"category":"ambient", "sounds":[{"name": "darwin:entity/galapagos_hawk_living", "stream": true}]}
 }
