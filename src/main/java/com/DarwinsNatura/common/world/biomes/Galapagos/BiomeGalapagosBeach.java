@@ -9,11 +9,9 @@ import com.DarwinsNatura.common.world.gen.plants.WorldGenBushGalapagos;
 import com.DarwinsNatura.common.world.gen.rocks.WorldGenGalapagosRocks;
 import com.DarwinsNatura.common.world.gen.rocks.WorldGenGalapagosShoreRocks;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.feature.WorldGenIceSpike;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

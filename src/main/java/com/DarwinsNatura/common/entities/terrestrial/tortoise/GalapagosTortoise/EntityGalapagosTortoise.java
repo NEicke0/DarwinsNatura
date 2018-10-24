@@ -25,39 +25,35 @@ public class EntityGalapagosTortoise extends EntityTortoiseBase{
         this.stepHeight=1;
 	}
 	
-
-@Override
-public boolean processInteract(EntityPlayer player, EnumHand hand) {
-	ItemStack ItemOnHand = player.getHeldItem(hand);
-	Random random = new Random();
-	int num;
-	
-	if(ItemOnHand.getItem()==Items.WHEAT) {
-		if(this.isChild() || ItemOnHand != null && (ItemOnHand.getItem() == Items.SPAWN_EGG)) {
+	@Override
+	public boolean processInteract(EntityPlayer player, EnumHand hand) {
+		ItemStack stack = player.getHeldItem(hand);
+		Random random = new Random();
+		int num;
+		
+		if(this.isChild() || stack != null && (stack.getItem() == Items.SPAWN_EGG)) {
 			return super.processInteract(player, hand);
 		}
 		else {
 			if(!this.isBeingRidden()) {
-				if(ItemOnHand != null && ItemOnHand.interactWithEntity(player, this, hand)) {
+				if(stack != null && stack.interactWithEntity(player, this, hand)) {
 					return true;
 				}
 				else {
-					player.rotationYaw=this.rotationYaw;
-					player.rotationPitch=this.rotationPitch;
-					
-					num=random.nextInt(11);
-			        if(num==2) {
-			        	ItemOnHand.shrink(1);
-			        	player.startRiding(this);
-						if(!this.world.isRemote) {
-							player.startRiding(this);
-						}
-			        	return true;
-			        }
-			        else {
-			        	ItemOnHand.shrink(1);
-			        	return false;	
-			        }
+					if(stack.getItem()==Items.WHEAT) {
+						num=random.nextInt(11);
+				        if(num==2) {
+				        	stack.shrink(1);
+							this.mountTo(player);
+							return true;
+				        }
+				        else {
+							return false;
+				        }
+					}
+					else {
+						return false;
+					}
 				}	
 			}
 			else {
@@ -65,74 +61,79 @@ public boolean processInteract(EntityPlayer player, EnumHand hand) {
 			}
 		}
 	}
-	else {
-		return super.processInteract(player, hand);
-	}
-    }
 	
-public boolean canBeSteered() {
-    Entity entity=this.getControllingPassenger();
-    
-    return entity instanceof EntityLivingBase;
-}
-
-@Nullable
-public Entity getControllingPassenger() {
-	return this.getPassengers().isEmpty() ? null : (Entity)this.getPassengers().get(0);
-}
-
-public void travel(float strafe, float vertical, float forward)
-{
-    if (this.isBeingRidden() && this.canBeSteered())
+	private void mountTo(EntityPlayer player) {
+		player.rotationYaw=this.rotationYaw;
+		player.rotationPitch=this.rotationPitch;
+		
+		if(!this.world.isRemote) {
+			player.startRiding(this);
+		}
+	}
+	
+	public boolean canBeSteered() {
+	    Entity entity=this.getControllingPassenger();
+	    
+	    return entity instanceof EntityLivingBase;
+	}
+	
+	@Nullable
+	public Entity getControllingPassenger() {
+		return this.getPassengers().isEmpty() ? null : (Entity)this.getPassengers().get(0);
+	}
+	
+	public void travel(float strafe, float vertical, float forward)
     {
-        EntityLivingBase entitylivingbase = (EntityLivingBase)this.getControllingPassenger();
-        this.rotationYaw = entitylivingbase.rotationYaw;
-        this.prevRotationYaw = this.rotationYaw;
-        this.rotationPitch = entitylivingbase.rotationPitch * 0.5F;
-        this.setRotation(this.rotationYaw, this.rotationPitch);
-        this.renderYawOffset = this.rotationYaw;
-        this.rotationYawHead = this.renderYawOffset;
-        strafe = entitylivingbase.moveStrafing * 0.5F;
-        forward = entitylivingbase.moveForward;
-
-        if (forward <= 0.0F)
+        if (this.isBeingRidden() && this.canBeSteered())
         {
-            forward *= 0.25F;            
+            EntityLivingBase entitylivingbase = (EntityLivingBase)this.getControllingPassenger();
+            this.rotationYaw = entitylivingbase.rotationYaw;
+            this.prevRotationYaw = this.rotationYaw;
+            this.rotationPitch = entitylivingbase.rotationPitch * 0.5F;
+            this.setRotation(this.rotationYaw, this.rotationPitch);
+            this.renderYawOffset = this.rotationYaw;
+            this.rotationYawHead = this.renderYawOffset;
+            strafe = entitylivingbase.moveStrafing * 0.5F;
+            forward = entitylivingbase.moveForward;
+
+            if (forward <= 0.0F)
+            {
+                forward *= 0.25F;            
+            }
+
+            this.jumpMovementFactor = this.getAIMoveSpeed() * 0.1F;
+
+            if (this.canPassengerSteer())
+            {
+                this.setAIMoveSpeed((float)this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue());
+                super.travel(strafe, vertical, forward);
+            }
+            else if (entitylivingbase instanceof EntityPlayer)
+            {
+                this.motionX = 0.0D;
+                this.motionY = 0.0D;
+                this.motionZ = 0.0D;
+            }
+
+            this.prevLimbSwingAmount = this.limbSwingAmount;
+            double d1 = this.posX - this.prevPosX;
+            double d0 = this.posZ - this.prevPosZ;
+            float f2 = MathHelper.sqrt(d1 * d1 + d0 * d0) * 4.0F;
+
+            if (f2 > 1.0F)
+            {
+                f2 = 1.0F;
+            }
+
+            this.limbSwingAmount += (f2 - this.limbSwingAmount) * 0.4F;
+            this.limbSwing += this.limbSwingAmount;
         }
-
-        this.jumpMovementFactor = this.getAIMoveSpeed() * 0.1F;
-
-        if (this.canPassengerSteer())
+        else
         {
-            this.setAIMoveSpeed((float)this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue());
+            this.jumpMovementFactor = 0.02F;
             super.travel(strafe, vertical, forward);
         }
-        else if (entitylivingbase instanceof EntityPlayer)
-        {
-            this.motionX = 0.0D;
-            this.motionY = 0.0D;
-            this.motionZ = 0.0D;
-        }
-
-        this.prevLimbSwingAmount = this.limbSwingAmount;
-        double d1 = this.posX - this.prevPosX;
-        double d0 = this.posZ - this.prevPosZ;
-        float f2 = MathHelper.sqrt(d1 * d1 + d0 * d0) * 4.0F;
-
-        if (f2 > 1.0F)
-        {
-            f2 = 1.0F;
-        }
-
-        this.limbSwingAmount += (f2 - this.limbSwingAmount) * 0.4F;
-        this.limbSwing += this.limbSwingAmount;
     }
-    else
-    {
-        this.jumpMovementFactor = 0.02F;
-        super.travel(strafe, vertical, forward);
-    }
-}
 	
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {

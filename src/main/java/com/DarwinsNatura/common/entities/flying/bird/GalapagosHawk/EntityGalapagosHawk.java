@@ -24,10 +24,6 @@ public class EntityGalapagosHawk extends EntityBirdBase{
 	protected SoundEvent getAmbientSound() {
 		return SoundHandler.GALAPAGOS_HAWK_LIVING;
 	}
-	@Override
-	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-		return SoundHandler.GALAPAGOS_HAWK_LIVING;
-	}
 	
     public boolean isHunting() {
 		return hunting;
