@@ -5,7 +5,6 @@ import java.util.Random;
 import com.DarwinsNatura.common.blocks.item.ItemBlockDoor;
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.init.DarwinsNaturaItems;
-import com.DarwinsNatura.common.tabs.AmericasTab;
 import com.DarwinsNatura.core.Main;
 
 import net.minecraft.block.BlockDoor;

@@ -5,7 +5,6 @@ import com.DarwinsNatura.common.init.DarwinsNaturaItems;
 import com.DarwinsNatura.core.Main;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
 

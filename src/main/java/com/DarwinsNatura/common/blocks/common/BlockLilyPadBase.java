@@ -10,16 +10,12 @@ import com.DarwinsNatura.common.init.DarwinsNaturaItems;
 import com.DarwinsNatura.core.Main;
 
 import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemLilyPad;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;

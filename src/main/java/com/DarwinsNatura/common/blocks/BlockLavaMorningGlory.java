@@ -7,7 +7,6 @@ import com.DarwinsNatura.core.Main;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 
 public class BlockLavaMorningGlory extends BlockBush{
