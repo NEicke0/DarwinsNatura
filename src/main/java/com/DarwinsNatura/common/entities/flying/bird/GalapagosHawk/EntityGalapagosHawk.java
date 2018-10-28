@@ -6,13 +6,25 @@ import com.DarwinsNatura.common.util.handlers.SoundHandler;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.attributes.IAttribute;
+import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.monster.EntityGuardian;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathFinder;
+import net.minecraft.pathfinding.PathNavigate;
+import net.minecraft.pathfinding.PathNavigateFlying;
+import net.minecraft.pathfinding.PathNavigateGround;
+import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class EntityGalapagosHawk extends EntityBirdBase{
@@ -20,15 +32,28 @@ public class EntityGalapagosHawk extends EntityBirdBase{
 	private static final DataParameter<Boolean> HUNTING = EntityDataManager.<Boolean>createKey(EntityGalapagosHawk.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> TARGET_ENTITY = EntityDataManager.<Integer>createKey(EntityGalapagosHawk.class, DataSerializers.VARINT);
 	
+    private EntityLivingBase targetedEntity;
 	public EntityGalapagosHawk(World worldIn) {
 		super(worldIn);
 		this.setSize(0.6F, 0.6F);
+		this.stepHeight = 0.9F;
 	}
 	
 	@Override
 	protected SoundEvent getAmbientSound() {
 		return SoundHandler.GALAPAGOS_HAWK_LIVING;
 	}
+	
+	@Override
+	protected void initEntityAI() {
+		super.initEntityAI();
+		this.tasks.addTask(9, new EntityAILookIdle(this));
+	}
+	
+	protected PathNavigate createNavigator(World worldIn)
+    {
+        return this.onGround ? new PathNavigateGround(this, worldIn) : new PathNavigateFlying(this, worldIn);
+    }
 	
 	public void entityInit()
     {
@@ -37,6 +62,7 @@ public class EntityGalapagosHawk extends EntityBirdBase{
         this.dataManager.register(TARGET_ENTITY, Integer.valueOf(0));
     }
 
+    public boolean isHunting()
     {
         return ((Boolean)this.dataManager.get(HUNTING)).booleanValue();
     }
