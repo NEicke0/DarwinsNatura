@@ -347,8 +347,6 @@ public class ModelGalapagosPenguin extends AdvancedModelBase {
 		float globalHeight = 1f;
 		float globalDegree = 2F;
 		
-		this.Head.rotateAngleZ = (f3 * 0.014453292F);
-		
 		bob(Body1, 0.1f * globalSpeed, 0.5f* globalHeight, true, f, f1);
 
 		swing(Body1, 0.05f * globalSpeed, 0.2f * globalDegree, false, 0f, 0f, f, f1);
@@ -366,9 +364,9 @@ public class ModelGalapagosPenguin extends AdvancedModelBase {
 		walk(Belly2, 0.06f * globalSpeed, 0.05f * globalDegree, false, 0f, 0f, f, f1);
 
 		walk(Tail1, 0.1f, 0.3f, false, 0f, 0f, entity.ticksExisted, 0.5F);	
-		walk(Neck1, 0.09f, 0.2f, true, 0f, 0f, entity.ticksExisted, 0.5F);
-		walk(Head, 0.09f, 0.2f, false, 0f, 0f, entity.ticksExisted, 0.5F);
-		walk(Head, 0.1f, 0.1f, false, 0f, 0.2f, entity.ticksExisted, 0.5F);
+		walk(Neck1, 0.08f, 0.1f, true, 0f, 0f, entity.ticksExisted, 0.5F);
+		walk(Head, 0.08f, 0.1f, false, 0f, 0f, entity.ticksExisted, 0.5F);
+		walk(Head, 0.09f, 0.05f, false, 0f, 0.2f, entity.ticksExisted, 0.5F);
 		walk(Body2, 0.09f, 0.05f, false, 0f, -0.075f, entity.ticksExisted, 0.5F);
 		walk(Belly2, 0.11f, 0.06f, true, 0f, 0f, entity.ticksExisted, 0.5F);
 		walk(Belly3, 0.14f, 0.05f, false, 0f, 0.05f, entity.ticksExisted, 0.5F);
