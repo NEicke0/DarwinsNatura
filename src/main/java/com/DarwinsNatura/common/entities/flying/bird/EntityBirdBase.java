@@ -6,6 +6,9 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.Blocks;
+import net.minecraft.pathfinding.PathNavigate;
+import net.minecraft.pathfinding.PathNavigateFlying;
+import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -24,6 +27,10 @@ public class EntityBirdBase extends EntityGender{
         super(worldIn);
     }
 	
+	protected PathNavigate createNavigator(World worldIn)
+    {
+        return this.onGround ? new PathNavigateGround(this, worldIn) : new PathNavigateFlying(this, worldIn);
+    }
 	public boolean getWaterBelow(World world, int x, int z){
 	    int y = 255;
 	    while (y-- >= 0)
