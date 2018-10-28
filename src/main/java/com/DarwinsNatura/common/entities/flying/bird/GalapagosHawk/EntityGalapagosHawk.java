@@ -125,7 +125,7 @@ public class EntityGalapagosHawk extends EntityBirdBase{
     	      }
     	    }
     	    
-    	    double distance2 = 0.25D;
+    	    double distance2 = 0.5D;
     	    Entity entityFound2 = null;
     	    
     	    double d = -1.0D;

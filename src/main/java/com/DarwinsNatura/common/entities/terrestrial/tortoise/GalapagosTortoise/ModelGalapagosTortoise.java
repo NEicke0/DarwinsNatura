@@ -427,8 +427,6 @@ public class ModelGalapagosTortoise extends AdvancedModelBase {
 		float globalHeight = 1f;
 		float globalDegree = 0.6F;
 		
-		this.Head.rotateAngleZ = (f4 * 0.014453292F);
-		
 		bob(BaseShell, 0.1f * globalSpeed, 0.5f* globalHeight, true, f, f1);
 		
 		walk(shape22, 0.1f * globalSpeed, 0.5f * globalDegree, false, 0f, 0f, f ,f1);

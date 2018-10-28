@@ -651,8 +651,6 @@ public class ModelGalapagosHawk extends AdvancedModelBase {
 		float globalHeight = 1f;
 		float globalDegree = 2F;
 		
-		this.Head.rotateAngleZ = (f3 * 0.014453292F);
-		
 		bob(Body, 0.1f * globalSpeed, 0.5f* globalHeight, true, f, f1);
 		
 		walk(RightLeg, 0.1f * globalSpeed, 0.5f * globalDegree, true, 0f, 0f, f ,f1);
