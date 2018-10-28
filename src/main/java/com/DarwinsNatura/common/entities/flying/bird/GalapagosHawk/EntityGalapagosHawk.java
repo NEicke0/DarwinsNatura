@@ -7,13 +7,18 @@ import com.DarwinsNatura.common.util.handlers.SoundHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.monster.EntityGuardian;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityGalapagosHawk extends EntityBirdBase{
 	
-	private boolean hunting=false;
+	private static final DataParameter<Boolean> HUNTING = EntityDataManager.<Boolean>createKey(EntityGalapagosHawk.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Integer> TARGET_ENTITY = EntityDataManager.<Integer>createKey(EntityGalapagosHawk.class, DataSerializers.VARINT);
 	
 	public EntityGalapagosHawk(World worldIn) {
 		super(worldIn);
@@ -25,13 +30,21 @@ public class EntityGalapagosHawk extends EntityBirdBase{
 		return SoundHandler.GALAPAGOS_HAWK_LIVING;
 	}
 	
-    public boolean isHunting() {
-		return hunting;
-	}
+	public void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(HUNTING, Boolean.valueOf(false));
+        this.dataManager.register(TARGET_ENTITY, Integer.valueOf(0));
+    }
 
-	public void setHunting(boolean hunting) {
-		this.hunting = hunting;
-	}
+    {
+        return ((Boolean)this.dataManager.get(HUNTING)).booleanValue();
+    }
+
+    private void setHunting(boolean moving)
+    {
+        this.dataManager.set(HUNTING, Boolean.valueOf(moving));
+    }
 	
     public double getMountedYOffset()
     {
