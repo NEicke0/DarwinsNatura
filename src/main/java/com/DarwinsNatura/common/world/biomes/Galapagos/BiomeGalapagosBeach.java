@@ -3,6 +3,7 @@ package com.DarwinsNatura.common.world.biomes.Galapagos;
 import java.util.Random;
 
 import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.EntityGalapagosPenguin;
+import com.DarwinsNatura.common.entities.aquatic.reptile.MarineIguana.EntityMarineIguana;
 import com.DarwinsNatura.common.init.DarwinsNaturaBlocks;
 import com.DarwinsNatura.common.world.gen.SandPatches;
 import com.DarwinsNatura.common.world.gen.plants.WorldGenBushGalapagos;
@@ -35,6 +36,7 @@ public class BiomeGalapagosBeach extends Biome
         this.decorator.cactiPerChunk = 0;
         
         this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityGalapagosPenguin.class, 30, 2, 6));
+        this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityMarineIguana.class, 25, 2, 6));
     }
 	
 	@Override

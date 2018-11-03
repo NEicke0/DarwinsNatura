@@ -10,13 +10,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class LayerSwimming implements LayerRenderer<EntityGalapagosPenguin>
+public class LayerGalapagosPenguinSwimming implements LayerRenderer<EntityGalapagosPenguin>
 {
     private static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MODID + ":textures/entity/aquatic/bird/gpenguin.png");
     private final RenderGalapagosPenguin penguinRenderer;
-    private final ModelGalapagosPenguinSwim penguinModel = new ModelGalapagosPenguinSwim(0.5F);
+    private final ModelGalapagosPenguinSwim penguinModel = new ModelGalapagosPenguinSwim();
 
-    public LayerSwimming(RenderGalapagosPenguin penguinRendererIn)
+    public LayerGalapagosPenguinSwimming(RenderGalapagosPenguin penguinRendererIn)
     {
         this.penguinRenderer = penguinRendererIn;
     }

@@ -1,6 +1,6 @@
 package com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin;
 
-import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.layer.LayerSwimming;
+import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.layer.LayerGalapagosPenguinSwimming;
 import com.DarwinsNatura.core.Reference;
 
 import net.minecraft.client.renderer.GlStateManager;
@@ -18,7 +18,7 @@ public class RenderGalapagosPenguin extends RenderLiving<EntityGalapagosPenguin>
 
 	public RenderGalapagosPenguin(RenderManager manager) {
 		super(manager, new ModelGalapagosPenguin(), 0.3F);
-		this.addLayer(new LayerSwimming(this));
+		this.addLayer(new LayerGalapagosPenguinSwimming(this));
 	}
 	
 	protected void preRenderCallback(EntityGalapagosPenguin entitylivingbaseIn, float partialTickTime)

@@ -3,6 +3,8 @@ package com.DarwinsNatura.core.proxy;
 import com.DarwinsNatura.common.blocks.BlockLeavesScalesia;
 import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.EntityGalapagosPenguin;
 import com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin.RenderGalapagosPenguin;
+import com.DarwinsNatura.common.entities.aquatic.reptile.MarineIguana.EntityMarineIguana;
+import com.DarwinsNatura.common.entities.aquatic.reptile.MarineIguana.RenderMarineIguana;
 import com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk.EntityGalapagosHawk;
 import com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk.RenderGalapagosHawk;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
@@ -24,6 +26,7 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosPenguin.class, new RenderGalapagosPenguin.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosHawk.class, new RenderGalapagosHawk.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosTortoise.class, new RenderGalapagosTortoise.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityMarineIguana.class, new RenderMarineIguana.RenderFactory());
 	}
 	
     @Override

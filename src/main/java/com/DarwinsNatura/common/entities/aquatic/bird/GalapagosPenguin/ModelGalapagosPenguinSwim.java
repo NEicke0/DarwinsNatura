@@ -59,7 +59,7 @@ public class ModelGalapagosPenguinSwim extends AdvancedModelBase {
 	public AdvancedModelRenderer RightLeg2;
 	public AdvancedModelRenderer LeftLeg2;
 
-	public ModelGalapagosPenguinSwim(float f) {
+	public ModelGalapagosPenguinSwim() {
 		this.textureWidth = 80;
 		this.textureHeight = 100;
 		this.Belly3 = new AdvancedModelRenderer(this, 26, 48);

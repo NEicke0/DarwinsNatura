@@ -442,6 +442,7 @@ public class ModelGalapagosTortoise extends AdvancedModelBase {
 		walk(shape22_5, 0.1f * globalSpeed, 0.15f * globalDegree, false, 2f, -0.1f, f ,f1);
 		walk(shape22_7, 0.1f * globalSpeed, 0.15f * globalDegree, true, 2f, -0.1f, f ,f1);
 		walk(Head, 0.08f * globalSpeed, 0.03f * globalDegree, true, 0f, -0.1f, f, f1);
+		
 		walk(Tail1, 0.05f, 0.2f, false, 0f, 0f, entity.ticksExisted, 0.5F);	
 		walk(Tail2, 0.05f, 0.2f, false, 0.5f, 0f, entity.ticksExisted, 0.5F);	
 		walk(Tail2, 0.05f, 0.2f, false, 0.5f, 0f, entity.ticksExisted, 0.5F);
@@ -449,6 +450,7 @@ public class ModelGalapagosTortoise extends AdvancedModelBase {
 		walk(Head, 0.09f, 0.1f, false, 0f, 0f, entity.ticksExisted, 0.5F);
 		walk(Head, 0.1f, 0.04f, false, 0f, 0.2f, entity.ticksExisted, 0.5F);
 	}
+    
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
