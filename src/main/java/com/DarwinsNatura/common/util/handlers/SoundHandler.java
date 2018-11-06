@@ -10,6 +10,8 @@ public class SoundHandler {
 	
 	public static SoundEvent GALAPAGOS_PENGUIN_LIVING; 
 	public static SoundEvent GALAPAGOS_HAWK_LIVING; 
+	public static SoundEvent FLIGHTLESS_CORMORANT_LIVING;
+	public static SoundEvent GALAPAGOS_BEACH_AMBIENT;
 	
     public static void registerSounds() {
 		
@@ -17,6 +19,8 @@ public class SoundHandler {
 		
 		GALAPAGOS_PENGUIN_LIVING = registerSound("entity.galapagos_penguin_living");
 		GALAPAGOS_HAWK_LIVING = registerSound("entity.galapagos_hawk_living");
+		FLIGHTLESS_CORMORANT_LIVING = registerSound("entity.flightless_cormorant_living");
+		GALAPAGOS_BEACH_AMBIENT = registerSound("entity.galapagos_beach_ambient");
     }	
 	
 	private static SoundEvent registerSound(String s) { ResourceLocation l = new ResourceLocation("darwin:" + s);
