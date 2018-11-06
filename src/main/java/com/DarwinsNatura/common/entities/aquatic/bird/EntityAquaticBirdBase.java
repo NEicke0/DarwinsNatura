@@ -27,17 +27,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public abstract class EntityPenguinBase extends EntityGender{
+public abstract class EntityAquaticBirdBase extends EntityGender{
 	
-    private static final DataParameter<Boolean> MOVING = EntityDataManager.<Boolean>createKey(EntityPenguinBase.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> MOVING = EntityDataManager.<Boolean>createKey(EntityAquaticBirdBase.class, DataSerializers.BOOLEAN);
     private EntityLivingBase targetedEntity;
     private int clientSideAttackTime;
     private boolean clientSideTouchedGround;
     protected EntityAIWander wander;
-    private EntityPenguinBase.GuardianMoveHelper moveHelpCross = new EntityPenguinBase.GuardianMoveHelper(this);
+    private EntityAquaticBirdBase.GuardianMoveHelper moveHelpCross = new EntityAquaticBirdBase.GuardianMoveHelper(this);
     private EntityMoveHelper helpMove = new EntityMoveHelper(this);;
 
-    public EntityPenguinBase(World worldIn)
+    public EntityAquaticBirdBase(World worldIn)
     {
         super(worldIn);
         setPathPriority(net.minecraft.pathfinding.PathNodeType.WATER, 0.0F);
@@ -212,9 +212,9 @@ public abstract class EntityPenguinBase extends EntityGender{
      */
     static class GuardianMoveHelper extends EntityMoveHelper
         {
-            private final EntityPenguinBase entityGuardian;
+            private final EntityAquaticBirdBase entityGuardian;
 
-            public GuardianMoveHelper(EntityPenguinBase Swimmer)
+            public GuardianMoveHelper(EntityAquaticBirdBase Swimmer)
             {
                 super(Swimmer);
                 this.entityGuardian = Swimmer;

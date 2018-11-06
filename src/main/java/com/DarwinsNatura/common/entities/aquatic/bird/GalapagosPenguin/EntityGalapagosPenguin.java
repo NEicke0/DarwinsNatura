@@ -1,13 +1,13 @@
 package com.DarwinsNatura.common.entities.aquatic.bird.GalapagosPenguin;
 
-import com.DarwinsNatura.common.entities.aquatic.bird.EntityPenguinBase;
+import com.DarwinsNatura.common.entities.aquatic.bird.EntityAquaticBirdBase;
 import com.DarwinsNatura.common.util.handlers.SoundHandler;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntityGalapagosPenguin extends EntityPenguinBase {
+public class EntityGalapagosPenguin extends EntityAquaticBirdBase {
 
 	public EntityGalapagosPenguin(World worldIn) {
 		super(worldIn);
