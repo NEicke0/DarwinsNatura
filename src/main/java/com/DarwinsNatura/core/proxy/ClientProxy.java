@@ -7,6 +7,8 @@ import com.DarwinsNatura.common.entities.aquatic.reptile.MarineIguana.EntityMari
 import com.DarwinsNatura.common.entities.aquatic.reptile.MarineIguana.RenderMarineIguana;
 import com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk.EntityGalapagosHawk;
 import com.DarwinsNatura.common.entities.flying.bird.GalapagosHawk.RenderGalapagosHawk;
+import com.DarwinsNatura.common.entities.terrestrial.bird.booby.EntityBlueFootedBooby;
+import com.DarwinsNatura.common.entities.terrestrial.bird.booby.RenderBFBooby;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.EntityGalapagosRiceRat;
 import com.DarwinsNatura.common.entities.terrestrial.rodent.GalapagosRiceRat.RenderGalapagosRiceRat;
 import com.DarwinsNatura.common.entities.terrestrial.tortoise.GalapagosTortoise.EntityGalapagosTortoise;
@@ -27,6 +29,7 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosHawk.class, new RenderGalapagosHawk.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityGalapagosTortoise.class, new RenderGalapagosTortoise.RenderFactory());
 		RenderingRegistry.registerEntityRenderingHandler(EntityMarineIguana.class, new RenderMarineIguana.RenderFactory());
+		RenderingRegistry.registerEntityRenderingHandler(EntityBlueFootedBooby.class, new RenderBFBooby.RenderFactory());
 	}
 	
     @Override
