@@ -16,4 +16,4 @@ jobs:
     - name: Build with Gradle
       run: 
          sudo apt-get update && sudo apt-get install --yes gradle &&
-         sudo gradle assemble testClasses
+         sudo gradle assemble testClasses test
